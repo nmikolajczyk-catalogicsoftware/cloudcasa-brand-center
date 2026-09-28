@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CloudCasa by Catalogic — Brand Resource Center</title>
+<meta name="description" content="Official brand guidelines, logos, colors, and typography for CloudCasa by Catalogic.">
+<link rel="icon" type="image/svg+xml" href="assets/svg/cc-icon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --pink: #DD248D;
+    --pink-dark: #B81C74;
+    --plum: #863E73;
+    --black: #171717;
+    --white: #FFFFFF;
+    --bg: #f7f7fa;
+    --border: #e4e6ed;
+    --text: #2c3e50;
+    --text-muted: #7f8c8d;
+    --card: #ffffff;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; font-size: 14px; }
+  h1,h2,h3,h4,h5,h6 { font-family: 'Poppins', sans-serif; }
+
+  /* Header */
+  .hero { background: linear-gradient(135deg, var(--black) 0%, #24212c 60%, #2e2233 100%); padding: 40px 48px 36px; color: white; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: space-between; }
+  .hero::before { content:''; position:absolute; top:-40%; right:-5%; width:500px; height:500px; background:radial-gradient(circle, rgba(221,36,141,0.18) 0%, transparent 65%); border-radius:50%; }
+  .hero-left { display: flex; align-items: center; gap: 24px; position: relative; z-index: 1; }
+  .hero-logos { display: flex; align-items: center; }
+  .hero-text h1 { font-size: 14px; font-weight: 500; opacity: 0.5; text-transform: uppercase; letter-spacing: 2px; }
+  .hero-text p { font-size: 15px; opacity: 0.7; margin-top: 2px; font-family: 'Inter', sans-serif; font-weight: 400; }
+
+  /* Nav */
+  .nav { display:flex; gap:0; background:white; border-bottom:2px solid var(--border); padding:0 48px; position:sticky; top:0; z-index:100; box-shadow:0 2px 8px rgba(0,0,0,0.04); overflow-x:auto; }
+  .nav a { padding:14px 24px; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.5px; color:var(--text-muted); text-decoration:none; border-bottom:3px solid transparent; white-space:nowrap; transition:all .15s; font-family:'Inter',sans-serif; }
+  .nav a:hover { color:var(--text); }
+  .nav a.active { color:var(--pink); border-bottom-color:var(--pink); }
+  .nav a:focus-visible, a:focus-visible { outline:2px solid var(--pink); outline-offset:2px; }
+
+  /* Sections */
+  .page { max-width:1200px; margin:0 auto; padding:0 48px 0; }
+  .section { display:none; }
+  .section.active { display:block; }
+  .section-title { font-family:'Poppins',sans-serif; font-size:11px; font-weight:500; text-transform:uppercase; letter-spacing:0.5px; color:var(--text-muted); margin:40px 0 20px; padding-bottom:8px; border-bottom:1px solid var(--border); scroll-margin-top:80px; }
+  .section-title-with-action { display:flex; align-items:baseline; justify-content:space-between; gap:12px; }
+  .section-title-actions { display:flex; gap:8px; flex-wrap:wrap; }
+  .section-title-zip, .section-title-view-downloads, .section-title-guideline { font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.3px; text-decoration:none; color:#fff; background:var(--pink); padding:4px 10px; border-radius:6px; transition:background .15s; white-space:nowrap; }
+  .section-title-zip:hover, .section-title-view-downloads:hover, .section-title-guideline:hover { background:var(--pink-dark); }
+  .lead { font-size:14px; color:var(--text-muted); margin-bottom:24px; max-width:720px; line-height:1.7; }
+  .lead strong { color:var(--text); }
+
+  /* Color Palette */
+  .palette-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; margin-bottom:16px; }
+  .palette-card { background:var(--card); border:1px solid var(--border); border-radius:12px; overflow:hidden; }
+  .palette-swatch { height:120px; display:flex; align-items:flex-end; padding:12px 16px; }
+  .palette-swatch .hex { font-size:14px; font-weight:700; font-family:'SF Mono','Fira Code',monospace; }
+  .palette-info { padding:16px; }
+  .palette-info h4 { font-size:14px; margin-bottom:8px; }
+  .palette-info table { width:100%; font-size:12px; }
+  .palette-info td { padding:3px 0; vertical-align:top; } .palette-info td:first-child { color:var(--text-muted); font-weight:600; width:70px; }
+
+  /* Typography */
+  .type-card { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:32px; margin-bottom:20px; }
+  .aa-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; margin-bottom:24px; }
+  .aa-card { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:32px; text-align:center; }
+  .aa-card .aa-glyph { font-family:'Poppins',sans-serif; font-size:72px; font-weight:600; line-height:1; color:var(--black); margin-bottom:12px; }
+  .aa-card .aa-name { font-size:14px; font-weight:700; color:var(--text); margin-bottom:2px; }
+  .aa-card .aa-role { font-size:12px; color:var(--text-muted); }
+  .type-sample-heading { font-family:'Poppins',sans-serif; }
+  .type-sample-body { font-family:'Inter',sans-serif; }
+  .type-combo { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:40px; margin-bottom:20px; }
+  .type-spec { margin-top:16px; padding-top:12px; border-top:1px dashed var(--border); font-size:11px; color:var(--text-muted); font-family:'Inter',sans-serif; }
+
+  .version-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+  .version-card { margin-bottom:0; padding:24px 28px; }
+  .version-strip { display:flex; height:32px; border-radius:6px; overflow:hidden; margin-bottom:16px; }
+  .version-strip span { flex:1; }
+  .version-card h5 { font-size:14px; margin-bottom:4px; }
+  .version-card p { font-size:13px; color:var(--text-muted); }
+  .badge { display:inline-block; font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.4px; color:var(--pink); background:#fce4f1; padding:1px 7px; border-radius:4px; vertical-align:1px; font-family:'Inter',sans-serif; }
+
+  /* Rules */
+  .rule-card { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:24px 28px; margin-bottom:12px; display:flex; align-items:flex-start; gap:16px; }
+  .rule-icon { width:28px; height:28px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; flex-shrink:0; margin-top:2px; }
+  .rule-do .rule-icon { background:#e8f5e9; color:#2e7d32; } .rule-dont .rule-icon { background:#ffebee; color:#c62828; }
+  .rule-card h5 { font-size:14px; margin-bottom:2px; } .rule-card p { font-size:13px; color:var(--text-muted); font-family:'Inter',sans-serif; }
+
+  /* Downloads */
+  .dl-row { display:flex; align-items:center; justify-content:space-between; padding:14px 0; border-bottom:1px solid #f0f1f5; gap:16px; }
+  .dl-row:last-child { border-bottom:none; }
+  .dl-left { display:flex; align-items:center; gap:14px; min-width:0; }
+  .dl-preview { width:52px; height:52px; border-radius:8px; display:flex; align-items:center; justify-content:center; flex-shrink:0; overflow:hidden; padding:4px; box-sizing:border-box; }
+  .dl-preview svg, .dl-preview img { width:100%; height:100%; object-fit:contain; display:block; }
+  .dl-preview-white { background:var(--black); }
+  .dl-preview-color { background:#fff; border:1px solid var(--border); }
+  .dl-info { display:flex; flex-direction:column; gap:2px; min-width:0; }
+  .dl-name { font-size:13px; font-weight:600; }
+  .dl-desc { font-size:11px; color:var(--text-muted); }
+  .dl-buttons { display:flex; gap:6px; flex-shrink:0; flex-wrap:wrap; }
+  .dl-btn { display:inline-flex; align-items:center; padding:5px 12px; border-radius:6px; font-size:11px; font-weight:700; text-decoration:none; text-transform:uppercase; letter-spacing:.3px; transition:all .15s; cursor:pointer; border:none; font-family:'Inter',sans-serif; }
+  .dl-btn-svg { background:#edf7ed; color:#2e7d32; } .dl-btn-svg:hover { background:#c8e6c9; }
+  .dl-btn-primary { background:var(--pink); color:#fff; } .dl-btn-primary:hover { background:var(--pink-dark); }
+  .dl-btn-png { background:#e3f2fd; color:#1565c0; } .dl-btn-png:hover { background:#bbdefb; }
+  .dl-btn-pdf { background:#ffebee; color:#b71c1c; } .dl-btn-pdf:hover { background:#ffcdd2; }
+  .dl-btn-ai { background:#fff3e0; color:#e65100; } .dl-btn-ai:hover { background:#ffe0b2; }
+  .dl-btn-eps { background:#f3e5f5; color:#6a1b9a; } .dl-btn-eps:hover { background:#e1bee7; }
+  .dl-preview-wide { width:96px; padding:10px 12px; }
+  .dl-preview-doc { padding:12px; }
+  .dl-group { font-size:12px; font-weight:600; color:var(--text); padding:18px 0 4px; border-bottom:1px solid #f0f1f5; }
+  .dl-group:first-child { padding-top:0; }
+  .dl-buttons .dl-btn { min-width:56px; justify-content:center; }
+  .dl-btn-disabled { background:#f0f1f5; color:#b6bac2; cursor:not-allowed; }
+  .dl-section-card { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:24px 28px; margin-bottom:20px; }
+
+  /* Logo system (overview) */
+  .product-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:24px; margin-bottom:20px; }
+  .product-card { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:32px; }
+  .product-card .mark { height:96px; display:flex; align-items:center; margin-bottom:18px; }
+  .product-card .mark img { max-height:100%; max-width:100%; margin-left:-12px; }
+  .product-card .tagline { font-size:13px; font-weight:600; color:#272727; margin-bottom:12px; }
+  .product-card p { font-size:13px; color:var(--text-muted); line-height:1.7; }
+  .product-card .badge-old { display:inline-block; font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.4px; color:var(--pink); background:#fce4f1; padding:1px 7px; border-radius:4px; vertical-align:1px; }
+  .product-card p.example { margin-top:12px; padding-top:12px; border-top:1px dashed var(--border); font-size:12px; }
+  .product-card p.example strong { color:var(--text); }
+  .product-card-link { cursor:pointer; transition:box-shadow .15s ease,transform .15s ease,border-color .15s ease; }
+  .product-card-link:hover, .product-card-link:focus-visible { box-shadow:0 8px 24px rgba(0,0,0,.08); transform:translateY(-2px); border-color:var(--pink); outline:none; }
+
+  /* Footer */
+  .footer { background:var(--black); color:rgba(255,255,255,0.5); padding:40px 48px; margin-top:60px; font-size:12px; font-family:'Inter',sans-serif; line-height:1.8; }
+  .footer-inner { max-width:1200px; margin:0 auto; display:flex; justify-content:space-between; align-items:flex-start; gap:40px; flex-wrap:wrap; }
+  .footer-left { max-width:500px; }
+  .footer a { color:rgba(255,255,255,0.6); text-decoration:none; } .footer a:hover { color:#fff; }
+
+  @media (max-width:900px) { .palette-grid { grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:768px) {
+    .hero { padding:32px 20px; flex-direction:column; align-items:flex-start; gap:16px; }
+    .hero-left { flex-direction:column; align-items:flex-start; gap:4px; }
+    .hero-text { margin-left:0 !important; }
+    .nav { padding:0 20px; }
+    .page { padding:0 20px 0; }
+    .palette-grid, .product-grid, .aa-grid, .version-grid { grid-template-columns:1fr; }
+    .footer-inner { flex-direction:column; }
+    .footer-inner > div:last-child { text-align:left !important; }
+    .dl-row { flex-direction:column; align-items:flex-start; gap:10px; }
+    .section-title-with-action { flex-direction:column; align-items:flex-start; }
+  }
+  @media (prefers-reduced-motion:reduce) { * { transition:none !important; } }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="hero">
+  <div class="hero-left">
+    <div class="hero-logos">
+      <svg style="height:64px;width:auto;margin-left:-8px;" viewBox="0 0 550 200" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="hg1" x1="52.9" y1="177.7" x2="141.9" y2="91.7" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#863D72"/><stop offset="1" stop-color="#DD238D"/></linearGradient>
+          <linearGradient id="hg2" x1="68" y1="164.3" x2="129.3" y2="105.1" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#863D72"/><stop offset="1" stop-color="#DD238D"/></linearGradient>
+        </defs>
+        <path fill="url(#hg1)" d="M137.4,87.4c-10.8-9.1-24.7-14.6-39.9-14.6c-34.2,0-61.9,27.7-61.9,61.9c0,34.2,27.7,61.9,61.9,61.9c15.2,0,29.1-5.5,39.9-14.6l5.4-5.1l-13-5c-8.5,7.2-19.4,11.5-31.4,11.5c-26.9,0-48.7-21.8-48.7-48.7c0-26.9,21.8-48.7,48.7-48.7c12,0,22.9,4.3,31.4,11.5l13-5v0L137.4,87.4z"/>
+        <path fill="url(#hg2)" d="M98.6,177.3c23.5,0,42.6-19.1,42.6-42.6c0-23.5-19.1-42.6-42.6-42.6c-11.7,0-22.4,4.8-30.1,12.5l8.1,8.1c5.6-5.6,13.4-9.1,22-9.1c17.2,0,31.1,14,31.1,31.1c0,17.2-14,31.1-31.1,31.1c-8.6,0-16.4-3.5-22-9.1l-8.1,8.1C76.2,172.5,86.9,177.3,98.6,177.3z"/>
+        <g fill="#FFFFFF">
+          <path d="M196.9,129.6c-2.2-4.1-6.3-6.8-11.3-6.8c-7.2,0-12.8,5.9-12.8,13.1c0,7.1,5.6,13.3,12.8,13.3c4.9,0,9.1-2.9,11.3-7h6.2c-2.5,7.2-9.4,12.3-17.4,12.3c-10.1,0-18.5-8.7-18.5-18.7c0-10.1,8.4-18.5,18.5-18.5c7.9,0,14.8,5.1,17.4,12.2H196.9z"/>
+          <path d="M211.2,95.7h5.4v57.9h-5.4V95.7z"/>
+          <path d="M224.7,135.9c0-10.1,8.4-18.5,18.5-18.5c10.1,0,18.5,8.4,18.5,18.5c0,10-8.4,18.7-18.5,18.7C233.1,154.6,224.7,145.9,224.7,135.9z M230.4,135.9c0,7.1,5.6,13.3,12.8,13.3c7.2,0,12.8-6.2,12.8-13.3c0-7.2-5.6-13.1-12.8-13.1C236,122.8,230.4,128.7,230.4,135.9z"/>
+          <path d="M301.2,153.7h-5.4v-4.3c-2.8,3.1-6.8,4.9-11.7,4.9c-10.2,0-14.6-4.5-14.6-15.9V118h5.4v20.4c0,7.1,3.2,10.5,9.2,10.5c7.2,0,11.7-4.1,11.7-11.9v-19h5.4V153.7z"/>
+          <path d="M342.1,148c-3.2,4-8,6.6-13.5,6.6c-10.1,0-18.5-8.7-18.5-18.7c0-10.1,8.4-18.5,18.5-18.5c5.4,0,10.2,2.5,13.5,6.4V95.7h5.4v57.9h-5.4V148z M341.7,135.9c0-7.2-6.2-13.1-13.3-13.1c-7.2,0-12.7,5.9-12.7,13.1c0,7.1,5.4,13.3,12.7,13.3C335.5,149.2,341.7,143,341.7,135.9z"/>
+          <path d="M385.4,129.6c-2.2-4.1-6.3-6.8-11.3-6.8c-7.2,0-12.8,5.9-12.8,13.1c0,7.1,5.6,13.3,12.8,13.3c4.9,0,9.1-2.9,11.3-7h6.2c-2.5,7.2-9.4,12.3-17.4,12.3c-10.1,0-18.5-8.7-18.5-18.7c0-10.1,8.4-18.5,18.5-18.5c7.9,0,14.8,5.1,17.4,12.2H385.4z"/>
+          <path d="M397.2,135.9c0-10.1,8.4-18.5,18.5-18.5c5.4,0,10.2,2.5,13.5,6.4V118h5.4v35.9h-5.4V148c-3.2,4-8,6.6-13.5,6.6C405.6,154.6,397.2,145.9,397.2,135.9z M428.9,135.9c0-7.2-6.2-13.1-13.3-13.1c-7.2,0-12.7,5.9-12.7,13.1c0,7.1,5.4,13.3,12.7,13.3C422.6,149.2,428.9,143,428.9,135.9z"/>
+          <path d="M464.6,126.7c-0.5-2.4-3.2-4.2-7.4-4.2c-4.3,0-7.3,2-7.3,4.7c0,2.7,2.4,4.2,8.2,5.4c9.2,1.9,12.8,5,12.8,11c0,6.2-4.8,10.7-13.7,10.7c-8,0-13.4-4.5-13.7-10.7h4.9c0.5,3,4.1,5.6,8.8,5.6c5.3,0,8.8-2.4,8.8-5.6c0-3.4-2.3-4.5-8.8-5.8c-8.5-1.7-12.3-4.8-12.3-10.5c0-5.4,4.2-9.8,12.3-9.8c7.1,0,11.8,3.9,12.3,9.3H464.6z"/>
+          <path d="M477,135.9c0-10.1,8.4-18.5,18.5-18.5c5.4,0,10.2,2.5,13.5,6.4V118h5.4v35.9H509V148c-3.2,4-8,6.6-13.5,6.6C485.4,154.6,477,145.9,477,135.9z M508.7,135.9c0-7.2-6.2-13.1-13.3-13.1c-7.2,0-12.7,5.9-12.7,13.1c0,7.1,5.4,13.3,12.7,13.3C502.4,149.2,508.7,143,508.7,135.9z"/>
+        </g>
+      </svg>
+    </div>
+    <div class="hero-text" style="margin-left:8px;">
+      <h1>Brand Resource Center</h1>
+      <p>Logos, colors, typography, usage guidelines, and downloads</p>
+    </div>
+  </div>
+</div>
+
+<div class="nav">
+  <a href="#" class="active" data-tab="overview" onclick="return showTab('overview',this)">Overview</a>
+  <a href="#" data-tab="colors" onclick="return showTab('colors',this)">Colors</a>
+  <a href="#" data-tab="typography" onclick="return showTab('typography',this)">Typography</a>
+  <a href="#" data-tab="usage" onclick="return showTab('usage',this)">Usage Rules</a>
+  <a href="#" data-tab="downloads" onclick="return showTab('downloads',this)">Downloads</a>
+</div>
+
+<div class="page">
+
+<!-- OVERVIEW -->
+<div class="section active" id="tab-overview">
+  <div class="section-title">Product</div>
+  <p class="lead">CloudCasa is Catalogic Software's backup and disaster recovery service for Kubernetes. Delivered as SaaS, it lets teams protect all their clusters and manage backup policies from one place.</p>
+
+  <div class="section-title section-title-with-action"><span>Logo System</span><a class="section-title-view-downloads" href="#" onclick="return showTab('downloads', document.querySelector('.nav a[data-tab=downloads]'));">View downloads &rarr;</a></div>
+  <p class="lead">The logo comes in two versions: <strong>with</strong> the "by Catalogic" tagline and <strong>without</strong> it. Use the tagline version by default; drop it only where Catalogic is already clear from context.</p>
+  <div class="product-grid">
+    <div class="product-card product-card-link" data-dl="dl-bycat" tabindex="0" role="link">
+      <div class="mark"><svg viewBox="0 0 550 270" xmlns="http://www.w3.org/2000/svg" style="height:110px;width:auto;margin-left:-20px;" role="img" aria-label="cloudcasa by Catalogic logo">
+<style type="text/css">
+	.ovmst0{fill:#111212;}
+	.ovmst1{fill:url(#ovm_1_);}
+	.ovmst2{fill:url(#ovm_2_);}
+	.ovmst3{fill:#131414;}
+</style>
+<g>
+	<g>
+		<g>
+			<path class="ovmst0" d="M196.9,129.6c-2.2-4.1-6.3-6.8-11.3-6.8c-7.2,0-12.8,5.9-12.8,13.1c0,7.1,5.6,13.3,12.8,13.3
+				c4.9,0,9.1-2.9,11.3-7h6.2c-2.5,7.2-9.4,12.3-17.4,12.3c-10.1,0-18.5-8.7-18.5-18.7c0-10.1,8.4-18.5,18.5-18.5
+				c7.9,0,14.8,5.1,17.4,12.2H196.9z"/>
+			<path class="ovmst0" d="M211.2,95.7h5.4v57.9h-5.4V95.7z"/>
+			<path class="ovmst0" d="M224.7,135.9c0-10.1,8.4-18.5,18.5-18.5c10.1,0,18.5,8.4,18.5,18.5c0,10-8.4,18.7-18.5,18.7
+				C233.1,154.6,224.7,145.9,224.7,135.9z M230.4,135.9c0,7.1,5.6,13.3,12.8,13.3c7.2,0,12.8-6.2,12.8-13.3
+				c0-7.2-5.6-13.1-12.8-13.1C236,122.8,230.4,128.7,230.4,135.9z"/>
+			<path class="ovmst0" d="M301.2,153.7h-5.4v-4.3c-2.8,3.1-6.8,4.9-11.7,4.9c-10.2,0-14.6-4.5-14.6-15.9V118h5.4v20.4
+				c0,7.1,3.2,10.5,9.2,10.5c7.2,0,11.7-4.1,11.7-11.9v-19h5.4V153.7z"/>
+			<path class="ovmst0" d="M342.1,148c-3.2,4-8,6.6-13.5,6.6c-10.1,0-18.5-8.7-18.5-18.7c0-10.1,8.4-18.5,18.5-18.5
+				c5.4,0,10.2,2.5,13.5,6.4V95.7h5.4v57.9h-5.4V148z M341.7,135.9c0-7.2-6.2-13.1-13.3-13.1c-7.2,0-12.7,5.9-12.7,13.1
+				c0,7.1,5.4,13.3,12.7,13.3C335.5,149.2,341.7,143,341.7,135.9z"/>
+			<path class="ovmst0" d="M385.4,129.6c-2.2-4.1-6.3-6.8-11.3-6.8c-7.2,0-12.8,5.9-12.8,13.1c0,7.1,5.6,13.3,12.8,13.3
+				c4.9,0,9.1-2.9,11.3-7h6.2c-2.5,7.2-9.4,12.3-17.4,12.3c-10.1,0-18.5-8.7-18.5-18.7c0-10.1,8.4-18.5,18.5-18.5
+				c7.9,0,14.8,5.1,17.4,12.2H385.4z"/>
+			<path class="ovmst0" d="M397.2,135.9c0-10.1,8.4-18.5,18.5-18.5c5.4,0,10.2,2.5,13.5,6.4V118h5.4v35.9h-5.4V148
+				c-3.2,4-8,6.6-13.5,6.6C405.6,154.6,397.2,145.9,397.2,135.9z M428.9,135.9c0-7.2-6.2-13.1-13.3-13.1c-7.2,0-12.7,5.9-12.7,13.1
+				c0,7.1,5.4,13.3,12.7,13.3C422.6,149.2,428.9,143,428.9,135.9z"/>
+			<path class="ovmst0" d="M464.6,126.7c-0.5-2.4-3.2-4.2-7.4-4.2c-4.3,0-7.3,2-7.3,4.7c0,2.7,2.4,4.2,8.2,5.4c9.2,1.9,12.8,5,12.8,11
+				c0,6.2-4.8,10.7-13.7,10.7c-8,0-13.4-4.5-13.7-10.7h4.9c0.5,3,4.1,5.6,8.8,5.6c5.3,0,8.8-2.4,8.8-5.6c0-3.4-2.3-4.5-8.8-5.8
+				c-8.5-1.7-12.3-4.8-12.3-10.5c0-5.4,4.2-9.8,12.3-9.8c7.1,0,11.8,3.9,12.3,9.3H464.6z"/>
+			<path class="ovmst0" d="M477,135.9c0-10.1,8.4-18.5,18.5-18.5c5.4,0,10.2,2.5,13.5,6.4V118h5.4v35.9H509V148c-3.2,4-8,6.6-13.5,6.6
+				C485.4,154.6,477,145.9,477,135.9z M508.7,135.9c0-7.2-6.2-13.1-13.3-13.1c-7.2,0-12.7,5.9-12.7,13.1c0,7.1,5.4,13.3,12.7,13.3
+				C502.4,149.2,508.7,143,508.7,135.9z"/>
+		</g>
+	</g>
+	<g>
+		<linearGradient id="ovm_1_" gradientUnits="userSpaceOnUse" x1="52.9007" y1="177.6705" x2="141.9465" y2="91.68">
+			<stop  offset="0" style="stop-color:#863D72"/>
+			<stop  offset="1" style="stop-color:#DD238D"/>
+		</linearGradient>
+		<path class="ovmst1" d="M137.4,87.4c-10.8-9.1-24.7-14.6-39.9-14.6c-34.2,0-61.9,27.7-61.9,61.9c0,34.2,27.7,61.9,61.9,61.9
+			c15.2,0,29.1-5.5,39.9-14.6l5.4-5.1l-13-5c-8.5,7.2-19.4,11.5-31.4,11.5c-26.9,0-48.7-21.8-48.7-48.7c0-26.9,21.8-48.7,48.7-48.7
+			c12,0,22.9,4.3,31.4,11.5l13-5v0L137.4,87.4z"/>
+		<linearGradient id="ovm_2_" gradientUnits="userSpaceOnUse" x1="67.9803" y1="164.2871" x2="129.2565" y2="105.1134">
+			<stop  offset="0" style="stop-color:#863D72"/>
+			<stop  offset="1" style="stop-color:#DD238D"/>
+		</linearGradient>
+		<path class="ovmst2" d="M98.6,177.3c23.5,0,42.6-19.1,42.6-42.6c0-23.5-19.1-42.6-42.6-42.6c-11.7,0-22.4,4.8-30.1,12.5l8.1,8.1
+			c5.6-5.6,13.4-9.1,22-9.1c17.2,0,31.1,14,31.1,31.1c0,17.2-14,31.1-31.1,31.1c-8.6,0-16.4-3.5-22-9.1l-8.1,8.1
+			C76.2,172.5,86.9,177.3,98.6,177.3z"/>
+	</g>
+	<g>
+		<path class="ovmst3" d="M362.5,176.2c3.7,0,6.6,2.8,6.6,7.1c0,4.3-2.9,7.2-6.6,7.2c-2.5,0-4.3-1.3-5.2-2.8v2.6H355v-18.8h2.3v7.4
+			C358.2,177.5,360.1,176.2,362.5,176.2z M362,178.2c-2.5,0-4.7,1.9-4.7,5.1c0,3.3,2.2,5.2,4.7,5.2c2.6,0,4.7-1.9,4.7-5.2
+			S364.6,178.2,362,178.2z"/>
+		<path class="ovmst3" d="M381.7,176.5h2.4l-8.4,20.4h-2.4l2.7-6.7l-5.6-13.7h2.6l4.4,11.3L381.7,176.5z"/>
+		<path class="ovmst3" d="M401.1,172.5c3.8,0,6.9,1.9,8.2,5.3h-2.8c-1-2.1-2.8-3.3-5.4-3.3c-3.7,0-6.5,2.7-6.5,7c0,4.3,2.8,7,6.5,7
+			c2.6,0,4.5-1.2,5.4-3.3h2.8c-1.3,3.4-4.4,5.3-8.2,5.3c-4.9,0-8.8-3.7-8.8-9C392.3,176.2,396.2,172.5,401.1,172.5z"/>
+		<path class="ovmst3" d="M418.5,176.2c2.6,0,4.4,1.3,5.2,2.8v-2.5h2.3v13.9h-2.3v-2.6c-0.8,1.5-2.6,2.8-5.2,2.8
+			c-3.7,0-6.6-2.9-6.6-7.2C411.9,179,414.8,176.2,418.5,176.2z M418.9,178.2c-2.5,0-4.7,1.8-4.7,5.1s2.2,5.2,4.7,5.2
+			s4.7-1.9,4.7-5.2C423.6,180.2,421.5,178.2,418.9,178.2z"/>
+		<path class="ovmst3" d="M430.4,178.4h-1.8v-1.9h1.8V173h2.3v3.5h3.6v1.9h-3.6v8.2c0,1.4,0.5,1.9,1.9,1.9h1.7v2h-2.1
+			c-2.5,0-3.9-1-3.9-3.8V178.4z"/>
+		<path class="ovmst3" d="M444.8,176.2c2.6,0,4.4,1.3,5.2,2.8v-2.5h2.3v13.9H450v-2.6c-0.8,1.5-2.6,2.8-5.2,2.8c-3.7,0-6.6-2.9-6.6-7.2
+			C438.2,179,441.1,176.2,444.8,176.2z M445.3,178.2c-2.5,0-4.7,1.8-4.7,5.1s2.2,5.2,4.7,5.2s4.7-1.9,4.7-5.2
+			C450,180.2,447.8,178.2,445.3,178.2z"/>
+		<path class="ovmst3" d="M456.2,171.6h2.3v18.8h-2.3V171.6z"/>
+		<path class="ovmst3" d="M468.5,190.6c-3.9,0-6.9-2.8-6.9-7.2c0-4.4,3.1-7.1,7-7.1c4,0,7,2.8,7,7.1
+			C475.6,187.8,472.5,190.6,468.5,190.6z M468.5,188.6c2.4,0,4.8-1.6,4.8-5.2c0-3.5-2.3-5.1-4.7-5.1c-2.4,0-4.6,1.6-4.6,5.1
+			C464,186.9,466.1,188.6,468.5,188.6z"/>
+		<path class="ovmst3" d="M484.4,176.2c2.5,0,4.4,1.3,5.2,2.8v-2.5h2.3v14.2c0,3.8-2.6,6.5-6.6,6.5c-3.6,0-6.3-1.8-6.7-4.8h2.3
+			c0.5,1.7,2.2,2.8,4.4,2.8c2.5,0,4.3-1.6,4.3-4.5v-2.9c-0.8,1.5-2.6,2.8-5.2,2.8c-3.7,0-6.6-2.9-6.6-7.2
+			C477.8,179,480.7,176.2,484.4,176.2z M484.9,178.2c-2.5,0-4.7,1.8-4.7,5.1s2.2,5.2,4.7,5.2s4.7-1.9,4.7-5.2
+			C489.6,180.2,487.4,178.2,484.9,178.2z"/>
+		<path class="ovmst3" d="M495.4,172.6c0-0.9,0.7-1.6,1.6-1.6c0.8,0,1.5,0.7,1.5,1.6c0,0.9-0.7,1.6-1.5,1.6
+			C496.1,174.2,495.4,173.5,495.4,172.6z M495.8,176.5h2.3v13.9h-2.3V176.5z"/>
+		<path class="ovmst3" d="M508,176.2c3.4,0,5.7,1.8,6.4,4.7h-2.5c-0.5-1.7-1.9-2.7-3.9-2.7c-2.5,0-4.4,1.8-4.4,5.2
+			c0,3.4,1.9,5.2,4.4,5.2c2.1,0,3.4-1,3.9-2.7h2.5c-0.7,2.8-3,4.7-6.4,4.7c-4,0-6.8-2.8-6.8-7.2C501.2,179,504,176.2,508,176.2z"/>
+	</g>
+</g>
+</svg>
+</div>
+      <div class="tagline">With "by Catalogic" &nbsp;<span class="badge">Default</span></div>
+      <p>For anything where CloudCasa appears as a Catalogic product. Horizontal and stacked versions available.</p>
+      <p class="example"><strong>Examples:</strong> website, sales decks, datasheets, events, partner co-branding.</p>
+    </div>
+    <div class="product-card product-card-link" data-dl="dl-standalone" tabindex="0" role="link">
+      <div class="mark"><svg viewBox="0 0 550 270" xmlns="http://www.w3.org/2000/svg" style="height:110px;width:auto;margin-left:-20px;" role="img" aria-label="cloudcasa logo without by Catalogic">
+<style type="text/css">
+	.ovsst0{fill:#111212;}
+	.ovsst1{fill:url(#ovs_1_);}
+	.ovsst2{fill:url(#ovs_2_);}
+	.ovsst3{fill:#131414;}
+</style>
+<g>
+	<g>
+		<g>
+			<path class="ovsst0" d="M196.9,129.6c-2.2-4.1-6.3-6.8-11.3-6.8c-7.2,0-12.8,5.9-12.8,13.1c0,7.1,5.6,13.3,12.8,13.3
+				c4.9,0,9.1-2.9,11.3-7h6.2c-2.5,7.2-9.4,12.3-17.4,12.3c-10.1,0-18.5-8.7-18.5-18.7c0-10.1,8.4-18.5,18.5-18.5
+				c7.9,0,14.8,5.1,17.4,12.2H196.9z"/>
+			<path class="ovsst0" d="M211.2,95.7h5.4v57.9h-5.4V95.7z"/>
+			<path class="ovsst0" d="M224.7,135.9c0-10.1,8.4-18.5,18.5-18.5c10.1,0,18.5,8.4,18.5,18.5c0,10-8.4,18.7-18.5,18.7
+				C233.1,154.6,224.7,145.9,224.7,135.9z M230.4,135.9c0,7.1,5.6,13.3,12.8,13.3c7.2,0,12.8-6.2,12.8-13.3
+				c0-7.2-5.6-13.1-12.8-13.1C236,122.8,230.4,128.7,230.4,135.9z"/>
+			<path class="ovsst0" d="M301.2,153.7h-5.4v-4.3c-2.8,3.1-6.8,4.9-11.7,4.9c-10.2,0-14.6-4.5-14.6-15.9V118h5.4v20.4
+				c0,7.1,3.2,10.5,9.2,10.5c7.2,0,11.7-4.1,11.7-11.9v-19h5.4V153.7z"/>
+			<path class="ovsst0" d="M342.1,148c-3.2,4-8,6.6-13.5,6.6c-10.1,0-18.5-8.7-18.5-18.7c0-10.1,8.4-18.5,18.5-18.5
+				c5.4,0,10.2,2.5,13.5,6.4V95.7h5.4v57.9h-5.4V148z M341.7,135.9c0-7.2-6.2-13.1-13.3-13.1c-7.2,0-12.7,5.9-12.7,13.1
+				c0,7.1,5.4,13.3,12.7,13.3C335.5,149.2,341.7,143,341.7,135.9z"/>
+			<path class="ovsst0" d="M385.4,129.6c-2.2-4.1-6.3-6.8-11.3-6.8c-7.2,0-12.8,5.9-12.8,13.1c0,7.1,5.6,13.3,12.8,13.3
+				c4.9,0,9.1-2.9,11.3-7h6.2c-2.5,7.2-9.4,12.3-17.4,12.3c-10.1,0-18.5-8.7-18.5-18.7c0-10.1,8.4-18.5,18.5-18.5
+				c7.9,0,14.8,5.1,17.4,12.2H385.4z"/>
+			<path class="ovsst0" d="M397.2,135.9c0-10.1,8.4-18.5,18.5-18.5c5.4,0,10.2,2.5,13.5,6.4V118h5.4v35.9h-5.4V148
+				c-3.2,4-8,6.6-13.5,6.6C405.6,154.6,397.2,145.9,397.2,135.9z M428.9,135.9c0-7.2-6.2-13.1-13.3-13.1c-7.2,0-12.7,5.9-12.7,13.1
+				c0,7.1,5.4,13.3,12.7,13.3C422.6,149.2,428.9,143,428.9,135.9z"/>
+			<path class="ovsst0" d="M464.6,126.7c-0.5-2.4-3.2-4.2-7.4-4.2c-4.3,0-7.3,2-7.3,4.7c0,2.7,2.4,4.2,8.2,5.4c9.2,1.9,12.8,5,12.8,11
+				c0,6.2-4.8,10.7-13.7,10.7c-8,0-13.4-4.5-13.7-10.7h4.9c0.5,3,4.1,5.6,8.8,5.6c5.3,0,8.8-2.4,8.8-5.6c0-3.4-2.3-4.5-8.8-5.8
+				c-8.5-1.7-12.3-4.8-12.3-10.5c0-5.4,4.2-9.8,12.3-9.8c7.1,0,11.8,3.9,12.3,9.3H464.6z"/>
+			<path class="ovsst0" d="M477,135.9c0-10.1,8.4-18.5,18.5-18.5c5.4,0,10.2,2.5,13.5,6.4V118h5.4v35.9H509V148c-3.2,4-8,6.6-13.5,6.6
+				C485.4,154.6,477,145.9,477,135.9z M508.7,135.9c0-7.2-6.2-13.1-13.3-13.1c-7.2,0-12.7,5.9-12.7,13.1c0,7.1,5.4,13.3,12.7,13.3
+				C502.4,149.2,508.7,143,508.7,135.9z"/>
+		</g>
+	</g>
+	<g>
+		<linearGradient id="ovs_1_" gradientUnits="userSpaceOnUse" x1="52.9007" y1="177.6705" x2="141.9465" y2="91.68">
+			<stop  offset="0" style="stop-color:#863D72"/>
+			<stop  offset="1" style="stop-color:#DD238D"/>
+		</linearGradient>
+		<path class="ovsst1" d="M137.4,87.4c-10.8-9.1-24.7-14.6-39.9-14.6c-34.2,0-61.9,27.7-61.9,61.9c0,34.2,27.7,61.9,61.9,61.9
+			c15.2,0,29.1-5.5,39.9-14.6l5.4-5.1l-13-5c-8.5,7.2-19.4,11.5-31.4,11.5c-26.9,0-48.7-21.8-48.7-48.7c0-26.9,21.8-48.7,48.7-48.7
+			c12,0,22.9,4.3,31.4,11.5l13-5v0L137.4,87.4z"/>
+		<linearGradient id="ovs_2_" gradientUnits="userSpaceOnUse" x1="67.9803" y1="164.2871" x2="129.2565" y2="105.1134">
+			<stop  offset="0" style="stop-color:#863D72"/>
+			<stop  offset="1" style="stop-color:#DD238D"/>
+		</linearGradient>
+		<path class="ovsst2" d="M98.6,177.3c23.5,0,42.6-19.1,42.6-42.6c0-23.5-19.1-42.6-42.6-42.6c-11.7,0-22.4,4.8-30.1,12.5l8.1,8.1
+			c5.6-5.6,13.4-9.1,22-9.1c17.2,0,31.1,14,31.1,31.1c0,17.2-14,31.1-31.1,31.1c-8.6,0-16.4-3.5-22-9.1l-8.1,8.1
+			C76.2,172.5,86.9,177.3,98.6,177.3z"/>
+	</g>
+</g>
+</svg>
+</div>
+      <div class="tagline">Without "by Catalogic"</div>
+      <p>For places inside the product itself, where the parent brand is already clear.</p>
+      <p class="example"><strong>Examples:</strong> app login screen, app store listing, in-product UI, sub-brand use.</p>
+    </div>
+  </div>
+</div>
+
+<!-- COLORS -->
+<div class="section" id="tab-colors">
+  <div class="section-title">Brand Colors</div>
+  <div class="palette-grid">
+    <div class="palette-card">
+      <div class="palette-swatch" style="background:#863E73;"><span class="hex" style="color:#fff;">#863E73</span></div>
+      <div class="palette-info">
+        <h4>Pantone 689 C</h4>
+        <table>
+          <tr><td>Pantone</td><td>689 C</td></tr>
+          <tr><td>CMYK</td><td>0, 54, 14, 47</td></tr>
+          <tr><td>RGB</td><td>134, 62, 115</td></tr>
+          <tr><td>Usage</td><td>Gradient start. Used only inside the logo gradient.</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="palette-card">
+      <div class="palette-swatch" style="background:#DD248D;"><span class="hex" style="color:#fff;">#DD248D</span></div>
+      <div class="palette-info">
+        <h4>Pantone Pink C</h4>
+        <table>
+          <tr><td>Pantone</td><td>Pink C</td></tr>
+          <tr><td>CMYK</td><td>0, 84, 36, 13</td></tr>
+          <tr><td>RGB</td><td>221, 36, 141</td></tr>
+          <tr><td>Usage</td><td>Gradient end, and the mark color in the flat color version.</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="palette-card">
+      <div class="palette-swatch" style="background:#171717;"><span class="hex" style="color:#fff;">#171717</span></div>
+      <div class="palette-info">
+        <h4>Pantone Black 6 C</h4>
+        <table>
+          <tr><td>Pantone</td><td>Black 6 C</td></tr>
+          <tr><td>CMYK</td><td>5, 0, 0, 93</td></tr>
+          <tr><td>RGB</td><td>23, 23, 23</td></tr>
+          <tr><td>Usage</td><td>Logo text, and the only color in the single color version.</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="palette-card">
+      <div class="palette-swatch" style="background:linear-gradient(44deg,#863E73 0%,#DD248D 100%);"><span class="hex" style="color:#fff;">#863E73 &rarr; #DD248D</span></div>
+      <div class="palette-info">
+        <h4>Logo Gradient</h4>
+        <table>
+          <tr><td>From</td><td>Pantone 689 C</td></tr>
+          <tr><td>To</td><td>Pantone Pink C</td></tr>
+          <tr><td>Angle</td><td>44&deg;</td></tr>
+          <tr><td>Usage</td><td>Logo mark only. Never on buttons, headers, or other UI.</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title">Color Versions of the Logo</div>
+  <div class="version-grid">
+    <div class="type-card version-card">
+      <div class="version-strip"><span style="background:linear-gradient(44deg,#863E73,#DD248D);flex:2;"></span><span style="background:#171717;"></span></div>
+      <h5>Gradient full color <span class="badge">Preferred</span></h5>
+      <p>For all digital, web, presentation, and offset print applications.</p>
+    </div>
+    <div class="type-card version-card">
+      <div class="version-strip"><span style="background:#DD248D;flex:2;"></span><span style="background:#171717;"></span></div>
+      <h5>Flat color (spot)</h5>
+      <p>Only where the gradient isn't possible, e.g. screen printing and vinyl graphics for signage.</p>
+    </div>
+    <div class="type-card version-card">
+      <div class="version-strip"><span style="background:#171717;"></span><span style="background:#fff;border:1px solid var(--border);"></span></div>
+      <h5>Single color</h5>
+      <p>Black, or white on a dark background. For b/w laser prints, forms, and fax sheets, or embossing and etching on glass, wood, metal, and plastic.</p>
+    </div>
+  </div>
+</div>
+
+<!-- TYPOGRAPHY -->
+<div class="section" id="tab-typography">
+  <div class="section-title section-title-with-action"><span>Typefaces</span><div class="section-title-actions"><a class="dl-btn dl-btn-primary" href="https://fonts.google.com/specimen/Poppins" target="_blank" rel="noopener">Download Poppins<svg width="12" height="12" viewBox="0 0 12 12" fill="none" style="margin-left:6px;vertical-align:-1px;"><path d="M6 1V8M6 8L3 5M6 8L9 5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 10.5H10" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></a><a class="dl-btn dl-btn-primary" href="https://fonts.google.com/specimen/Inter" target="_blank" rel="noopener">Download Inter<svg width="12" height="12" viewBox="0 0 12 12" fill="none" style="margin-left:6px;vertical-align:-1px;"><path d="M6 1V8M6 8L3 5M6 8L9 5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 10.5H10" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></a></div></div>
+  <p class="lead" style="max-width:560px;">We use <strong>Poppins</strong> for headings and <strong>Inter</strong> for body text. Both are free on Google Fonts. Open Sans is a legacy fallback only.</p>
+
+  <div class="aa-grid">
+    <div class="aa-card">
+      <div class="aa-glyph" style="font-family:'Poppins',sans-serif;">Aa</div>
+      <div class="aa-name">Poppins</div>
+      <div class="aa-role">Headings &nbsp;&bull;&nbsp; weights 400&ndash;900</div>
+    </div>
+    <div class="aa-card">
+      <div class="aa-glyph" style="font-family:'Inter',sans-serif;">Aa</div>
+      <div class="aa-name">Inter</div>
+      <div class="aa-role">Body text &nbsp;&bull;&nbsp; weights 300&ndash;800</div>
+    </div>
+  </div>
+
+  <div class="type-combo">
+    <div class="type-sample-heading" style="font-size:36px;font-weight:700;line-height:1.25;color:var(--black);margin-bottom:12px;">Protect Your Kubernetes Workloads with Confidence</div>
+    <div class="type-sample-body" style="font-size:16px;font-weight:400;line-height:1.7;color:#555;max-width:640px;">CloudCasa delivers enterprise-grade backup and disaster recovery for Kubernetes environments. Whether you run a handful of clusters or thousands, the platform scales with you while keeping your data safe, compliant, and recoverable.</div>
+    <div class="type-spec">Heading: Poppins Bold 700 &nbsp;&bull;&nbsp; Body: Inter Regular 400</div>
+  </div>
+
+  <div class="section-title section-title-with-action"><span>Product Typeface</span><div class="section-title-actions"><a class="dl-btn dl-btn-primary" href="https://fonts.google.com/specimen/Montserrat" target="_blank" rel="noopener">Download Montserrat<svg width="12" height="12" viewBox="0 0 12 12" fill="none" style="margin-left:6px;vertical-align:-1px;"><path d="M6 1V8M6 8L3 5M6 8L9 5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 10.5H10" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></a></div></div>
+  <p class="lead" style="max-width:560px;">Inside the CloudCasa app, the UI uses <strong>Montserrat</strong> &mdash; separate from the Poppins/Inter pairing used on marketing and brand materials.</p>
+  <div style="display:flex;gap:20px;flex-wrap:wrap;align-items:stretch;margin-bottom:20px;">
+    <div class="aa-card" style="max-width:340px;flex:1;min-width:220px;">
+      <div class="aa-glyph" style="font-family:'Montserrat',sans-serif;">Aa</div>
+      <div class="aa-name">Montserrat</div>
+      <div class="aa-role">Product UI</div>
+    </div>
+    <div class="type-card" style="font-family:'Montserrat',sans-serif;flex:2;min-width:280px;margin-bottom:0;padding:28px;">
+      <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--pink);margin-bottom:10px;">Backup Job &mdash; prod-cluster-01</div>
+      <div style="font-size:20px;font-weight:700;color:var(--black);margin-bottom:8px;">Completed successfully</div>
+      <div style="font-size:14px;color:#666;line-height:1.6;margin-bottom:16px;">214 resources and 6 persistent volumes backed up in 8 minutes. Next run scheduled for tonight at 11:00 PM.</div>
+      <div style="display:inline-flex;align-items:center;padding:8px 16px;border-radius:6px;background:var(--pink);color:#fff;font-size:13px;font-weight:600;">View Job Details</div>
+    </div>
+  </div>
+
+  <div class="section-title">Logo Typeface</div>
+  <p class="lead" style="max-width:560px;">The wordmark is set in <strong>Arcon</strong>, always in lowercase. Arcon belongs to the logo only &mdash; don't use it for headings, body text, or anything else.</p>
+  <div style="display:flex;gap:20px;flex-wrap:wrap;align-items:stretch;">
+    <div class="aa-card" style="max-width:340px;flex:1;min-width:220px;display:flex;flex-direction:column;justify-content:center;">
+      <svg viewBox="-0.5 -0.5 52.82 31.25" xmlns="http://www.w3.org/2000/svg" style="height:58px;width:auto;display:block;margin:7px auto 19px;" role="img" aria-label="Aa in Arcon"><path fill="#171717" fill-rule="nonzero" d="M15.064 3.672L9.931 15.024L20.155 15.024L15.064 3.672ZM13.395 0.000L16.691 0.000L30.087 29.795L26.791 29.795L21.449 17.944L8.637 17.944L3.296 29.795L0.000 29.795L13.395 0.000ZM48.861 20.656C48.861 16.942 45.648 13.895 42.018 13.895C38.304 13.895 35.507 16.942 35.507 20.656C35.507 24.286 38.304 27.499 42.018 27.499C45.648 27.499 48.861 24.286 48.861 20.656ZM32.587 20.656C32.587 15.439 36.885 11.141 42.101 11.141C44.898 11.141 47.360 12.434 49.029 14.438L49.029 11.433L51.824 11.433L51.824 29.878L49.029 29.878L49.029 26.873C47.360 28.919 44.898 30.254 42.101 30.254C36.885 30.254 32.587 25.788 32.587 20.656Z"/></svg>
+
+      <div class="aa-name">Arcon</div>
+      <div class="aa-role">Logo wordmark only</div>
+    </div>
+    <div class="type-card" style="flex:2;min-width:280px;margin-bottom:0;padding:28px;">
+      <div class="rule-card rule-do" style="border:none;padding:0;margin-bottom:14px;"><div class="rule-icon">&#10003;</div><div><h5>cloudcasa</h5><p>Correct in the logo.</p></div></div>
+      <div class="rule-card rule-dont" style="border:none;padding:0;margin-bottom:0;"><div class="rule-icon">&#10007;</div><div><h5>CloudCasa &nbsp;/&nbsp; Cloudcasa &nbsp;/&nbsp; CLOUDCASA</h5><p>Never use these casings in the logo.</p></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- USAGE RULES -->
+<div class="section" id="tab-usage">
+  <div class="section-title">Do</div>
+  <div class="rule-card rule-do"><div class="rule-icon">&#10003;</div><div><h5>Always use lowercase</h5><p>The logo text is "cloudcasa" (all lowercase). This applies everywhere: website, decks, documents, social media.</p></div></div>
+  <div class="rule-card rule-do"><div class="rule-icon">&#10003;</div><div><h5>Respect the exclusion zone</h5><p>Leave a clear area equal to the height of the letter "l" in "cloudcasa" around all edges of the logo.</p></div></div>
+  <div class="rule-card rule-do"><div class="rule-icon">&#10003;</div><div><h5>Use the gradient version as default</h5><p>The gradient (purple-to-pink) version is the preferred logo for all digital, web, presentation, and offset print uses.</p></div></div>
+  <div class="rule-card rule-do"><div class="rule-icon">&#10003;</div><div><h5>Use "by Catalogic" lockup for partner/co-brand contexts</h5><p>When the CloudCasa logo appears alongside partner logos, use the "cloudcasa by Catalogic" stacked variant with associate logo placement rules.</p></div></div>
+  <div class="rule-card rule-do"><div class="rule-icon">&#10003;</div><div><h5>Use white logo on dark or busy backgrounds</h5><p>Over photography, dark UIs, or colored backgrounds, switch to the all-white version for readability.</p></div></div>
+  <div class="section-title">Don't</div>
+  <div class="rule-card rule-dont"><div class="rule-icon">&#10007;</div><div><h5>Don't capitalize the logo text</h5><p>"CloudCasa", "Cloudcasa", or "CLOUDCASA" are all incorrect in the logo context. Always lowercase.</p></div></div>
+  <div class="rule-card rule-dont"><div class="rule-icon">&#10007;</div><div><h5>Don't use the gradient on colored backgrounds</h5><p>On non-white, non-light-gray backgrounds, use either the all-white or single-color (dark) version.</p></div></div>
+  <div class="rule-card rule-dont"><div class="rule-icon">&#10007;</div><div><h5>Don't stretch, rotate, or skew the logo</h5><p>Always scale proportionally. Use the provided SVG files which maintain correct aspect ratio.</p></div></div>
+  <div class="rule-card rule-dont"><div class="rule-icon">&#10007;</div><div><h5>Don't use the icon gradient for UI elements</h5><p>The purple-to-pink gradient is reserved for the CC double-C icon mark. Do not apply it to buttons, headers, or other interface elements.</p></div></div>
+</div>
+
+<!-- DOWNLOADS -->
+<div class="section" id="tab-downloads">
+  <div class="section-title section-title-with-action" id="dl-bycat"><span>With &ldquo;by Catalogic&rdquo;</span><div class="section-title-actions"><a class="section-title-zip" href="assets/packages/cloudcasa-by-catalogic-logos.zip" download>Download ZIP<svg width="12" height="12" viewBox="0 0 12 12" fill="none" style="margin-left:6px;vertical-align:-1px;"><path d="M6 1V8M6 8L3 5M6 8L9 5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 10.5H10" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></a></div></div>
+  <div class="dl-section-card">
+    <div class="dl-group">Horizontal</div>
+    <div class="dl-row"><div class="dl-left"><div class="dl-preview dl-preview-wide dl-preview-color"><svg viewBox="35.6 72.8 478.8 124.4" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<style type="text/css">
+	.th1st0{fill:#111212;}
+	.th1st1{fill:url(#th1_1_);}
+	.th1st2{fill:url(#th1_2_);}
+	.th1st3{fill:#131414;}
+</style>
+<g>
+	<g>
+		<g>
+			<path class="th1st0" d="M196.9,129.6c-2.2-4.1-6.3-6.8-11.3-6.8c-7.2,0-12.8,5.9-12.8,13.1c0,7.1,5.6,13.3,12.8,13.3
+				c4.9,0,9.1-2.9,11.3-7h6.2c-2.5,7.2-9.4,12.3-17.4,12.3c-10.1,0-18.5-8.7-18.5-18.7c0-10.1,8.4-18.5,18.5-18.5
+				c7.9,0,14.8,5.1,17.4,12.2H196.9z"/>
+			<path class="th1st0" d="M211.2,95.7h5.4v57.9h-5.4V95.7z"/>
+			<path class="th1st0" d="M224.7,135.9c0-10.1,8.4-18.5,18.5-18.5c10.1,0,18.5,8.4,18.5,18.5c0,10-8.4,18.7-18.5,18.7
+				C233.1,154.6,224.7,145.9,224.7,135.9z M230.4,135.9c0,7.1,5.6,13.3,12.8,13.3c7.2,0,12.8-6.2,12.8-13.3
+				c0-7.2-5.6-13.1-12.8-13.1C236,122.8,230.4,128.7,230.4,135.9z"/>
+			<path class="th1st0" d="M301.2,153.7h-5.4v-4.3c-2.8,3.1-6.8,4.9-11.7,4.9c-10.2,0-14.6-4.5-14.6-15.9V118h5.4v20.4
+				c0,7.1,3.2,10.5,9.2,10.5c7.2,0,11.7-4.1,11.7-11.9v-19h5.4V153.7z"/>
+			<path class="th1st0" d="M342.1,148c-3.2,4-8,6.6-13.5,6.6c-10.1,0-18.5-8.7-18.5-18.7c0-10.1,8.4-18.5,18.5-18.5
+				c5.4,0,10.2,2.5,13.5,6.4V95.7h5.4v57.9h-5.4V148z M341.7,135.9c0-7.2-6.2-13.1-13.3-13.1c-7.2,0-12.7,5.9-12.7,13.1
+				c0,7.1,5.4,13.3,12.7,13.3C335.5,149.2,341.7,143,341.7,135.9z"/>
+			<path class="th1st0" d="M385.4,129.6c-2.2-4.1-6.3-6.8-11.3-6.8c-7.2,0-12.8,5.9-12.8,13.1c0,7.1,5.6,13.3,12.8,13.3
+				c4.9,0,9.1-2.9,11.3-7h6.2c-2.5,7.2-9.4,12.3-17.4,12.3c-10.1,0-18.5-8.7-18.5-18.7c0-10.1,8.4-18.5,18.5-18.5
+				c7.9,0,14.8,5.1,17.4,12.2H385.4z"/>
+			<path class="th1st0" d="M397.2,135.9c0-10.1,8.4-18.5,18.5-18.5c5.4,0,10.2,2.5,13.5,6.4V118h5.4v35.9h-5.4V148
+				c-3.2,4-8,6.6-13.5,6.6C405.6,154.6,397.2,145.9,397.2,135.9z M428.9,135.9c0-7.2-6.2-13.1-13.3-13.1c-7.2,0-12.7,5.9-12.7,13.1
+				c0,7.1,5.4,13.3,12.7,13.3C422.6,149.2,428.9,143,428.9,135.9z"/>
+			<path class="th1st0" d="M464.6,126.7c-0.5-2.4-3.2-4.2-7.4-4.2c-4.3,0-7.3,2-7.3,4.7c0,2.7,2.4,4.2,8.2,5.4c9.2,1.9,12.8,5,12.8,11
+				c0,6.2-4.8,10.7-13.7,10.7c-8,0-13.4-4.5-13.7-10.7h4.9c0.5,3,4.1,5.6,8.8,5.6c5.3,0,8.8-2.4,8.8-5.6c0-3.4-2.3-4.5-8.8-5.8
+				c-8.5-1.7-12.3-4.8-12.3-10.5c0-5.4,4.2-9.8,12.3-9.8c7.1,0,11.8,3.9,12.3,9.3H464.6z"/>
+			<path class="th1st0" d="M477,135.9c0-10.1,8.4-18.5,18.5-18.5c5.4,0,10.2,2.5,13.5,6.4V118h5.4v35.9H509V148c-3.2,4-8,6.6-13.5,6.6
+				C485.4,154.6,477,145.9,477,135.9z M508.7,135.9c0-7.2-6.2-13.1-13.3-13.1c-7.2,0-12.7,5.9-12.7,13.1c0,7.1,5.4,13.3,12.7,13.3
+				C502.4,149.2,508.7,143,508.7,135.9z"/>
+		</g>
+	</g>
+	<g>
+		<linearGradient id="th1_1_" gradientUnits="userSpaceOnUse" x1="52.9007" y1="177.6705" x2="141.9465" y2="91.68">
+			<stop  offset="0" style="stop-color:#863D72"/>
+			<stop  offset="1" style="stop-color:#DD238D"/>
+		</linearGradient>
+		<path class="th1st1" d="M137.4,87.4c-10.8-9.1-24.7-14.6-39.9-14.6c-34.2,0-61.9,27.7-61.9,61.9c0,34.2,27.7,61.9,61.9,61.9
+			c15.2,0,29.1-5.5,39.9-14.6l5.4-5.1l-13-5c-8.5,7.2-19.4,11.5-31.4,11.5c-26.9,0-48.7-21.8-48.7-48.7c0-26.9,21.8-48.7,48.7-48.7
+			c12,0,22.9,4.3,31.4,11.5l13-5v0L137.4,87.4z"/>
+		<linearGradient id="th1_2_" gradientUnits="userSpaceOnUse" x1="67.9803" y1="164.2871" x2="129.2565" y2="105.1134">
+			<stop  offset="0" style="stop-color:#863D72"/>
+			<stop  offset="1" style="stop-color:#DD238D"/>
+		</linearGradient>
+		<path class="th1st2" d="M98.6,177.3c23.5,0,42.6-19.1,42.6-42.6c0-23.5-19.1-42.6-42.6-42.6c-11.7,0-22.4,4.8-30.1,12.5l8.1,8.1
+			c5.6-5.6,13.4-9.1,22-9.1c17.2,0,31.1,14,31.1,31.1c0,17.2-14,31.1-31.1,31.1c-8.6,0-16.4-3.5-22-9.1l-8.1,8.1
+			C76.2,172.5,86.9,177.3,98.6,177.3z"/>
+	</g>
+	<g>
+		<path class="th1st3" d="M362.5,176.2c3.7,0,6.6,2.8,6.6,7.1c0,4.3-2.9,7.2-6.6,7.2c-2.5,0-4.3-1.3-5.2-2.8v2.6H355v-18.8h2.3v7.4
+			C358.2,177.5,360.1,176.2,362.5,176.2z M362,178.2c-2.5,0-4.7,1.9-4.7,5.1c0,3.3,2.2,5.2,4.7,5.2c2.6,0,4.7-1.9,4.7-5.2
+			S364.6,178.2,362,178.2z"/>
+		<path class="th1st3" d="M381.7,176.5h2.4l-8.4,20.4h-2.4l2.7-6.7l-5.6-13.7h2.6l4.4,11.3L381.7,176.5z"/>
+		<path class="th1st3" d="M401.1,172.5c3.8,0,6.9,1.9,8.2,5.3h-2.8c-1-2.1-2.8-3.3-5.4-3.3c-3.7,0-6.5,2.7-6.5,7c0,4.3,2.8,7,6.5,7
+			c2.6,0,4.5-1.2,5.4-3.3h2.8c-1.3,3.4-4.4,5.3-8.2,5.3c-4.9,0-8.8-3.7-8.8-9C392.3,176.2,396.2,172.5,401.1,172.5z"/>
+		<path class="th1st3" d="M418.5,176.2c2.6,0,4.4,1.3,5.2,2.8v-2.5h2.3v13.9h-2.3v-2.6c-0.8,1.5-2.6,2.8-5.2,2.8
+			c-3.7,0-6.6-2.9-6.6-7.2C411.9,179,414.8,176.2,418.5,176.2z M418.9,178.2c-2.5,0-4.7,1.8-4.7,5.1s2.2,5.2,4.7,5.2
+			s4.7-1.9,4.7-5.2C423.6,180.2,421.5,178.2,418.9,178.2z"/>
+		<path class="th1st3" d="M430.4,178.4h-1.8v-1.9h1.8V173h2.3v3.5h3.6v1.9h-3.6v8.2c0,1.4,0.5,1.9,1.9,1.9h1.7v2h-2.1
+			c-2.5,0-3.9-1-3.9-3.8V178.4z"/>
+		<path class="th1st3" d="M444.8,176.2c2.6,0,4.4,1.3,5.2,2.8v-2.5h2.3v13.9H450v-2.6c-0.8,1.5-2.6,2.8-5.2,2.8c-3.7,0-6.6-2.9-6.6-7.2
+			C438.2,179,441.1,176.2,444.8,176.2z M445.3,178.2c-2.5,0-4.7,1.8-4.7,5.1s2.2,5.2,4.7,5.2s4.7-1.9,4.7-5.2
+			C450,180.2,447.8,178.2,445.3,178.2z"/>
+		<path class="th1st3" d="M456.2,171.6h2.3v18.8h-2.3V171.6z"/>
+		<path class="th1st3" d="M468.5,190.6c-3.9,0-6.9-2.8-6.9-7.2c0-4.4,3.1-7.1,7-7.1c4,0,7,2.8,7,7.1
+			C475.6,187.8,472.5,190.6,468.5,190.6z M468.5,188.6c2.4,0,4.8-1.6,4.8-5.2c0-3.5-2.3-5.1-4.7-5.1c-2.4,0-4.6,1.6-4.6,5.1
+			C464,186.9,466.1,188.6,468.5,188.6z"/>
+		<path class="th1st3" d="M484.4,176.2c2.5,0,4.4,1.3,5.2,2.8v-2.5h2.3v14.2c0,3.8-2.6,6.5-6.6,6.5c-3.6,0-6.3-1.8-6.7-4.8h2.3
+			c0.5,1.7,2.2,2.8,4.4,2.8c2.5,0,4.3-1.6,4.3-4.5v-2.9c-0.8,1.5-2.6,2.8-5.2,2.8c-3.7,0-6.6-2.9-6.6-7.2
+			C477.8,179,480.7,176.2,484.4,176.2z M484.9,178.2c-2.5,0-4.7,1.8-4.7,5.1s2.2,5.2,4.7,5.2s4.7-1.9,4.7-5.2
+			C489.6,180.2,487.4,178.2,484.9,178.2z"/>
+		<path class="th1st3" d="M495.4,172.6c0-0.9,0.7-1.6,1.6-1.6c0.8,0,1.5,0.7,1.5,1.6c0,0.9-0.7,1.6-1.5,1.6
+			C496.1,174.2,495.4,173.5,495.4,172.6z M495.8,176.5h2.3v13.9h-2.3V176.5z"/>
+		<path class="th1st3" d="M508,176.2c3.4,0,5.7,1.8,6.4,4.7h-2.5c-0.5-1.7-1.9-2.7-3.9-2.7c-2.5,0-4.4,1.8-4.4,5.2
+			c0,3.4,1.9,5.2,4.4,5.2c2.1,0,3.4-1,3.9-2.7h2.5c-0.7,2.8-3,4.7-6.4,4.7c-4,0-6.8-2.8-6.8-7.2C501.2,179,504,176.2,508,176.2z"/>
+	</g>
+</g>
+</svg>
+</div><div class="dl-info"><span class="dl-name">Gradient <span class="badge">Preferred</span></span><span class="dl-desc">Digital, web, presentations, and offset print.</span></div></div><div class="dl-buttons"><a class="dl-btn dl-btn-svg" href="assets/svg/cloudcasa-logo-main.svg" download>SVG</a><a class="dl-btn dl-btn-png" href="assets/png/cloudcasa-logo-main.png" download>PNG</a><a class="dl-btn dl-btn-png" href="assets/png/cloudcasa-logo-main@2x.png" download>PNG 2x</a></div></div>
+    <div class="dl-row"><div class="dl-left"><div class="dl-preview dl-preview-wide dl-preview-white"><svg viewBox="35.6 72.8 478.8 124.4" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<style type="text/css">
+	.th2st0{fill:#FFFFFF;}
+	.th2st1{fill:#FFFFFF;}
+</style>
+<g>
+	<g>
+		<path class="th2st0" d="M196.9,129.6c-2.2-4.1-6.3-6.8-11.3-6.8c-7.2,0-12.8,5.9-12.8,13.1c0,7.1,5.6,13.3,12.8,13.3
+			c4.9,0,9.1-2.9,11.3-7h6.2c-2.5,7.2-9.4,12.3-17.4,12.3c-10.1,0-18.5-8.7-18.5-18.7c0-10.1,8.4-18.5,18.5-18.5
+			c7.9,0,14.8,5.1,17.4,12.2H196.9z"/>
+		<path class="th2st0" d="M211.2,95.7h5.4v57.9h-5.4V95.7z"/>
+		<path class="th2st0" d="M224.7,135.9c0-10.1,8.4-18.5,18.5-18.5c10.1,0,18.5,8.4,18.5,18.5c0,10-8.4,18.7-18.5,18.7
+			C233.1,154.6,224.7,145.9,224.7,135.9z M230.4,135.9c0,7.1,5.6,13.3,12.8,13.3c7.2,0,12.8-6.2,12.8-13.3c0-7.2-5.6-13.1-12.8-13.1
+			C236,122.8,230.4,128.7,230.4,135.9z"/>
+		<path class="th2st0" d="M301.2,153.7h-5.4v-4.3c-2.8,3.1-6.8,4.9-11.7,4.9c-10.2,0-14.6-4.5-14.6-15.9V118h5.4v20.4
+			c0,7.1,3.2,10.5,9.2,10.5c7.2,0,11.7-4.1,11.7-11.9v-19h5.4V153.7z"/>
+		<path class="th2st0" d="M342.1,148c-3.2,4-8,6.6-13.5,6.6c-10.1,0-18.5-8.7-18.5-18.7c0-10.1,8.4-18.5,18.5-18.5
+			c5.4,0,10.2,2.5,13.5,6.4V95.7h5.4v57.9h-5.4V148z M341.7,135.9c0-7.2-6.2-13.1-13.3-13.1c-7.2,0-12.7,5.9-12.7,13.1
+			c0,7.1,5.4,13.3,12.7,13.3C335.5,149.2,341.7,143,341.7,135.9z"/>
+		<path class="th2st0" d="M385.4,129.6c-2.2-4.1-6.3-6.8-11.3-6.8c-7.2,0-12.8,5.9-12.8,13.1c0,7.1,5.6,13.3,12.8,13.3
+			c4.9,0,9.1-2.9,11.3-7h6.2c-2.5,7.2-9.4,12.3-17.4,12.3c-10.1,0-18.5-8.7-18.5-18.7c0-10.1,8.4-18.5,18.5-18.5
+			c7.9,0,14.8,5.1,17.4,12.2H385.4z"/>
+		<path class="th2st0" d="M397.2,135.9c0-10.1,8.4-18.5,18.5-18.5c5.4,0,10.2,2.5,13.5,6.4V118h5.4v35.9h-5.4V148
+			c-3.2,4-8,6.6-13.5,6.6C405.6,154.6,397.2,145.9,397.2,135.9z M428.9,135.9c0-7.2-6.2-13.1-13.3-13.1c-7.2,0-12.7,5.9-12.7,13.1
+			c0,7.1,5.4,13.3,12.7,13.3C422.6,149.2,428.9,143,428.9,135.9z"/>
+		<path class="th2st0" d="M464.6,126.7c-0.5-2.4-3.2-4.2-7.4-4.2c-4.3,0-7.3,2-7.3,4.7c0,2.7,2.4,4.2,8.2,5.4c9.2,1.9,12.8,5,12.8,11
+			c0,6.2-4.8,10.7-13.7,10.7c-8,0-13.4-4.5-13.7-10.7h4.9c0.5,3,4.1,5.6,8.8,5.6c5.3,0,8.8-2.4,8.8-5.6c0-3.4-2.3-4.5-8.8-5.8
+			c-8.5-1.7-12.3-4.8-12.3-10.5c0-5.4,4.2-9.8,12.3-9.8c7.1,0,11.8,3.9,12.3,9.3H464.6z"/>
+		<path class="th2st0" d="M477,135.9c0-10.1,8.4-18.5,18.5-18.5c5.4,0,10.2,2.5,13.5,6.4V118h5.4v35.9H509V148c-3.2,4-8,6.6-13.5,6.6
+			C485.4,154.6,477,145.9,477,135.9z M508.7,135.9c0-7.2-6.2-13.1-13.3-13.1c-7.2,0-12.7,5.9-12.7,13.1c0,7.1,5.4,13.3,12.7,13.3
+			C502.4,149.2,508.7,143,508.7,135.9z"/>
+	</g>
+</g>
+<g>
+	<path fill="#FFFFFF" d="M137.4,87.4c-10.8-9.1-24.7-14.6-39.9-14.6c-34.2,0-61.9,27.7-61.9,61.9c0,34.2,27.7,61.9,61.9,61.9
+		c15.2,0,29.1-5.5,39.9-14.6l5.4-5.1l-13-5c-8.5,7.2-19.4,11.5-31.4,11.5c-26.9,0-48.7-21.8-48.7-48.7c0-26.9,21.8-48.7,48.7-48.7
+		c12,0,22.9,4.3,31.4,11.5l13-5v0L137.4,87.4z"/>
+	<path fill="#FFFFFF" d="M98.6,177.3c23.5,0,42.6-19.1,42.6-42.6c0-23.5-19.1-42.6-42.6-42.6c-11.7,0-22.4,4.8-30.1,12.5l8.1,8.1
+		c5.6-5.6,13.4-9.1,22-9.1c17.2,0,31.1,14,31.1,31.1c0,17.2-14,31.1-31.1,31.1c-8.6,0-16.4-3.5-22-9.1l-8.1,8.1
+		C76.2,172.5,86.9,177.3,98.6,177.3z"/>
+</g>
+<g>
+	<path class="th2st1" d="M362.5,176.2c3.7,0,6.6,2.8,6.6,7.1c0,4.3-2.9,7.2-6.6,7.2c-2.5,0-4.3-1.3-5.2-2.8v2.6H355v-18.8h2.3v7.4
+		C358.2,177.5,360.1,176.2,362.5,176.2z M362,178.2c-2.5,0-4.7,1.9-4.7,5.1c0,3.3,2.2,5.2,4.7,5.2c2.6,0,4.7-1.9,4.7-5.2
+		S364.6,178.2,362,178.2z"/>
+	<path class="th2st1" d="M381.7,176.5h2.4l-8.4,20.4h-2.4l2.7-6.7l-5.6-13.7h2.6l4.4,11.3L381.7,176.5z"/>
+	<path class="th2st1" d="M401.1,172.5c3.8,0,6.9,1.9,8.2,5.3h-2.8c-1-2.1-2.8-3.3-5.4-3.3c-3.7,0-6.5,2.7-6.5,7c0,4.3,2.8,7,6.5,7
+		c2.6,0,4.5-1.2,5.4-3.3h2.8c-1.3,3.4-4.4,5.3-8.2,5.3c-4.9,0-8.8-3.7-8.8-9C392.3,176.2,396.2,172.5,401.1,172.5z"/>
+	<path class="th2st1" d="M418.5,176.2c2.6,0,4.4,1.3,5.2,2.8v-2.5h2.3v13.9h-2.3v-2.6c-0.8,1.5-2.6,2.8-5.2,2.8c-3.7,0-6.6-2.9-6.6-7.2
+		C411.9,179,414.8,176.2,418.5,176.2z M418.9,178.2c-2.5,0-4.7,1.8-4.7,5.1s2.2,5.2,4.7,5.2s4.7-1.9,4.7-5.2
+		C423.6,180.2,421.5,178.2,418.9,178.2z"/>
+	<path class="th2st1" d="M430.4,178.4h-1.8v-1.9h1.8V173h2.3v3.5h3.6v1.9h-3.6v8.2c0,1.4,0.5,1.9,1.9,1.9h1.7v2h-2.1
+		c-2.5,0-3.9-1-3.9-3.8V178.4z"/>
+	<path class="th2st1" d="M444.8,176.2c2.6,0,4.4,1.3,5.2,2.8v-2.5h2.3v13.9H450v-2.6c-0.8,1.5-2.6,2.8-5.2,2.8c-3.7,0-6.6-2.9-6.6-7.2
+		C438.2,179,441.1,176.2,444.8,176.2z M445.3,178.2c-2.5,0-4.7,1.8-4.7,5.1s2.2,5.2,4.7,5.2s4.7-1.9,4.7-5.2
+		C450,180.2,447.8,178.2,445.3,178.2z"/>
+	<path class="th2st1" d="M456.2,171.6h2.3v18.8h-2.3V171.6z"/>
+	<path class="th2st1" d="M468.5,190.6c-3.9,0-6.9-2.8-6.9-7.2c0-4.4,3.1-7.1,7-7.1c4,0,7,2.8,7,7.1
+		C475.6,187.8,472.5,190.6,468.5,190.6z M468.5,188.6c2.4,0,4.8-1.6,4.8-5.2c0-3.5-2.3-5.1-4.7-5.1c-2.4,0-4.6,1.6-4.6,5.1
+		C464,186.9,466.1,188.6,468.5,188.6z"/>
+	<path class="th2st1" d="M484.4,176.2c2.5,0,4.4,1.3,5.2,2.8v-2.5h2.3v14.2c0,3.8-2.6,6.5-6.6,6.5c-3.6,0-6.3-1.8-6.7-4.8h2.3
+		c0.5,1.7,2.2,2.8,4.4,2.8c2.5,0,4.3-1.6,4.3-4.5v-2.9c-0.8,1.5-2.6,2.8-5.2,2.8c-3.7,0-6.6-2.9-6.6-7.2
+		C477.8,179,480.7,176.2,484.4,176.2z M484.9,178.2c-2.5,0-4.7,1.8-4.7,5.1s2.2,5.2,4.7,5.2s4.7-1.9,4.7-5.2
+		C489.6,180.2,487.4,178.2,484.9,178.2z"/>
+	<path class="th2st1" d="M495.4,172.6c0-0.9,0.7-1.6,1.6-1.6c0.8,0,1.5,0.7,1.5,1.6c0,0.9-0.7,1.6-1.5,1.6
+		C496.1,174.2,495.4,173.5,495.4,172.6z M495.8,176.5h2.3v13.9h-2.3V176.5z"/>
+	<path class="th2st1" d="M508,176.2c3.4,0,5.7,1.8,6.4,4.7h-2.5c-0.5-1.7-1.9-2.7-3.9-2.7c-2.5,0-4.4,1.8-4.4,5.2
+		c0,3.4,1.9,5.2,4.4,5.2c2.1,0,3.4-1,3.9-2.7h2.5c-0.7,2.8-3,4.7-6.4,4.7c-4,0-6.8-2.8-6.8-7.2C501.2,179,504,176.2,508,176.2z"/>
+</g>
+</svg>
+</div><div class="dl-info"><span class="dl-name">White</span><span class="dl-desc">Single color, white on dark or photographic backgrounds.</span></div></div><div class="dl-buttons"><a class="dl-btn dl-btn-svg" href="assets/svg/cloudcasa-logo-white.svg" download>SVG</a><a class="dl-btn dl-btn-png" href="assets/png/cloudcasa-logo-white.png" download>PNG</a><a class="dl-btn dl-btn-png" href="assets/png/cloudcasa-logo-white@2x.png" download>PNG 2x</a></div></div>
+    <div class="dl-row"><div class="dl-left"><div class="dl-preview dl-preview-wide dl-preview-color"><svg viewBox="35.6 72.8 478.8 124.4" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<style type="text/css">
+	.th3st0{fill:#111212;}
+	.th3st1{fill:#131414;}
+</style>
+<g>
+	<g>
+		<path class="th3st0" d="M196.9,129.6c-2.2-4.1-6.3-6.8-11.3-6.8c-7.2,0-12.8,5.9-12.8,13.1c0,7.1,5.6,13.3,12.8,13.3
+			c4.9,0,9.1-2.9,11.3-7h6.2c-2.5,7.2-9.4,12.3-17.4,12.3c-10.1,0-18.5-8.7-18.5-18.7c0-10.1,8.4-18.5,18.5-18.5
+			c7.9,0,14.8,5.1,17.4,12.2H196.9z"/>
+		<path class="th3st0" d="M211.2,95.7h5.4v57.9h-5.4V95.7z"/>
+		<path class="th3st0" d="M224.7,135.9c0-10.1,8.4-18.5,18.5-18.5c10.1,0,18.5,8.4,18.5,18.5c0,10-8.4,18.7-18.5,18.7
+			C233.1,154.6,224.7,145.9,224.7,135.9z M230.4,135.9c0,7.1,5.6,13.3,12.8,13.3c7.2,0,12.8-6.2,12.8-13.3c0-7.2-5.6-13.1-12.8-13.1
+			C236,122.8,230.4,128.7,230.4,135.9z"/>
+		<path class="th3st0" d="M301.2,153.7h-5.4v-4.3c-2.8,3.1-6.8,4.9-11.7,4.9c-10.2,0-14.6-4.5-14.6-15.9V118h5.4v20.4
+			c0,7.1,3.2,10.5,9.2,10.5c7.2,0,11.7-4.1,11.7-11.9v-19h5.4V153.7z"/>
+		<path class="th3st0" d="M342.1,148c-3.2,4-8,6.6-13.5,6.6c-10.1,0-18.5-8.7-18.5-18.7c0-10.1,8.4-18.5,18.5-18.5
+			c5.4,0,10.2,2.5,13.5,6.4V95.7h5.4v57.9h-5.4V148z M341.7,135.9c0-7.2-6.2-13.1-13.3-13.1c-7.2,0-12.7,5.9-12.7,13.1
+			c0,7.1,5.4,13.3,12.7,13.3C335.5,149.2,341.7,143,341.7,135.9z"/>
+		<path class="th3st0" d="M385.4,129.6c-2.2-4.1-6.3-6.8-11.3-6.8c-7.2,0-12.8,5.9-12.8,13.1c0,7.1,5.6,13.3,12.8,13.3
+			c4.9,0,9.1-2.9,11.3-7h6.2c-2.5,7.2-9.4,12.3-17.4,12.3c-10.1,0-18.5-8.7-18.5-18.7c0-10.1,8.4-18.5,18.5-18.5
+			c7.9,0,14.8,5.1,17.4,12.2H385.4z"/>
+		<path class="th3st0" d="M397.2,135.9c0-10.1,8.4-18.5,18.5-18.5c5.4,0,10.2,2.5,13.5,6.4V118h5.4v35.9h-5.4V148
+			c-3.2,4-8,6.6-13.5,6.6C405.6,154.6,397.2,145.9,397.2,135.9z M428.9,135.9c0-7.2-6.2-13.1-13.3-13.1c-7.2,0-12.7,5.9-12.7,13.1
+			c0,7.1,5.4,13.3,12.7,13.3C422.6,149.2,428.9,143,428.9,135.9z"/>
+		<path class="th3st0" d="M464.6,126.7c-0.5-2.4-3.2-4.2-7.4-4.2c-4.3,0-7.3,2-7.3,4.7c0,2.7,2.4,4.2,8.2,5.4c9.2,1.9,12.8,5,12.8,11
+			c0,6.2-4.8,10.7-13.7,10.7c-8,0-13.4-4.5-13.7-10.7h4.9c0.5,3,4.1,5.6,8.8,5.6c5.3,0,8.8-2.4,8.8-5.6c0-3.4-2.3-4.5-8.8-5.8
+			c-8.5-1.7-12.3-4.8-12.3-10.5c0-5.4,4.2-9.8,12.3-9.8c7.1,0,11.8,3.9,12.3,9.3H464.6z"/>
+		<path class="th3st0" d="M477,135.9c0-10.1,8.4-18.5,18.5-18.5c5.4,0,10.2,2.5,13.5,6.4V118h5.4v35.9H509V148c-3.2,4-8,6.6-13.5,6.6
+			C485.4,154.6,477,145.9,477,135.9z M508.7,135.9c0-7.2-6.2-13.1-13.3-13.1c-7.2,0-12.7,5.9-12.7,13.1c0,7.1,5.4,13.3,12.7,13.3
+			C502.4,149.2,508.7,143,508.7,135.9z"/>
+	</g>
+</g>
+<g>
+	<path d="M137.4,87.4c-10.8-9.1-24.7-14.6-39.9-14.6c-34.2,0-61.9,27.7-61.9,61.9c0,34.2,27.7,61.9,61.9,61.9
+		c15.2,0,29.1-5.5,39.9-14.6l5.4-5.1l-13-5c-8.5,7.2-19.4,11.5-31.4,11.5c-26.9,0-48.7-21.8-48.7-48.7c0-26.9,21.8-48.7,48.7-48.7
+		c12,0,22.9,4.3,31.4,11.5l13-5v0L137.4,87.4z"/>
+	<path d="M98.6,177.3c23.5,0,42.6-19.1,42.6-42.6c0-23.5-19.1-42.6-42.6-42.6c-11.7,0-22.4,4.8-30.1,12.5l8.1,8.1
+		c5.6-5.6,13.4-9.1,22-9.1c17.2,0,31.1,14,31.1,31.1c0,17.2-14,31.1-31.1,31.1c-8.6,0-16.4-3.5-22-9.1l-8.1,8.1
+		C76.2,172.5,86.9,177.3,98.6,177.3z"/>
+</g>
+<g>
+	<path class="th3st1" d="M362.5,176.2c3.7,0,6.6,2.8,6.6,7.1c0,4.3-2.9,7.2-6.6,7.2c-2.5,0-4.3-1.3-5.2-2.8v2.6H355v-18.8h2.3v7.4
+		C358.2,177.5,360.1,176.2,362.5,176.2z M362,178.2c-2.5,0-4.7,1.9-4.7,5.1c0,3.3,2.2,5.2,4.7,5.2c2.6,0,4.7-1.9,4.7-5.2
+		S364.6,178.2,362,178.2z"/>
+	<path class="th3st1" d="M381.7,176.5h2.4l-8.4,20.4h-2.4l2.7-6.7l-5.6-13.7h2.6l4.4,11.3L381.7,176.5z"/>
+	<path class="th3st1" d="M401.1,172.5c3.8,0,6.9,1.9,8.2,5.3h-2.8c-1-2.1-2.8-3.3-5.4-3.3c-3.7,0-6.5,2.7-6.5,7c0,4.3,2.8,7,6.5,7
+		c2.6,0,4.5-1.2,5.4-3.3h2.8c-1.3,3.4-4.4,5.3-8.2,5.3c-4.9,0-8.8-3.7-8.8-9C392.3,176.2,396.2,172.5,401.1,172.5z"/>
+	<path class="th3st1" d="M418.5,176.2c2.6,0,4.4,1.3,5.2,2.8v-2.5h2.3v13.9h-2.3v-2.6c-0.8,1.5-2.6,2.8-5.2,2.8c-3.7,0-6.6-2.9-6.6-7.2
+		C411.9,179,414.8,176.2,418.5,176.2z M418.9,178.2c-2.5,0-4.7,1.8-4.7,5.1s2.2,5.2,4.7,5.2s4.7-1.9,4.7-5.2
+		C423.6,180.2,421.5,178.2,418.9,178.2z"/>
+	<path class="th3st1" d="M430.4,178.4h-1.8v-1.9h1.8V173h2.3v3.5h3.6v1.9h-3.6v8.2c0,1.4,0.5,1.9,1.9,1.9h1.7v2h-2.1
+		c-2.5,0-3.9-1-3.9-3.8V178.4z"/>
+	<path class="th3st1" d="M444.8,176.2c2.6,0,4.4,1.3,5.2,2.8v-2.5h2.3v13.9H450v-2.6c-0.8,1.5-2.6,2.8-5.2,2.8c-3.7,0-6.6-2.9-6.6-7.2
+		C438.2,179,441.1,176.2,444.8,176.2z M445.3,178.2c-2.5,0-4.7,1.8-4.7,5.1s2.2,5.2,4.7,5.2s4.7-1.9,4.7-5.2
+		C450,180.2,447.8,178.2,445.3,178.2z"/>
+	<path class="th3st1" d="M456.2,171.6h2.3v18.8h-2.3V171.6z"/>
+	<path class="th3st1" d="M468.5,190.6c-3.9,0-6.9-2.8-6.9-7.2c0-4.4,3.1-7.1,7-7.1c4,0,7,2.8,7,7.1
+		C475.6,187.8,472.5,190.6,468.5,190.6z M468.5,188.6c2.4,0,4.8-1.6,4.8-5.2c0-3.5-2.3-5.1-4.7-5.1c-2.4,0-4.6,1.6-4.6,5.1
+		C464,186.9,466.1,188.6,468.5,188.6z"/>
+	<path class="th3st1" d="M484.4,176.2c2.5,0,4.4,1.3,5.2,2.8v-2.5h2.3v14.2c0,3.8-2.6,6.5-6.6,6.5c-3.6,0-6.3-1.8-6.7-4.8h2.3
+		c0.5,1.7,2.2,2.8,4.4,2.8c2.5,0,4.3-1.6,4.3-4.5v-2.9c-0.8,1.5-2.6,2.8-5.2,2.8c-3.7,0-6.6-2.9-6.6-7.2
+		C477.8,179,480.7,176.2,484.4,176.2z M484.9,178.2c-2.5,0-4.7,1.8-4.7,5.1s2.2,5.2,4.7,5.2s4.7-1.9,4.7-5.2
+		C489.6,180.2,487.4,178.2,484.9,178.2z"/>
+	<path class="th3st1" d="M495.4,172.6c0-0.9,0.7-1.6,1.6-1.6c0.8,0,1.5,0.7,1.5,1.6c0,0.9-0.7,1.6-1.5,1.6
+		C496.1,174.2,495.4,173.5,495.4,172.6z M495.8,176.5h2.3v13.9h-2.3V176.5z"/>
+	<path class="th3st1" d="M508,176.2c3.4,0,5.7,1.8,6.4,4.7h-2.5c-0.5-1.7-1.9-2.7-3.9-2.7c-2.5,0-4.4,1.8-4.4,5.2
+		c0,3.4,1.9,5.2,4.4,5.2c2.1,0,3.4-1,3.9-2.7h2.5c-0.7,2.8-3,4.7-6.4,4.7c-4,0-6.8-2.8-6.8-7.2C501.2,179,504,176.2,508,176.2z"/>
+</g>
+</svg>
+</div><div class="dl-info"><span class="dl-name">Black</span><span class="dl-desc">Single color. B/W prints, forms, embossing and etching.</span></div></div><div class="dl-buttons"><a class="dl-btn dl-btn-svg" href="assets/svg/cloudcasa-logo-dark.svg" download>SVG</a><a class="dl-btn dl-btn-png" href="assets/png/cloudcasa-logo-dark.png" download>PNG</a><a class="dl-btn dl-btn-png" href="assets/png/cloudcasa-logo-dark@2x.png" download>PNG 2x</a></div></div>
+    <div class="dl-group">Stacked</div>
+    <div class="dl-row"><div class="dl-left"><div class="dl-preview dl-preview-wide dl-preview-color"><svg viewBox="126.8 30.9 296.6 204.8" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<style type="text/css">
+	.th4st0{fill:#111212;}
+	.th4st1{fill:url(#th4_1_);}
+	.th4st2{fill:url(#th4_2_);}
+	.th4st3{fill:#131414;}
+</style>
+<g>
+	<g>
+		<path class="th4st0" d="M152.1,181c-1.9-3.4-5.4-5.8-9.6-5.8c-6.1,0-10.9,5-10.9,11.2c0,6,4.8,11.3,10.9,11.3c4.2,0,7.7-2.5,9.6-5.9
+			h5.2c-2.1,6.1-8,10.5-14.8,10.5c-8.6,0-15.7-7.4-15.7-15.8c0-8.6,7.1-15.7,15.7-15.7c6.7,0,12.5,4.3,14.7,10.3H152.1z"/>
+		<path class="th4st0" d="M164.2,152.3h4.6v49.2h-4.6V152.3z"/>
+		<path class="th4st0" d="M175.7,186.4c0-8.6,7.1-15.7,15.7-15.7s15.7,7.1,15.7,15.7c0,8.5-7.1,15.8-15.7,15.8S175.7,194.8,175.7,186.4
+			z M180.6,186.4c0,6,4.8,11.3,10.9,11.3c6.1,0,10.9-5.3,10.9-11.3c0-6.1-4.8-11.2-10.9-11.2C185.3,175.2,180.6,180.2,180.6,186.4z"
+			/>
+		<path class="th4st0" d="M240.6,201.5H236v-3.6c-2.4,2.6-5.8,4.1-9.9,4.1c-8.7,0-12.4-3.9-12.4-13.5v-17.3h4.6v17.3c0,6,2.8,9,7.8,9
+			c6.1,0,9.9-3.4,9.9-10.1v-16.1h4.6V201.5z"/>
+		<path class="th4st0" d="M275.3,196.6c-2.8,3.4-6.8,5.6-11.4,5.6c-8.6,0-15.7-7.4-15.7-15.8c0-8.6,7.1-15.7,15.7-15.7
+			c4.6,0,8.7,2.1,11.4,5.4v-23.8h4.6v49.2h-4.6V196.6z M275,186.4c0-6.1-5.3-11.2-11.3-11.2c-6.1,0-10.7,5-10.7,11.2
+			c0,6,4.6,11.3,10.7,11.3C269.7,197.7,275,192.4,275,186.4z"/>
+		<path class="th4st0" d="M312.1,181c-1.9-3.4-5.4-5.8-9.6-5.8c-6.1,0-10.9,5-10.9,11.2c0,6,4.8,11.3,10.9,11.3c4.2,0,7.7-2.5,9.6-5.9
+			h5.2c-2.1,6.1-8,10.5-14.8,10.5c-8.6,0-15.7-7.4-15.7-15.8c0-8.6,7.1-15.7,15.7-15.7c6.7,0,12.5,4.3,14.7,10.3H312.1z"/>
+		<path class="th4st0" d="M322.1,186.4c0-8.6,7.1-15.7,15.7-15.7c4.6,0,8.7,2.1,11.4,5.4v-5h4.6v30.4h-4.6v-5
+			c-2.8,3.4-6.8,5.6-11.4,5.6C329.2,202.2,322.1,194.8,322.1,186.4z M349,186.4c0-6.1-5.3-11.2-11.3-11.2c-6.1,0-10.7,5-10.7,11.2
+			c0,6,4.6,11.3,10.7,11.3C343.7,197.7,349,192.4,349,186.4z"/>
+		<path class="th4st0" d="M379.3,178.6c-0.4-2.1-2.7-3.6-6.3-3.6c-3.6,0-6.2,1.7-6.2,4c0,2.3,2,3.6,7,4.5c7.8,1.6,10.9,4.3,10.9,9.3
+			c0,5.3-4.1,9.1-11.6,9.1c-6.8,0-11.4-3.8-11.6-9.1h4.2c0.4,2.5,3.5,4.8,7.4,4.8c4.5,0,7.4-2,7.4-4.8c0-2.9-1.9-3.9-7.4-5
+			c-7.2-1.4-10.5-4.1-10.5-8.9c0-4.6,3.6-8.3,10.5-8.3c6,0,10,3.3,10.5,7.9H379.3z"/>
+		<path class="th4st0" d="M389.9,186.4c0-8.6,7.1-15.7,15.7-15.7c4.6,0,8.7,2.1,11.4,5.4v-5h4.6v30.4H417v-5c-2.8,3.4-6.8,5.6-11.4,5.6
+			C397,202.2,389.9,194.8,389.9,186.4z M416.7,186.4c0-6.1-5.3-11.2-11.3-11.2c-6.1,0-10.7,5-10.7,11.2c0,6,4.6,11.3,10.7,11.3
+			C411.4,197.7,416.7,192.4,416.7,186.4z"/>
+	</g>
+</g>
+<g>
+	<linearGradient id="th4_1_" gradientUnits="userSpaceOnUse" x1="243.48" y1="119.9423" x2="319.0496" y2="46.9656">
+		<stop  offset="0" style="stop-color:#863D72"/>
+		<stop  offset="1" style="stop-color:#DD238D"/>
+	</linearGradient>
+	<path class="th4st1" d="M315.2,43.3c-9.1-7.7-21-12.4-33.9-12.4c-29,0-52.5,23.5-52.5,52.5c0,29,23.5,52.5,52.5,52.5
+		c12.9,0,24.7-4.7,33.9-12.4l4.5-4.3l-11-4.2c-7.2,6.1-16.5,9.8-26.7,9.8c-22.8,0-41.4-18.5-41.4-41.4c0-22.8,18.5-41.4,41.4-41.4
+		c10.2,0,19.5,3.7,26.7,9.8l11-4.2v0L315.2,43.3z"/>
+	<linearGradient id="th4_2_" gradientUnits="userSpaceOnUse" x1="256.2775" y1="108.5843" x2="308.2802" y2="58.3659">
+		<stop  offset="0" style="stop-color:#863D72"/>
+		<stop  offset="1" style="stop-color:#DD238D"/>
+	</linearGradient>
+	<path class="th4st2" d="M282.3,119.6c19.9,0,36.2-16.2,36.2-36.2c0-19.9-16.2-36.2-36.2-36.2c-10,0-19,4.1-25.6,10.6l6.9,6.9
+		c4.8-4.8,11.4-7.7,18.7-7.7c14.6,0,26.4,11.8,26.4,26.4c0,14.6-11.8,26.4-26.4,26.4c-7.3,0-13.9-3-18.7-7.7l-6.9,6.9
+		C263.3,115.6,272.3,119.6,282.3,119.6z"/>
+</g>
+<g>
+	<path class="th4st3" d="M294.6,218.1c3.2,0,5.6,2.4,5.6,6c0,3.7-2.4,6.1-5.6,6.1c-2.2,0-3.7-1.1-4.4-2.4v2.2h-2v-15.9h2v6.3
+		C290.9,219.2,292.5,218.1,294.6,218.1z M294.2,219.8c-2.1,0-4,1.6-4,4.4c0,2.8,1.9,4.4,4,4.4c2.2,0,4-1.6,4-4.4
+		C298.2,221.4,296.3,219.8,294.2,219.8z"/>
+	<path class="th4st3" d="M310.9,218.3h2l-7.1,17.3h-2l2.3-5.7l-4.8-11.7h2.2l3.7,9.5L310.9,218.3z"/>
+	<path class="th4st3" d="M327.3,214.9c3.2,0,5.8,1.6,6.9,4.5H332c-0.8-1.8-2.4-2.8-4.6-2.8c-3.1,0-5.5,2.3-5.5,6c0,3.7,2.3,5.9,5.5,5.9
+		c2.2,0,3.8-1,4.6-2.8h2.3c-1.1,2.9-3.7,4.5-6.9,4.5c-4.2,0-7.5-3.1-7.5-7.6C319.9,218.1,323.2,214.9,327.3,214.9z"/>
+	<path class="th4st3" d="M342.1,218.1c2.2,0,3.7,1.1,4.4,2.3v-2.2h2v11.8h-2v-2.2c-0.7,1.3-2.2,2.4-4.4,2.4c-3.1,0-5.6-2.5-5.6-6.1
+		C336.5,220.5,338.9,218.1,342.1,218.1z M342.4,219.8c-2.2,0-4,1.6-4,4.3c0,2.8,1.8,4.4,4,4.4c2.2,0,4-1.6,4-4.4
+		C346.4,221.4,344.6,219.8,342.4,219.8z"/>
+	<path class="th4st3" d="M352.2,219.9h-1.5v-1.6h1.5v-3h2v3h3.1v1.6h-3.1v6.9c0,1.2,0.4,1.6,1.6,1.6h1.4v1.7h-1.8
+		c-2.1,0-3.3-0.9-3.3-3.2V219.9z"/>
+	<path class="th4st3" d="M364.4,218.1c2.2,0,3.7,1.1,4.4,2.3v-2.2h2v11.8h-2v-2.2c-0.7,1.3-2.2,2.4-4.4,2.4c-3.1,0-5.6-2.5-5.6-6.1
+		C358.8,220.5,361.3,218.1,364.4,218.1z M364.8,219.8c-2.2,0-4,1.6-4,4.3c0,2.8,1.8,4.4,4,4.4s4-1.6,4-4.4
+		C368.8,221.4,367,219.8,364.8,219.8z"/>
+	<path class="th4st3" d="M374.1,214.2h2v15.9h-2V214.2z"/>
+	<path class="th4st3" d="M384.5,230.3c-3.3,0-5.9-2.4-5.9-6.1c0-3.7,2.6-6.1,6-6.1c3.4,0,6,2.3,6,6.1
+		C390.6,227.9,387.9,230.3,384.5,230.3z M384.5,228.5c2,0,4-1.4,4-4.4c0-3-2-4.4-4-4.4c-2.1,0-3.9,1.4-3.9,4.4
+		C380.7,227.1,382.5,228.5,384.5,228.5z"/>
+	<path class="th4st3" d="M398,218.1c2.2,0,3.7,1.1,4.4,2.3v-2.2h2v12c0,3.2-2.2,5.5-5.6,5.5c-3.1,0-5.3-1.6-5.7-4.1h1.9
+		c0.4,1.4,1.8,2.4,3.8,2.4c2.1,0,3.7-1.3,3.7-3.8v-2.5c-0.7,1.3-2.2,2.4-4.4,2.4c-3.2,0-5.6-2.5-5.6-6.1
+		C392.4,220.5,394.9,218.1,398,218.1z M398.4,219.8c-2.2,0-4,1.6-4,4.3c0,2.8,1.8,4.4,4,4.4c2.2,0,4-1.6,4-4.4
+		C402.4,221.4,400.6,219.8,398.4,219.8z"/>
+	<path class="th4st3" d="M407.4,215c0-0.8,0.6-1.3,1.3-1.3c0.7,0,1.3,0.6,1.3,1.3c0,0.8-0.6,1.3-1.3,1.3
+		C407.9,216.4,407.4,215.8,407.4,215z M407.7,218.3h2v11.8h-2V218.3z"/>
+	<path class="th4st3" d="M418,218.1c2.9,0,4.8,1.5,5.4,4h-2.1c-0.4-1.4-1.6-2.3-3.3-2.3c-2.2,0-3.7,1.5-3.7,4.4c0,2.9,1.6,4.5,3.7,4.5
+		c1.7,0,2.9-0.8,3.3-2.3h2.1c-0.6,2.3-2.5,4-5.4,4c-3.4,0-5.7-2.4-5.7-6.1C412.3,220.5,414.6,218.1,418,218.1z"/>
+</g>
+</svg>
+</div><div class="dl-info"><span class="dl-name">Gradient <span class="badge">Preferred</span></span><span class="dl-desc">Digital, web, presentations, and offset print.</span></div></div><div class="dl-buttons"><a class="dl-btn dl-btn-svg" href="assets/svg/cloudcasa-logo-main-stacked.svg" download>SVG</a><a class="dl-btn dl-btn-png" href="assets/png/cloudcasa-logo-main-stacked.png" download>PNG</a><a class="dl-btn dl-btn-png" href="assets/png/cloudcasa-logo-main-stacked@2x.png" download>PNG 2x</a></div></div>
+    <div class="dl-row"><div class="dl-left"><div class="dl-preview dl-preview-wide dl-preview-white"><svg viewBox="126.8 30.9 296.6 204.8" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<style type="text/css">
+	.th5st0{fill:#FFFFFF;}
+	.th5st1{fill:#FFFFFF;}
+</style>
+<g>
+	<g>
+		<path class="th5st0" d="M152.1,181c-1.9-3.4-5.4-5.8-9.6-5.8c-6.1,0-10.9,5-10.9,11.2c0,6,4.8,11.3,10.9,11.3c4.2,0,7.7-2.5,9.6-5.9
+			h5.2c-2.1,6.1-8,10.5-14.8,10.5c-8.6,0-15.7-7.4-15.7-15.8c0-8.6,7.1-15.7,15.7-15.7c6.7,0,12.5,4.3,14.7,10.3H152.1z"/>
+		<path class="th5st0" d="M164.2,152.3h4.6v49.2h-4.6V152.3z"/>
+		<path class="th5st0" d="M175.7,186.4c0-8.6,7.1-15.7,15.7-15.7s15.7,7.1,15.7,15.7c0,8.5-7.1,15.8-15.7,15.8S175.7,194.8,175.7,186.4
+			z M180.6,186.4c0,6,4.8,11.3,10.9,11.3c6.1,0,10.9-5.3,10.9-11.3c0-6.1-4.8-11.2-10.9-11.2C185.3,175.2,180.6,180.2,180.6,186.4z"
+			/>
+		<path class="th5st0" d="M240.6,201.5H236v-3.6c-2.4,2.6-5.8,4.1-9.9,4.1c-8.7,0-12.4-3.9-12.4-13.5v-17.3h4.6v17.3c0,6,2.8,9,7.8,9
+			c6.1,0,9.9-3.4,9.9-10.1v-16.1h4.6V201.5z"/>
+		<path class="th5st0" d="M275.3,196.6c-2.8,3.4-6.8,5.6-11.4,5.6c-8.6,0-15.7-7.4-15.7-15.8c0-8.6,7.1-15.7,15.7-15.7
+			c4.6,0,8.7,2.1,11.4,5.4v-23.8h4.6v49.2h-4.6V196.6z M275,186.4c0-6.1-5.3-11.2-11.3-11.2c-6.1,0-10.7,5-10.7,11.2
+			c0,6,4.6,11.3,10.7,11.3C269.7,197.7,275,192.4,275,186.4z"/>
+		<path class="th5st0" d="M312.1,181c-1.9-3.4-5.4-5.8-9.6-5.8c-6.1,0-10.9,5-10.9,11.2c0,6,4.8,11.3,10.9,11.3c4.2,0,7.7-2.5,9.6-5.9
+			h5.2c-2.1,6.1-8,10.5-14.8,10.5c-8.6,0-15.7-7.4-15.7-15.8c0-8.6,7.1-15.7,15.7-15.7c6.7,0,12.5,4.3,14.7,10.3H312.1z"/>
+		<path class="th5st0" d="M322.1,186.4c0-8.6,7.1-15.7,15.7-15.7c4.6,0,8.7,2.1,11.4,5.4v-5h4.6v30.4h-4.6v-5
+			c-2.8,3.4-6.8,5.6-11.4,5.6C329.2,202.2,322.1,194.8,322.1,186.4z M349,186.4c0-6.1-5.3-11.2-11.3-11.2c-6.1,0-10.7,5-10.7,11.2
+			c0,6,4.6,11.3,10.7,11.3C343.7,197.7,349,192.4,349,186.4z"/>
+		<path class="th5st0" d="M379.3,178.6c-0.4-2.1-2.7-3.6-6.3-3.6c-3.6,0-6.2,1.7-6.2,4c0,2.3,2,3.6,7,4.5c7.8,1.6,10.9,4.3,10.9,9.3
+			c0,5.3-4.1,9.1-11.6,9.1c-6.8,0-11.4-3.8-11.6-9.1h4.2c0.4,2.5,3.5,4.8,7.4,4.8c4.5,0,7.4-2,7.4-4.8c0-2.9-1.9-3.9-7.4-5
+			c-7.2-1.4-10.5-4.1-10.5-8.9c0-4.6,3.6-8.3,10.5-8.3c6,0,10,3.3,10.5,7.9H379.3z"/>
+		<path class="th5st0" d="M389.9,186.4c0-8.6,7.1-15.7,15.7-15.7c4.6,0,8.7,2.1,11.4,5.4v-5h4.6v30.4H417v-5c-2.8,3.4-6.8,5.6-11.4,5.6
+			C397,202.2,389.9,194.8,389.9,186.4z M416.7,186.4c0-6.1-5.3-11.2-11.3-11.2c-6.1,0-10.7,5-10.7,11.2c0,6,4.6,11.3,10.7,11.3
+			C411.4,197.7,416.7,192.4,416.7,186.4z"/>
+	</g>
+</g>
+<g>
+	<path fill="#FFFFFF" d="M315.2,43.3c-9.1-7.7-21-12.4-33.9-12.4c-29,0-52.5,23.5-52.5,52.5c0,29,23.5,52.5,52.5,52.5c12.9,0,24.7-4.7,33.9-12.4
+		l4.5-4.3l-11-4.2c-7.2,6.1-16.5,9.8-26.7,9.8c-22.8,0-41.4-18.5-41.4-41.4c0-22.8,18.5-41.4,41.4-41.4c10.2,0,19.5,3.7,26.7,9.8
+		l11-4.2v0L315.2,43.3z"/>
+	<path fill="#FFFFFF" d="M282.3,119.6c19.9,0,36.2-16.2,36.2-36.2c0-19.9-16.2-36.2-36.2-36.2c-10,0-19,4.1-25.6,10.6l6.9,6.9
+		c4.8-4.8,11.4-7.7,18.7-7.7c14.6,0,26.4,11.8,26.4,26.4c0,14.6-11.8,26.4-26.4,26.4c-7.3,0-13.9-3-18.7-7.7l-6.9,6.9
+		C263.3,115.6,272.3,119.6,282.3,119.6z"/>
+</g>
+<g>
+	<path class="th5st1" d="M294.6,218.1c3.2,0,5.6,2.4,5.6,6c0,3.7-2.4,6.1-5.6,6.1c-2.2,0-3.7-1.1-4.4-2.4v2.2h-2v-15.9h2v6.3
+		C290.9,219.2,292.5,218.1,294.6,218.1z M294.2,219.8c-2.1,0-4,1.6-4,4.4c0,2.8,1.9,4.4,4,4.4c2.2,0,4-1.6,4-4.4
+		C298.2,221.4,296.3,219.8,294.2,219.8z"/>
+	<path class="th5st1" d="M310.9,218.3h2l-7.1,17.3h-2l2.3-5.7l-4.8-11.7h2.2l3.7,9.5L310.9,218.3z"/>
+	<path class="th5st1" d="M327.3,214.9c3.2,0,5.8,1.6,6.9,4.5H332c-0.8-1.8-2.4-2.8-4.6-2.8c-3.1,0-5.5,2.3-5.5,6c0,3.7,2.3,5.9,5.5,5.9
+		c2.2,0,3.8-1,4.6-2.8h2.3c-1.1,2.9-3.7,4.5-6.9,4.5c-4.2,0-7.5-3.1-7.5-7.6C319.9,218.1,323.2,214.9,327.3,214.9z"/>
+	<path class="th5st1" d="M342.1,218.1c2.2,0,3.7,1.1,4.4,2.3v-2.2h2v11.8h-2v-2.2c-0.7,1.3-2.2,2.4-4.4,2.4c-3.1,0-5.6-2.5-5.6-6.1
+		C336.5,220.5,338.9,218.1,342.1,218.1z M342.4,219.8c-2.2,0-4,1.6-4,4.3c0,2.8,1.8,4.4,4,4.4c2.2,0,4-1.6,4-4.4
+		C346.4,221.4,344.6,219.8,342.4,219.8z"/>
+	<path class="th5st1" d="M352.2,219.9h-1.5v-1.6h1.5v-3h2v3h3.1v1.6h-3.1v6.9c0,1.2,0.4,1.6,1.6,1.6h1.4v1.7h-1.8
+		c-2.1,0-3.3-0.9-3.3-3.2V219.9z"/>
+	<path class="th5st1" d="M364.4,218.1c2.2,0,3.7,1.1,4.4,2.3v-2.2h2v11.8h-2v-2.2c-0.7,1.3-2.2,2.4-4.4,2.4c-3.1,0-5.6-2.5-5.6-6.1
+		C358.8,220.5,361.3,218.1,364.4,218.1z M364.8,219.8c-2.2,0-4,1.6-4,4.3c0,2.8,1.8,4.4,4,4.4s4-1.6,4-4.4
+		C368.8,221.4,367,219.8,364.8,219.8z"/>
+	<path class="th5st1" d="M374.1,214.2h2v15.9h-2V214.2z"/>
+	<path class="th5st1" d="M384.5,230.3c-3.3,0-5.9-2.4-5.9-6.1c0-3.7,2.6-6.1,6-6.1c3.4,0,6,2.3,6,6.1
+		C390.6,227.9,387.9,230.3,384.5,230.3z M384.5,228.5c2,0,4-1.4,4-4.4c0-3-2-4.4-4-4.4c-2.1,0-3.9,1.4-3.9,4.4
+		C380.7,227.1,382.5,228.5,384.5,228.5z"/>
+	<path class="th5st1" d="M398,218.1c2.2,0,3.7,1.1,4.4,2.3v-2.2h2v12c0,3.2-2.2,5.5-5.6,5.5c-3.1,0-5.3-1.6-5.7-4.1h1.9
+		c0.4,1.4,1.8,2.4,3.8,2.4c2.1,0,3.7-1.3,3.7-3.8v-2.5c-0.7,1.3-2.2,2.4-4.4,2.4c-3.2,0-5.6-2.5-5.6-6.1
+		C392.4,220.5,394.9,218.1,398,218.1z M398.4,219.8c-2.2,0-4,1.6-4,4.3c0,2.8,1.8,4.4,4,4.4c2.2,0,4-1.6,4-4.4
+		C402.4,221.4,400.6,219.8,398.4,219.8z"/>
+	<path class="th5st1" d="M407.4,215c0-0.8,0.6-1.3,1.3-1.3c0.7,0,1.3,0.6,1.3,1.3c0,0.8-0.6,1.3-1.3,1.3
+		C407.9,216.4,407.4,215.8,407.4,215z M407.7,218.3h2v11.8h-2V218.3z"/>
+	<path class="th5st1" d="M418,218.1c2.9,0,4.8,1.5,5.4,4h-2.1c-0.4-1.4-1.6-2.3-3.3-2.3c-2.2,0-3.7,1.5-3.7,4.4c0,2.9,1.6,4.5,3.7,4.5
+		c1.7,0,2.9-0.8,3.3-2.3h2.1c-0.6,2.3-2.5,4-5.4,4c-3.4,0-5.7-2.4-5.7-6.1C412.3,220.5,414.6,218.1,418,218.1z"/>
+</g>
+</svg>
+</div><div class="dl-info"><span class="dl-name">White</span><span class="dl-desc">Single color, white on dark or photographic backgrounds.</span></div></div><div class="dl-buttons"><a class="dl-btn dl-btn-svg" href="assets/svg/cloudcasa-logo-white-stacked.svg" download>SVG</a><a class="dl-btn dl-btn-png" href="assets/png/cloudcasa-logo-white-stacked.png" download>PNG</a><a class="dl-btn dl-btn-png" href="assets/png/cloudcasa-logo-white-stacked@2x.png" download>PNG 2x</a></div></div>
+    <div class="dl-row"><div class="dl-left"><div class="dl-preview dl-preview-wide dl-preview-color"><svg viewBox="126.8 30.9 296.6 204.8" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<style type="text/css">
+	.th6st0{fill:#111212;}
+	.th6st1{fill:#131414;}
+</style>
+<g>
+	<g>
+		<path class="th6st0" d="M152.1,181c-1.9-3.4-5.4-5.8-9.6-5.8c-6.1,0-10.9,5-10.9,11.2c0,6,4.8,11.3,10.9,11.3c4.2,0,7.7-2.5,9.6-5.9
+			h5.2c-2.1,6.1-8,10.5-14.8,10.5c-8.6,0-15.7-7.4-15.7-15.8c0-8.6,7.1-15.7,15.7-15.7c6.7,0,12.5,4.3,14.7,10.3H152.1z"/>
+		<path class="th6st0" d="M164.2,152.3h4.6v49.2h-4.6V152.3z"/>
+		<path class="th6st0" d="M175.7,186.4c0-8.6,7.1-15.7,15.7-15.7s15.7,7.1,15.7,15.7c0,8.5-7.1,15.8-15.7,15.8S175.7,194.8,175.7,186.4
+			z M180.6,186.4c0,6,4.8,11.3,10.9,11.3c6.1,0,10.9-5.3,10.9-11.3c0-6.1-4.8-11.2-10.9-11.2C185.3,175.2,180.6,180.2,180.6,186.4z"
+			/>
+		<path class="th6st0" d="M240.6,201.5H236v-3.6c-2.4,2.6-5.8,4.1-9.9,4.1c-8.7,0-12.4-3.9-12.4-13.5v-17.3h4.6v17.3c0,6,2.8,9,7.8,9
+			c6.1,0,9.9-3.4,9.9-10.1v-16.1h4.6V201.5z"/>
+		<path class="th6st0" d="M275.3,196.6c-2.8,3.4-6.8,5.6-11.4,5.6c-8.6,0-15.7-7.4-15.7-15.8c0-8.6,7.1-15.7,15.7-15.7
+			c4.6,0,8.7,2.1,11.4,5.4v-23.8h4.6v49.2h-4.6V196.6z M275,186.4c0-6.1-5.3-11.2-11.3-11.2c-6.1,0-10.7,5-10.7,11.2
+			c0,6,4.6,11.3,10.7,11.3C269.7,197.7,275,192.4,275,186.4z"/>
+		<path class="th6st0" d="M312.1,181c-1.9-3.4-5.4-5.8-9.6-5.8c-6.1,0-10.9,5-10.9,11.2c0,6,4.8,11.3,10.9,11.3c4.2,0,7.7-2.5,9.6-5.9
+			h5.2c-2.1,6.1-8,10.5-14.8,10.5c-8.6,0-15.7-7.4-15.7-15.8c0-8.6,7.1-15.7,15.7-15.7c6.7,0,12.5,4.3,14.7,10.3H312.1z"/>
+		<path class="th6st0" d="M322.1,186.4c0-8.6,7.1-15.7,15.7-15.7c4.6,0,8.7,2.1,11.4,5.4v-5h4.6v30.4h-4.6v-5
+			c-2.8,3.4-6.8,5.6-11.4,5.6C329.2,202.2,322.1,194.8,322.1,186.4z M349,186.4c0-6.1-5.3-11.2-11.3-11.2c-6.1,0-10.7,5-10.7,11.2
+			c0,6,4.6,11.3,10.7,11.3C343.7,197.7,349,192.4,349,186.4z"/>
+		<path class="th6st0" d="M379.3,178.6c-0.4-2.1-2.7-3.6-6.3-3.6c-3.6,0-6.2,1.7-6.2,4c0,2.3,2,3.6,7,4.5c7.8,1.6,10.9,4.3,10.9,9.3
+			c0,5.3-4.1,9.1-11.6,9.1c-6.8,0-11.4-3.8-11.6-9.1h4.2c0.4,2.5,3.5,4.8,7.4,4.8c4.5,0,7.4-2,7.4-4.8c0-2.9-1.9-3.9-7.4-5
+			c-7.2-1.4-10.5-4.1-10.5-8.9c0-4.6,3.6-8.3,10.5-8.3c6,0,10,3.3,10.5,7.9H379.3z"/>
+		<path class="th6st0" d="M389.9,186.4c0-8.6,7.1-15.7,15.7-15.7c4.6,0,8.7,2.1,11.4,5.4v-5h4.6v30.4H417v-5c-2.8,3.4-6.8,5.6-11.4,5.6
+			C397,202.2,389.9,194.8,389.9,186.4z M416.7,186.4c0-6.1-5.3-11.2-11.3-11.2c-6.1,0-10.7,5-10.7,11.2c0,6,4.6,11.3,10.7,11.3
+			C411.4,197.7,416.7,192.4,416.7,186.4z"/>
+	</g>
+</g>
+<g>
+	<path d="M315.2,43.3c-9.1-7.7-21-12.4-33.9-12.4c-29,0-52.5,23.5-52.5,52.5c0,29,23.5,52.5,52.5,52.5c12.9,0,24.7-4.7,33.9-12.4
+		l4.5-4.3l-11-4.2c-7.2,6.1-16.5,9.8-26.7,9.8c-22.8,0-41.4-18.5-41.4-41.4c0-22.8,18.5-41.4,41.4-41.4c10.2,0,19.5,3.7,26.7,9.8
+		l11-4.2v0L315.2,43.3z"/>
+	<path d="M282.3,119.6c19.9,0,36.2-16.2,36.2-36.2c0-19.9-16.2-36.2-36.2-36.2c-10,0-19,4.1-25.6,10.6l6.9,6.9
+		c4.8-4.8,11.4-7.7,18.7-7.7c14.6,0,26.4,11.8,26.4,26.4c0,14.6-11.8,26.4-26.4,26.4c-7.3,0-13.9-3-18.7-7.7l-6.9,6.9
+		C263.3,115.6,272.3,119.6,282.3,119.6z"/>
+</g>
+<g>
+	<path class="th6st1" d="M294.6,218.1c3.2,0,5.6,2.4,5.6,6c0,3.7-2.4,6.1-5.6,6.1c-2.2,0-3.7-1.1-4.4-2.4v2.2h-2v-15.9h2v6.3
+		C290.9,219.2,292.5,218.1,294.6,218.1z M294.2,219.8c-2.1,0-4,1.6-4,4.4c0,2.8,1.9,4.4,4,4.4c2.2,0,4-1.6,4-4.4
+		C298.2,221.4,296.3,219.8,294.2,219.8z"/>
+	<path class="th6st1" d="M310.9,218.3h2l-7.1,17.3h-2l2.3-5.7l-4.8-11.7h2.2l3.7,9.5L310.9,218.3z"/>
+	<path class="th6st1" d="M327.3,214.9c3.2,0,5.8,1.6,6.9,4.5H332c-0.8-1.8-2.4-2.8-4.6-2.8c-3.1,0-5.5,2.3-5.5,6c0,3.7,2.3,5.9,5.5,5.9
+		c2.2,0,3.8-1,4.6-2.8h2.3c-1.1,2.9-3.7,4.5-6.9,4.5c-4.2,0-7.5-3.1-7.5-7.6C319.9,218.1,323.2,214.9,327.3,214.9z"/>
+	<path class="th6st1" d="M342.1,218.1c2.2,0,3.7,1.1,4.4,2.3v-2.2h2v11.8h-2v-2.2c-0.7,1.3-2.2,2.4-4.4,2.4c-3.1,0-5.6-2.5-5.6-6.1
+		C336.5,220.5,338.9,218.1,342.1,218.1z M342.4,219.8c-2.2,0-4,1.6-4,4.3c0,2.8,1.8,4.4,4,4.4c2.2,0,4-1.6,4-4.4
+		C346.4,221.4,344.6,219.8,342.4,219.8z"/>
+	<path class="th6st1" d="M352.2,219.9h-1.5v-1.6h1.5v-3h2v3h3.1v1.6h-3.1v6.9c0,1.2,0.4,1.6,1.6,1.6h1.4v1.7h-1.8
+		c-2.1,0-3.3-0.9-3.3-3.2V219.9z"/>
+	<path class="th6st1" d="M364.4,218.1c2.2,0,3.7,1.1,4.4,2.3v-2.2h2v11.8h-2v-2.2c-0.7,1.3-2.2,2.4-4.4,2.4c-3.1,0-5.6-2.5-5.6-6.1
+		C358.8,220.5,361.3,218.1,364.4,218.1z M364.8,219.8c-2.2,0-4,1.6-4,4.3c0,2.8,1.8,4.4,4,4.4s4-1.6,4-4.4
+		C368.8,221.4,367,219.8,364.8,219.8z"/>
+	<path class="th6st1" d="M374.1,214.2h2v15.9h-2V214.2z"/>
+	<path class="th6st1" d="M384.5,230.3c-3.3,0-5.9-2.4-5.9-6.1c0-3.7,2.6-6.1,6-6.1c3.4,0,6,2.3,6,6.1
+		C390.6,227.9,387.9,230.3,384.5,230.3z M384.5,228.5c2,0,4-1.4,4-4.4c0-3-2-4.4-4-4.4c-2.1,0-3.9,1.4-3.9,4.4
+		C380.7,227.1,382.5,228.5,384.5,228.5z"/>
+	<path class="th6st1" d="M398,218.1c2.2,0,3.7,1.1,4.4,2.3v-2.2h2v12c0,3.2-2.2,5.5-5.6,5.5c-3.1,0-5.3-1.6-5.7-4.1h1.9
+		c0.4,1.4,1.8,2.4,3.8,2.4c2.1,0,3.7-1.3,3.7-3.8v-2.5c-0.7,1.3-2.2,2.4-4.4,2.4c-3.2,0-5.6-2.5-5.6-6.1
+		C392.4,220.5,394.9,218.1,398,218.1z M398.4,219.8c-2.2,0-4,1.6-4,4.3c0,2.8,1.8,4.4,4,4.4c2.2,0,4-1.6,4-4.4
+		C402.4,221.4,400.6,219.8,398.4,219.8z"/>
+	<path class="th6st1" d="M407.4,215c0-0.8,0.6-1.3,1.3-1.3c0.7,0,1.3,0.6,1.3,1.3c0,0.8-0.6,1.3-1.3,1.3
+		C407.9,216.4,407.4,215.8,407.4,215z M407.7,218.3h2v11.8h-2V218.3z"/>
+	<path class="th6st1" d="M418,218.1c2.9,0,4.8,1.5,5.4,4h-2.1c-0.4-1.4-1.6-2.3-3.3-2.3c-2.2,0-3.7,1.5-3.7,4.4c0,2.9,1.6,4.5,3.7,4.5
+		c1.7,0,2.9-0.8,3.3-2.3h2.1c-0.6,2.3-2.5,4-5.4,4c-3.4,0-5.7-2.4-5.7-6.1C412.3,220.5,414.6,218.1,418,218.1z"/>
+</g>
+</svg>
+</div><div class="dl-info"><span class="dl-name">Black</span><span class="dl-desc">Single color. B/W prints, forms, embossing and etching.</span></div></div><div class="dl-buttons"><a class="dl-btn dl-btn-svg" href="assets/svg/cloudcasa-logo-dark-stacked.svg" download>SVG</a><a class="dl-btn dl-btn-png" href="assets/png/cloudcasa-logo-dark-stacked.png" download>PNG</a><a class="dl-btn dl-btn-png" href="assets/png/cloudcasa-logo-dark-stacked@2x.png" download>PNG 2x</a></div></div>
+  </div>
+
+  <div class="section-title section-title-with-action" id="dl-standalone"><span>Without &ldquo;by Catalogic&rdquo;</span></div>
+  <div class="dl-section-card">
+    <div class="dl-row"><div class="dl-left"><div class="dl-preview dl-preview-wide dl-preview-color"><svg viewBox="35.6 72.8 478.8 123.8" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<style type="text/css">
+	.th7st0{fill:#111212;}
+	.th7st1{fill:url(#th7_1_);}
+	.th7st2{fill:url(#th7_2_);}
+	.th7st3{fill:#131414;}
+</style>
+<g>
+	<g>
+		<g>
+			<path class="th7st0" d="M196.9,129.6c-2.2-4.1-6.3-6.8-11.3-6.8c-7.2,0-12.8,5.9-12.8,13.1c0,7.1,5.6,13.3,12.8,13.3
+				c4.9,0,9.1-2.9,11.3-7h6.2c-2.5,7.2-9.4,12.3-17.4,12.3c-10.1,0-18.5-8.7-18.5-18.7c0-10.1,8.4-18.5,18.5-18.5
+				c7.9,0,14.8,5.1,17.4,12.2H196.9z"/>
+			<path class="th7st0" d="M211.2,95.7h5.4v57.9h-5.4V95.7z"/>
+			<path class="th7st0" d="M224.7,135.9c0-10.1,8.4-18.5,18.5-18.5c10.1,0,18.5,8.4,18.5,18.5c0,10-8.4,18.7-18.5,18.7
+				C233.1,154.6,224.7,145.9,224.7,135.9z M230.4,135.9c0,7.1,5.6,13.3,12.8,13.3c7.2,0,12.8-6.2,12.8-13.3
+				c0-7.2-5.6-13.1-12.8-13.1C236,122.8,230.4,128.7,230.4,135.9z"/>
+			<path class="th7st0" d="M301.2,153.7h-5.4v-4.3c-2.8,3.1-6.8,4.9-11.7,4.9c-10.2,0-14.6-4.5-14.6-15.9V118h5.4v20.4
+				c0,7.1,3.2,10.5,9.2,10.5c7.2,0,11.7-4.1,11.7-11.9v-19h5.4V153.7z"/>
+			<path class="th7st0" d="M342.1,148c-3.2,4-8,6.6-13.5,6.6c-10.1,0-18.5-8.7-18.5-18.7c0-10.1,8.4-18.5,18.5-18.5
+				c5.4,0,10.2,2.5,13.5,6.4V95.7h5.4v57.9h-5.4V148z M341.7,135.9c0-7.2-6.2-13.1-13.3-13.1c-7.2,0-12.7,5.9-12.7,13.1
+				c0,7.1,5.4,13.3,12.7,13.3C335.5,149.2,341.7,143,341.7,135.9z"/>
+			<path class="th7st0" d="M385.4,129.6c-2.2-4.1-6.3-6.8-11.3-6.8c-7.2,0-12.8,5.9-12.8,13.1c0,7.1,5.6,13.3,12.8,13.3
+				c4.9,0,9.1-2.9,11.3-7h6.2c-2.5,7.2-9.4,12.3-17.4,12.3c-10.1,0-18.5-8.7-18.5-18.7c0-10.1,8.4-18.5,18.5-18.5
+				c7.9,0,14.8,5.1,17.4,12.2H385.4z"/>
+			<path class="th7st0" d="M397.2,135.9c0-10.1,8.4-18.5,18.5-18.5c5.4,0,10.2,2.5,13.5,6.4V118h5.4v35.9h-5.4V148
+				c-3.2,4-8,6.6-13.5,6.6C405.6,154.6,397.2,145.9,397.2,135.9z M428.9,135.9c0-7.2-6.2-13.1-13.3-13.1c-7.2,0-12.7,5.9-12.7,13.1
+				c0,7.1,5.4,13.3,12.7,13.3C422.6,149.2,428.9,143,428.9,135.9z"/>
+			<path class="th7st0" d="M464.6,126.7c-0.5-2.4-3.2-4.2-7.4-4.2c-4.3,0-7.3,2-7.3,4.7c0,2.7,2.4,4.2,8.2,5.4c9.2,1.9,12.8,5,12.8,11
+				c0,6.2-4.8,10.7-13.7,10.7c-8,0-13.4-4.5-13.7-10.7h4.9c0.5,3,4.1,5.6,8.8,5.6c5.3,0,8.8-2.4,8.8-5.6c0-3.4-2.3-4.5-8.8-5.8
+				c-8.5-1.7-12.3-4.8-12.3-10.5c0-5.4,4.2-9.8,12.3-9.8c7.1,0,11.8,3.9,12.3,9.3H464.6z"/>
+			<path class="th7st0" d="M477,135.9c0-10.1,8.4-18.5,18.5-18.5c5.4,0,10.2,2.5,13.5,6.4V118h5.4v35.9H509V148c-3.2,4-8,6.6-13.5,6.6
+				C485.4,154.6,477,145.9,477,135.9z M508.7,135.9c0-7.2-6.2-13.1-13.3-13.1c-7.2,0-12.7,5.9-12.7,13.1c0,7.1,5.4,13.3,12.7,13.3
+				C502.4,149.2,508.7,143,508.7,135.9z"/>
+		</g>
+	</g>
+	<g>
+		<linearGradient id="th7_1_" gradientUnits="userSpaceOnUse" x1="52.9007" y1="177.6705" x2="141.9465" y2="91.68">
+			<stop  offset="0" style="stop-color:#863D72"/>
+			<stop  offset="1" style="stop-color:#DD238D"/>
+		</linearGradient>
+		<path class="th7st1" d="M137.4,87.4c-10.8-9.1-24.7-14.6-39.9-14.6c-34.2,0-61.9,27.7-61.9,61.9c0,34.2,27.7,61.9,61.9,61.9
+			c15.2,0,29.1-5.5,39.9-14.6l5.4-5.1l-13-5c-8.5,7.2-19.4,11.5-31.4,11.5c-26.9,0-48.7-21.8-48.7-48.7c0-26.9,21.8-48.7,48.7-48.7
+			c12,0,22.9,4.3,31.4,11.5l13-5v0L137.4,87.4z"/>
+		<linearGradient id="th7_2_" gradientUnits="userSpaceOnUse" x1="67.9803" y1="164.2871" x2="129.2565" y2="105.1134">
+			<stop  offset="0" style="stop-color:#863D72"/>
+			<stop  offset="1" style="stop-color:#DD238D"/>
+		</linearGradient>
+		<path class="th7st2" d="M98.6,177.3c23.5,0,42.6-19.1,42.6-42.6c0-23.5-19.1-42.6-42.6-42.6c-11.7,0-22.4,4.8-30.1,12.5l8.1,8.1
+			c5.6-5.6,13.4-9.1,22-9.1c17.2,0,31.1,14,31.1,31.1c0,17.2-14,31.1-31.1,31.1c-8.6,0-16.4-3.5-22-9.1l-8.1,8.1
+			C76.2,172.5,86.9,177.3,98.6,177.3z"/>
+	</g>
+</g>
+</svg>
+</div><div class="dl-info"><span class="dl-name">Gradient <span class="badge">Preferred</span></span><span class="dl-desc">Digital, web, presentations, and offset print.</span></div></div><div class="dl-buttons"><a class="dl-btn dl-btn-svg" href="assets/svg/cloudcasa-logo-standalone.svg" download>SVG</a><a class="dl-btn dl-btn-png" href="assets/png/cloudcasa-logo-standalone.png" download>PNG</a><a class="dl-btn dl-btn-png" href="assets/png/cloudcasa-logo-standalone@2x.png" download>PNG 2x</a></div></div>
+    <div class="dl-row"><div class="dl-left"><div class="dl-preview dl-preview-wide dl-preview-white"><svg viewBox="35.6 72.8 478.8 123.8" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<style type="text/css">
+	.th8st0{fill:#FFFFFF;}
+	.th8st1{fill:#FFFFFF;}
+</style>
+<g>
+	<g>
+		<path class="th8st0" d="M196.9,129.6c-2.2-4.1-6.3-6.8-11.3-6.8c-7.2,0-12.8,5.9-12.8,13.1c0,7.1,5.6,13.3,12.8,13.3
+			c4.9,0,9.1-2.9,11.3-7h6.2c-2.5,7.2-9.4,12.3-17.4,12.3c-10.1,0-18.5-8.7-18.5-18.7c0-10.1,8.4-18.5,18.5-18.5
+			c7.9,0,14.8,5.1,17.4,12.2H196.9z"/>
+		<path class="th8st0" d="M211.2,95.7h5.4v57.9h-5.4V95.7z"/>
+		<path class="th8st0" d="M224.7,135.9c0-10.1,8.4-18.5,18.5-18.5c10.1,0,18.5,8.4,18.5,18.5c0,10-8.4,18.7-18.5,18.7
+			C233.1,154.6,224.7,145.9,224.7,135.9z M230.4,135.9c0,7.1,5.6,13.3,12.8,13.3c7.2,0,12.8-6.2,12.8-13.3c0-7.2-5.6-13.1-12.8-13.1
+			C236,122.8,230.4,128.7,230.4,135.9z"/>
+		<path class="th8st0" d="M301.2,153.7h-5.4v-4.3c-2.8,3.1-6.8,4.9-11.7,4.9c-10.2,0-14.6-4.5-14.6-15.9V118h5.4v20.4
+			c0,7.1,3.2,10.5,9.2,10.5c7.2,0,11.7-4.1,11.7-11.9v-19h5.4V153.7z"/>
+		<path class="th8st0" d="M342.1,148c-3.2,4-8,6.6-13.5,6.6c-10.1,0-18.5-8.7-18.5-18.7c0-10.1,8.4-18.5,18.5-18.5
+			c5.4,0,10.2,2.5,13.5,6.4V95.7h5.4v57.9h-5.4V148z M341.7,135.9c0-7.2-6.2-13.1-13.3-13.1c-7.2,0-12.7,5.9-12.7,13.1
+			c0,7.1,5.4,13.3,12.7,13.3C335.5,149.2,341.7,143,341.7,135.9z"/>
+		<path class="th8st0" d="M385.4,129.6c-2.2-4.1-6.3-6.8-11.3-6.8c-7.2,0-12.8,5.9-12.8,13.1c0,7.1,5.6,13.3,12.8,13.3
+			c4.9,0,9.1-2.9,11.3-7h6.2c-2.5,7.2-9.4,12.3-17.4,12.3c-10.1,0-18.5-8.7-18.5-18.7c0-10.1,8.4-18.5,18.5-18.5
+			c7.9,0,14.8,5.1,17.4,12.2H385.4z"/>
+		<path class="th8st0" d="M397.2,135.9c0-10.1,8.4-18.5,18.5-18.5c5.4,0,10.2,2.5,13.5,6.4V118h5.4v35.9h-5.4V148
+			c-3.2,4-8,6.6-13.5,6.6C405.6,154.6,397.2,145.9,397.2,135.9z M428.9,135.9c0-7.2-6.2-13.1-13.3-13.1c-7.2,0-12.7,5.9-12.7,13.1
+			c0,7.1,5.4,13.3,12.7,13.3C422.6,149.2,428.9,143,428.9,135.9z"/>
+		<path class="th8st0" d="M464.6,126.7c-0.5-2.4-3.2-4.2-7.4-4.2c-4.3,0-7.3,2-7.3,4.7c0,2.7,2.4,4.2,8.2,5.4c9.2,1.9,12.8,5,12.8,11
+			c0,6.2-4.8,10.7-13.7,10.7c-8,0-13.4-4.5-13.7-10.7h4.9c0.5,3,4.1,5.6,8.8,5.6c5.3,0,8.8-2.4,8.8-5.6c0-3.4-2.3-4.5-8.8-5.8
+			c-8.5-1.7-12.3-4.8-12.3-10.5c0-5.4,4.2-9.8,12.3-9.8c7.1,0,11.8,3.9,12.3,9.3H464.6z"/>
+		<path class="th8st0" d="M477,135.9c0-10.1,8.4-18.5,18.5-18.5c5.4,0,10.2,2.5,13.5,6.4V118h5.4v35.9H509V148c-3.2,4-8,6.6-13.5,6.6
+			C485.4,154.6,477,145.9,477,135.9z M508.7,135.9c0-7.2-6.2-13.1-13.3-13.1c-7.2,0-12.7,5.9-12.7,13.1c0,7.1,5.4,13.3,12.7,13.3
+			C502.4,149.2,508.7,143,508.7,135.9z"/>
+	</g>
+</g>
+<g>
+	<path fill="#FFFFFF" d="M137.4,87.4c-10.8-9.1-24.7-14.6-39.9-14.6c-34.2,0-61.9,27.7-61.9,61.9c0,34.2,27.7,61.9,61.9,61.9
+		c15.2,0,29.1-5.5,39.9-14.6l5.4-5.1l-13-5c-8.5,7.2-19.4,11.5-31.4,11.5c-26.9,0-48.7-21.8-48.7-48.7c0-26.9,21.8-48.7,48.7-48.7
+		c12,0,22.9,4.3,31.4,11.5l13-5v0L137.4,87.4z"/>
+	<path fill="#FFFFFF" d="M98.6,177.3c23.5,0,42.6-19.1,42.6-42.6c0-23.5-19.1-42.6-42.6-42.6c-11.7,0-22.4,4.8-30.1,12.5l8.1,8.1
+		c5.6-5.6,13.4-9.1,22-9.1c17.2,0,31.1,14,31.1,31.1c0,17.2-14,31.1-31.1,31.1c-8.6,0-16.4-3.5-22-9.1l-8.1,8.1
+		C76.2,172.5,86.9,177.3,98.6,177.3z"/>
+</g>
+</svg>
+</div><div class="dl-info"><span class="dl-name">White</span><span class="dl-desc">Single color, white on dark or photographic backgrounds.</span></div></div><div class="dl-buttons"><a class="dl-btn dl-btn-svg" href="assets/svg/cloudcasa-logo-standalone-white.svg" download>SVG</a><a class="dl-btn dl-btn-png" href="assets/png/cloudcasa-logo-standalone-white.png" download>PNG</a><a class="dl-btn dl-btn-png" href="assets/png/cloudcasa-logo-standalone-white@2x.png" download>PNG 2x</a></div></div>
+    <div class="dl-row"><div class="dl-left"><div class="dl-preview dl-preview-wide dl-preview-color"><svg viewBox="35.6 72.8 478.8 123.8" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<style type="text/css">
+	.th9st0{fill:#111212;}
+	.th9st1{fill:#131414;}
+</style>
+<g>
+	<g>
+		<path class="th9st0" d="M196.9,129.6c-2.2-4.1-6.3-6.8-11.3-6.8c-7.2,0-12.8,5.9-12.8,13.1c0,7.1,5.6,13.3,12.8,13.3
+			c4.9,0,9.1-2.9,11.3-7h6.2c-2.5,7.2-9.4,12.3-17.4,12.3c-10.1,0-18.5-8.7-18.5-18.7c0-10.1,8.4-18.5,18.5-18.5
+			c7.9,0,14.8,5.1,17.4,12.2H196.9z"/>
+		<path class="th9st0" d="M211.2,95.7h5.4v57.9h-5.4V95.7z"/>
+		<path class="th9st0" d="M224.7,135.9c0-10.1,8.4-18.5,18.5-18.5c10.1,0,18.5,8.4,18.5,18.5c0,10-8.4,18.7-18.5,18.7
+			C233.1,154.6,224.7,145.9,224.7,135.9z M230.4,135.9c0,7.1,5.6,13.3,12.8,13.3c7.2,0,12.8-6.2,12.8-13.3c0-7.2-5.6-13.1-12.8-13.1
+			C236,122.8,230.4,128.7,230.4,135.9z"/>
+		<path class="th9st0" d="M301.2,153.7h-5.4v-4.3c-2.8,3.1-6.8,4.9-11.7,4.9c-10.2,0-14.6-4.5-14.6-15.9V118h5.4v20.4
+			c0,7.1,3.2,10.5,9.2,10.5c7.2,0,11.7-4.1,11.7-11.9v-19h5.4V153.7z"/>
+		<path class="th9st0" d="M342.1,148c-3.2,4-8,6.6-13.5,6.6c-10.1,0-18.5-8.7-18.5-18.7c0-10.1,8.4-18.5,18.5-18.5
+			c5.4,0,10.2,2.5,13.5,6.4V95.7h5.4v57.9h-5.4V148z M341.7,135.9c0-7.2-6.2-13.1-13.3-13.1c-7.2,0-12.7,5.9-12.7,13.1
+			c0,7.1,5.4,13.3,12.7,13.3C335.5,149.2,341.7,143,341.7,135.9z"/>
+		<path class="th9st0" d="M385.4,129.6c-2.2-4.1-6.3-6.8-11.3-6.8c-7.2,0-12.8,5.9-12.8,13.1c0,7.1,5.6,13.3,12.8,13.3
+			c4.9,0,9.1-2.9,11.3-7h6.2c-2.5,7.2-9.4,12.3-17.4,12.3c-10.1,0-18.5-8.7-18.5-18.7c0-10.1,8.4-18.5,18.5-18.5
+			c7.9,0,14.8,5.1,17.4,12.2H385.4z"/>
+		<path class="th9st0" d="M397.2,135.9c0-10.1,8.4-18.5,18.5-18.5c5.4,0,10.2,2.5,13.5,6.4V118h5.4v35.9h-5.4V148
+			c-3.2,4-8,6.6-13.5,6.6C405.6,154.6,397.2,145.9,397.2,135.9z M428.9,135.9c0-7.2-6.2-13.1-13.3-13.1c-7.2,0-12.7,5.9-12.7,13.1
+			c0,7.1,5.4,13.3,12.7,13.3C422.6,149.2,428.9,143,428.9,135.9z"/>
+		<path class="th9st0" d="M464.6,126.7c-0.5-2.4-3.2-4.2-7.4-4.2c-4.3,0-7.3,2-7.3,4.7c0,2.7,2.4,4.2,8.2,5.4c9.2,1.9,12.8,5,12.8,11
+			c0,6.2-4.8,10.7-13.7,10.7c-8,0-13.4-4.5-13.7-10.7h4.9c0.5,3,4.1,5.6,8.8,5.6c5.3,0,8.8-2.4,8.8-5.6c0-3.4-2.3-4.5-8.8-5.8
+			c-8.5-1.7-12.3-4.8-12.3-10.5c0-5.4,4.2-9.8,12.3-9.8c7.1,0,11.8,3.9,12.3,9.3H464.6z"/>
+		<path class="th9st0" d="M477,135.9c0-10.1,8.4-18.5,18.5-18.5c5.4,0,10.2,2.5,13.5,6.4V118h5.4v35.9H509V148c-3.2,4-8,6.6-13.5,6.6
+			C485.4,154.6,477,145.9,477,135.9z M508.7,135.9c0-7.2-6.2-13.1-13.3-13.1c-7.2,0-12.7,5.9-12.7,13.1c0,7.1,5.4,13.3,12.7,13.3
+			C502.4,149.2,508.7,143,508.7,135.9z"/>
+	</g>
+</g>
+<g>
+	<path d="M137.4,87.4c-10.8-9.1-24.7-14.6-39.9-14.6c-34.2,0-61.9,27.7-61.9,61.9c0,34.2,27.7,61.9,61.9,61.9
+		c15.2,0,29.1-5.5,39.9-14.6l5.4-5.1l-13-5c-8.5,7.2-19.4,11.5-31.4,11.5c-26.9,0-48.7-21.8-48.7-48.7c0-26.9,21.8-48.7,48.7-48.7
+		c12,0,22.9,4.3,31.4,11.5l13-5v0L137.4,87.4z"/>
+	<path d="M98.6,177.3c23.5,0,42.6-19.1,42.6-42.6c0-23.5-19.1-42.6-42.6-42.6c-11.7,0-22.4,4.8-30.1,12.5l8.1,8.1
+		c5.6-5.6,13.4-9.1,22-9.1c17.2,0,31.1,14,31.1,31.1c0,17.2-14,31.1-31.1,31.1c-8.6,0-16.4-3.5-22-9.1l-8.1,8.1
+		C76.2,172.5,86.9,177.3,98.6,177.3z"/>
+</g>
+</svg>
+</div><div class="dl-info"><span class="dl-name">Black</span><span class="dl-desc">Single color. B/W prints, forms, embossing and etching.</span></div></div><div class="dl-buttons"><a class="dl-btn dl-btn-svg" href="assets/svg/cloudcasa-logo-standalone-dark.svg" download>SVG</a><a class="dl-btn dl-btn-png" href="assets/png/cloudcasa-logo-standalone-dark.png" download>PNG</a><a class="dl-btn dl-btn-png" href="assets/png/cloudcasa-logo-standalone-dark@2x.png" download>PNG 2x</a></div></div>
+  </div>
+
+  <div class="section-title section-title-with-action" id="dl-icon"><span>CC Icon</span></div>
+  <div class="dl-section-card">
+    <div class="dl-row"><div class="dl-left"><div class="dl-preview dl-preview-wide dl-preview-color"><svg viewBox="46.7 30.7 206.5 238.7" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<style type="text/css">
+	.th10st0{fill:url(#th10_1_);}
+	.th10st1{fill:url(#th10_2_);}
+</style>
+<g>
+	
+		<linearGradient id="th10_1_" gradientUnits="userSpaceOnUse" x1="80.1445" y1="71.1802" x2="251.9795" y2="237.1194" gradientTransform="matrix(1 0 0 -1 0 304)">
+		<stop  offset="0" style="stop-color:#843D72"/>
+		<stop  offset="1" style="stop-color:#DB238B"/>
+	</linearGradient>
+	<path class="th10st0" d="M243,58.8c-20.7-17.5-47.6-28.1-77-28.1C100.2,30.7,46.7,84.1,46.7,150s53.4,119.4,119.3,119.4
+		c29.3,0,56.3-10.6,77-28.1l10.2-9.8l-24.9-9.6c-16.3,13.9-37.6,22.1-60.7,22.1c-51.8,0-94-42-94-94c0-51.8,42-94,94-94
+		c23.1,0,44.2,8.4,60.7,22.1l24.9-9.6l0,0L243,58.8z"/>
+	
+		<linearGradient id="th10_2_" gradientUnits="userSpaceOnUse" x1="109.2271" y1="96.9571" x2="227.3752" y2="211.0513" gradientTransform="matrix(1 0 0 -1 0 304)">
+		<stop  offset="0" style="stop-color:#843D72"/>
+		<stop  offset="1" style="stop-color:#DB238B"/>
+	</linearGradient>
+	<path class="th10st1" d="M168.3,232.2c45.2,0,82.2-36.8,82.2-82.2c0-45.2-36.8-82.2-82.2-82.2c-22.7,0-43.2,9.2-58.1,24.1l15.7,15.7
+		c10.8-10.9,25.9-17.7,42.4-17.7c33.2,0,60.1,26.9,60.1,60.1s-26.9,60.1-60.1,60.1c-16.5,0-31.5-6.6-42.4-17.7l-15.7,15.7
+		C125.1,222.9,145.6,232.2,168.3,232.2z"/>
+</g>
+</svg>
+</div><div class="dl-info"><span class="dl-name">Gradient <span class="badge">Preferred</span></span><span class="dl-desc">Digital, web, presentations, and offset print.</span></div></div><div class="dl-buttons"><a class="dl-btn dl-btn-svg" href="assets/svg/cc-icon.svg" download>SVG</a><a class="dl-btn dl-btn-png" href="assets/png/cc-icon.png" download>PNG</a><a class="dl-btn dl-btn-png" href="assets/png/cc-icon@2x.png" download>PNG 2x</a></div></div>
+    <div class="dl-row"><div class="dl-left"><div class="dl-preview dl-preview-wide dl-preview-white"><svg viewBox="46.7 30.7 206.5 238.7" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<path fill="#ffffff" d="M243,58.8c-20.7-17.5-47.6-28.1-77-28.1C100.2,30.7,46.7,84.1,46.7,150s53.4,119.4,119.3,119.4
+	c29.3,0,56.3-10.6,77-28.1l10.2-9.8l-24.9-9.6c-16.3,13.9-37.6,22.1-60.7,22.1c-51.8,0-94-42-94-94c0-51.8,42-94,94-94
+	c23.1,0,44.2,8.4,60.7,22.1l24.9-9.6l0,0L243,58.8z"/>
+<path fill="#ffffff" d="M168.3,232.2c45.2,0,82.2-36.8,82.2-82.2c0-45.2-36.8-82.2-82.2-82.2c-22.7,0-43.2,9.2-58.1,24.1
+	l15.7,15.7c10.8-10.9,25.9-17.7,42.4-17.7c33.2,0,60.1,26.9,60.1,60.1s-26.9,60.1-60.1,60.1c-16.5,0-31.5-6.6-42.4-17.7
+	l-15.7,15.7C125.1,222.9,145.6,232.2,168.3,232.2z"/>
+</svg>
+</div><div class="dl-info"><span class="dl-name">White</span><span class="dl-desc">Single color, white on dark or photographic backgrounds.</span></div></div><div class="dl-buttons"><a class="dl-btn dl-btn-svg" href="assets/svg/cc-icon-white.svg" download>SVG</a><a class="dl-btn dl-btn-png" href="assets/png/cc-icon-white.png" download>PNG</a><a class="dl-btn dl-btn-png" href="assets/png/cc-icon-white@2x.png" download>PNG 2x</a></div></div>
+    <div class="dl-row"><div class="dl-left"><div class="dl-preview dl-preview-wide dl-preview-color"><svg viewBox="46.7 30.7 206.5 238.7" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<path fill="#171717" d="M243,58.8c-20.7-17.5-47.6-28.1-77-28.1C100.2,30.7,46.7,84.1,46.7,150s53.4,119.4,119.3,119.4
+	c29.3,0,56.3-10.6,77-28.1l10.2-9.8l-24.9-9.6c-16.3,13.9-37.6,22.1-60.7,22.1c-51.8,0-94-42-94-94c0-51.8,42-94,94-94
+	c23.1,0,44.2,8.4,60.7,22.1l24.9-9.6l0,0L243,58.8z"/>
+<path fill="#171717" d="M168.3,232.2c45.2,0,82.2-36.8,82.2-82.2c0-45.2-36.8-82.2-82.2-82.2c-22.7,0-43.2,9.2-58.1,24.1
+	l15.7,15.7c10.8-10.9,25.9-17.7,42.4-17.7c33.2,0,60.1,26.9,60.1,60.1s-26.9,60.1-60.1,60.1c-16.5,0-31.5-6.6-42.4-17.7
+	l-15.7,15.7C125.1,222.9,145.6,232.2,168.3,232.2z"/>
+</svg>
+</div><div class="dl-info"><span class="dl-name">Black</span><span class="dl-desc">Single color. B/W prints, forms, embossing and etching.</span></div></div><div class="dl-buttons"><a class="dl-btn dl-btn-svg" href="assets/svg/cc-icon-dark.svg" download>SVG</a><a class="dl-btn dl-btn-png" href="assets/png/cc-icon-dark.png" download>PNG</a><a class="dl-btn dl-btn-png" href="assets/png/cc-icon-dark@2x.png" download>PNG 2x</a></div></div>
+  </div>
+
+  <div class="section-title section-title-with-action" id="dl-source"><span>Source Files &amp; Guidelines</span><div class="section-title-actions"><a class="section-title-zip" href="assets/packages/cloudcasa-logos.zip" download>Download full set<svg width="12" height="12" viewBox="0 0 12 12" fill="none" style="margin-left:6px;vertical-align:-1px;"><path d="M6 1V8M6 8L3 5M6 8L9 5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 10.5H10" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></a></div></div>
+  <div class="dl-section-card">
+    <div class="dl-row"><div class="dl-left"><div class="dl-preview dl-preview-wide dl-preview-color"><svg viewBox="35.6 72.8 478.8 124.4" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<style type="text/css">
+	.th13st0{fill:#111212;}
+	.th13st1{fill:url(#th13_1_);}
+	.th13st2{fill:url(#th13_2_);}
+	.th13st3{fill:#131414;}
+</style>
+<g>
+	<g>
+		<g>
+			<path class="th13st0" d="M196.9,129.6c-2.2-4.1-6.3-6.8-11.3-6.8c-7.2,0-12.8,5.9-12.8,13.1c0,7.1,5.6,13.3,12.8,13.3
+				c4.9,0,9.1-2.9,11.3-7h6.2c-2.5,7.2-9.4,12.3-17.4,12.3c-10.1,0-18.5-8.7-18.5-18.7c0-10.1,8.4-18.5,18.5-18.5
+				c7.9,0,14.8,5.1,17.4,12.2H196.9z"/>
+			<path class="th13st0" d="M211.2,95.7h5.4v57.9h-5.4V95.7z"/>
+			<path class="th13st0" d="M224.7,135.9c0-10.1,8.4-18.5,18.5-18.5c10.1,0,18.5,8.4,18.5,18.5c0,10-8.4,18.7-18.5,18.7
+				C233.1,154.6,224.7,145.9,224.7,135.9z M230.4,135.9c0,7.1,5.6,13.3,12.8,13.3c7.2,0,12.8-6.2,12.8-13.3
+				c0-7.2-5.6-13.1-12.8-13.1C236,122.8,230.4,128.7,230.4,135.9z"/>
+			<path class="th13st0" d="M301.2,153.7h-5.4v-4.3c-2.8,3.1-6.8,4.9-11.7,4.9c-10.2,0-14.6-4.5-14.6-15.9V118h5.4v20.4
+				c0,7.1,3.2,10.5,9.2,10.5c7.2,0,11.7-4.1,11.7-11.9v-19h5.4V153.7z"/>
+			<path class="th13st0" d="M342.1,148c-3.2,4-8,6.6-13.5,6.6c-10.1,0-18.5-8.7-18.5-18.7c0-10.1,8.4-18.5,18.5-18.5
+				c5.4,0,10.2,2.5,13.5,6.4V95.7h5.4v57.9h-5.4V148z M341.7,135.9c0-7.2-6.2-13.1-13.3-13.1c-7.2,0-12.7,5.9-12.7,13.1
+				c0,7.1,5.4,13.3,12.7,13.3C335.5,149.2,341.7,143,341.7,135.9z"/>
+			<path class="th13st0" d="M385.4,129.6c-2.2-4.1-6.3-6.8-11.3-6.8c-7.2,0-12.8,5.9-12.8,13.1c0,7.1,5.6,13.3,12.8,13.3
+				c4.9,0,9.1-2.9,11.3-7h6.2c-2.5,7.2-9.4,12.3-17.4,12.3c-10.1,0-18.5-8.7-18.5-18.7c0-10.1,8.4-18.5,18.5-18.5
+				c7.9,0,14.8,5.1,17.4,12.2H385.4z"/>
+			<path class="th13st0" d="M397.2,135.9c0-10.1,8.4-18.5,18.5-18.5c5.4,0,10.2,2.5,13.5,6.4V118h5.4v35.9h-5.4V148
+				c-3.2,4-8,6.6-13.5,6.6C405.6,154.6,397.2,145.9,397.2,135.9z M428.9,135.9c0-7.2-6.2-13.1-13.3-13.1c-7.2,0-12.7,5.9-12.7,13.1
+				c0,7.1,5.4,13.3,12.7,13.3C422.6,149.2,428.9,143,428.9,135.9z"/>
+			<path class="th13st0" d="M464.6,126.7c-0.5-2.4-3.2-4.2-7.4-4.2c-4.3,0-7.3,2-7.3,4.7c0,2.7,2.4,4.2,8.2,5.4c9.2,1.9,12.8,5,12.8,11
+				c0,6.2-4.8,10.7-13.7,10.7c-8,0-13.4-4.5-13.7-10.7h4.9c0.5,3,4.1,5.6,8.8,5.6c5.3,0,8.8-2.4,8.8-5.6c0-3.4-2.3-4.5-8.8-5.8
+				c-8.5-1.7-12.3-4.8-12.3-10.5c0-5.4,4.2-9.8,12.3-9.8c7.1,0,11.8,3.9,12.3,9.3H464.6z"/>
+			<path class="th13st0" d="M477,135.9c0-10.1,8.4-18.5,18.5-18.5c5.4,0,10.2,2.5,13.5,6.4V118h5.4v35.9H509V148c-3.2,4-8,6.6-13.5,6.6
+				C485.4,154.6,477,145.9,477,135.9z M508.7,135.9c0-7.2-6.2-13.1-13.3-13.1c-7.2,0-12.7,5.9-12.7,13.1c0,7.1,5.4,13.3,12.7,13.3
+				C502.4,149.2,508.7,143,508.7,135.9z"/>
+		</g>
+	</g>
+	<g>
+		<linearGradient id="th13_1_" gradientUnits="userSpaceOnUse" x1="52.9007" y1="177.6705" x2="141.9465" y2="91.68">
+			<stop  offset="0" style="stop-color:#863D72"/>
+			<stop  offset="1" style="stop-color:#DD238D"/>
+		</linearGradient>
+		<path class="th13st1" d="M137.4,87.4c-10.8-9.1-24.7-14.6-39.9-14.6c-34.2,0-61.9,27.7-61.9,61.9c0,34.2,27.7,61.9,61.9,61.9
+			c15.2,0,29.1-5.5,39.9-14.6l5.4-5.1l-13-5c-8.5,7.2-19.4,11.5-31.4,11.5c-26.9,0-48.7-21.8-48.7-48.7c0-26.9,21.8-48.7,48.7-48.7
+			c12,0,22.9,4.3,31.4,11.5l13-5v0L137.4,87.4z"/>
+		<linearGradient id="th13_2_" gradientUnits="userSpaceOnUse" x1="67.9803" y1="164.2871" x2="129.2565" y2="105.1134">
+			<stop  offset="0" style="stop-color:#863D72"/>
+			<stop  offset="1" style="stop-color:#DD238D"/>
+		</linearGradient>
+		<path class="th13st2" d="M98.6,177.3c23.5,0,42.6-19.1,42.6-42.6c0-23.5-19.1-42.6-42.6-42.6c-11.7,0-22.4,4.8-30.1,12.5l8.1,8.1
+			c5.6-5.6,13.4-9.1,22-9.1c17.2,0,31.1,14,31.1,31.1c0,17.2-14,31.1-31.1,31.1c-8.6,0-16.4-3.5-22-9.1l-8.1,8.1
+			C76.2,172.5,86.9,177.3,98.6,177.3z"/>
+	</g>
+	<g>
+		<path class="th13st3" d="M362.5,176.2c3.7,0,6.6,2.8,6.6,7.1c0,4.3-2.9,7.2-6.6,7.2c-2.5,0-4.3-1.3-5.2-2.8v2.6H355v-18.8h2.3v7.4
+			C358.2,177.5,360.1,176.2,362.5,176.2z M362,178.2c-2.5,0-4.7,1.9-4.7,5.1c0,3.3,2.2,5.2,4.7,5.2c2.6,0,4.7-1.9,4.7-5.2
+			S364.6,178.2,362,178.2z"/>
+		<path class="th13st3" d="M381.7,176.5h2.4l-8.4,20.4h-2.4l2.7-6.7l-5.6-13.7h2.6l4.4,11.3L381.7,176.5z"/>
+		<path class="th13st3" d="M401.1,172.5c3.8,0,6.9,1.9,8.2,5.3h-2.8c-1-2.1-2.8-3.3-5.4-3.3c-3.7,0-6.5,2.7-6.5,7c0,4.3,2.8,7,6.5,7
+			c2.6,0,4.5-1.2,5.4-3.3h2.8c-1.3,3.4-4.4,5.3-8.2,5.3c-4.9,0-8.8-3.7-8.8-9C392.3,176.2,396.2,172.5,401.1,172.5z"/>
+		<path class="th13st3" d="M418.5,176.2c2.6,0,4.4,1.3,5.2,2.8v-2.5h2.3v13.9h-2.3v-2.6c-0.8,1.5-2.6,2.8-5.2,2.8
+			c-3.7,0-6.6-2.9-6.6-7.2C411.9,179,414.8,176.2,418.5,176.2z M418.9,178.2c-2.5,0-4.7,1.8-4.7,5.1s2.2,5.2,4.7,5.2
+			s4.7-1.9,4.7-5.2C423.6,180.2,421.5,178.2,418.9,178.2z"/>
+		<path class="th13st3" d="M430.4,178.4h-1.8v-1.9h1.8V173h2.3v3.5h3.6v1.9h-3.6v8.2c0,1.4,0.5,1.9,1.9,1.9h1.7v2h-2.1
+			c-2.5,0-3.9-1-3.9-3.8V178.4z"/>
+		<path class="th13st3" d="M444.8,176.2c2.6,0,4.4,1.3,5.2,2.8v-2.5h2.3v13.9H450v-2.6c-0.8,1.5-2.6,2.8-5.2,2.8c-3.7,0-6.6-2.9-6.6-7.2
+			C438.2,179,441.1,176.2,444.8,176.2z M445.3,178.2c-2.5,0-4.7,1.8-4.7,5.1s2.2,5.2,4.7,5.2s4.7-1.9,4.7-5.2
+			C450,180.2,447.8,178.2,445.3,178.2z"/>
+		<path class="th13st3" d="M456.2,171.6h2.3v18.8h-2.3V171.6z"/>
+		<path class="th13st3" d="M468.5,190.6c-3.9,0-6.9-2.8-6.9-7.2c0-4.4,3.1-7.1,7-7.1c4,0,7,2.8,7,7.1
+			C475.6,187.8,472.5,190.6,468.5,190.6z M468.5,188.6c2.4,0,4.8-1.6,4.8-5.2c0-3.5-2.3-5.1-4.7-5.1c-2.4,0-4.6,1.6-4.6,5.1
+			C464,186.9,466.1,188.6,468.5,188.6z"/>
+		<path class="th13st3" d="M484.4,176.2c2.5,0,4.4,1.3,5.2,2.8v-2.5h2.3v14.2c0,3.8-2.6,6.5-6.6,6.5c-3.6,0-6.3-1.8-6.7-4.8h2.3
+			c0.5,1.7,2.2,2.8,4.4,2.8c2.5,0,4.3-1.6,4.3-4.5v-2.9c-0.8,1.5-2.6,2.8-5.2,2.8c-3.7,0-6.6-2.9-6.6-7.2
+			C477.8,179,480.7,176.2,484.4,176.2z M484.9,178.2c-2.5,0-4.7,1.8-4.7,5.1s2.2,5.2,4.7,5.2s4.7-1.9,4.7-5.2
+			C489.6,180.2,487.4,178.2,484.9,178.2z"/>
+		<path class="th13st3" d="M495.4,172.6c0-0.9,0.7-1.6,1.6-1.6c0.8,0,1.5,0.7,1.5,1.6c0,0.9-0.7,1.6-1.5,1.6
+			C496.1,174.2,495.4,173.5,495.4,172.6z M495.8,176.5h2.3v13.9h-2.3V176.5z"/>
+		<path class="th13st3" d="M508,176.2c3.4,0,5.7,1.8,6.4,4.7h-2.5c-0.5-1.7-1.9-2.7-3.9-2.7c-2.5,0-4.4,1.8-4.4,5.2
+			c0,3.4,1.9,5.2,4.4,5.2c2.1,0,3.4-1,3.9-2.7h2.5c-0.7,2.8-3,4.7-6.4,4.7c-4,0-6.8-2.8-6.8-7.2C501.2,179,504,176.2,508,176.2z"/>
+	</g>
+</g>
+</svg>
+</div><div class="dl-info"><span class="dl-name">Master logo files</span><span class="dl-desc">Editable vector sources for production and print shops.</span></div></div><div class="dl-buttons"><a class="dl-btn dl-btn-ai" href="assets/source/cloudcasa-logo.ai" download>AI</a><a class="dl-btn dl-btn-eps" href="assets/source/cloudcasa-logo.eps" download>EPS</a><a class="dl-btn dl-btn-pdf" href="assets/source/cloudcasa-logo.pdf" download>PDF</a></div></div>
+    <div class="dl-row"><div class="dl-left"><div class="dl-preview dl-preview-wide dl-preview-color dl-preview-doc"><svg viewBox="0 0 24 24" fill="none" stroke="#DD248D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg></div><div class="dl-info"><span class="dl-name">Visual Identity Guidelines</span><span class="dl-desc">14 pages: logo concept, exclusion zone, colors, typography, stationery.</span></div></div><div class="dl-buttons"><a class="dl-btn dl-btn-pdf" href="assets/docs/brand-identity-cloudcasa-by-catalogic.pdf" download>PDF</a></div></div>
+  </div>
+</div>
+
+</div><!-- .page -->
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-inner">
+    <div class="footer-left">
+      <p>CloudCasa is a registered trademark of Catalogic Software, Inc. All rights reserved. The CloudCasa name, logo, and the CC double-C icon are protected trademarks. Unauthorized use, reproduction, or modification of these brand assets is prohibited.</p>
+      <p style="margin-top:8px;">For brand usage inquiries or to request assets not available on this page, contact <a href="mailto:marketing@catalogicsoftware.com">marketing@catalogicsoftware.com</a>.</p>
+    </div>
+    <div style="text-align:right;">
+      <p>&copy; 2024&ndash;2026 Catalogic Software, Inc.</p>
+      <p>140 E. Ridgewood Ave., Suite 415, South Tower, Office 432<br>Paramus, NJ 07652, USA</p>
+      <p style="margin-top:12px;"><a href="https://www.catalogicsoftware.com">catalogicsoftware.com</a> &nbsp;|&nbsp; <a href="https://www.cloudcasa.io">cloudcasa.io</a></p>
+      <p style="margin-top:12px;font-size:11px;opacity:0.6;">Last updated: September 2026</p>
+    </div>
+  </div>
+</div>
+
+<script>
+function showTab(tab, el) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav a').forEach(a => a.classList.remove('active'));
+  document.getElementById('tab-' + tab).classList.add('active');
+  el.classList.add('active');
+  return false;
+}
+
+function goToDownload(id) {
+  var dlTab = document.querySelector('.nav a[data-tab="downloads"]');
+  showTab('downloads', dlTab);
+  requestAnimationFrame(function() {
+    var el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+  return false;
+}
+
+var grid = document.querySelector('.product-grid');
+grid.addEventListener('click', function(e) {
+  var card = e.target.closest('.product-card-link');
+  if (card && card.dataset.dl) goToDownload(card.dataset.dl);
+});
+grid.addEventListener('keydown', function(e) {
+  var card = e.target.closest('.product-card-link');
+  if (card && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); goToDownload(card.dataset.dl); }
+});
+</script>
+</body>
+</html>
