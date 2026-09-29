@@ -1324,6 +1324,42 @@ document.querySelectorAll('.dl-row').forEach(function(row) {
 		buttonGroup.append(link);
 	});
 });
+
+var allWhiteVariants = {
+	'cloudcasa-logo-white.svg': 'cloudcasa-by-catalogic_logo_all-white',
+	'cloudcasa-logo-white-stacked.svg': 'cloudcasa-by-catalogic_logo_stacked_all-white',
+	'cloudcasa-logo-standalone-white.svg': 'cloudcasa_logo_all-white',
+	'cloudcasa_logo_stacked_white.svg': 'cloudcasa_logo_stacked_all-white'
+};
+
+var allWhiteFormats = {
+	'SVG': { folder: 'svg', extension: '.svg' },
+	'PNG': { folder: 'png', extension: '.png' },
+	'PNG 2x': { folder: 'png', extension: '@2x.png' },
+	'AI': { folder: 'source', extension: '.ai' },
+	'PDF': { folder: 'docs', extension: '.pdf' }
+};
+
+Object.keys(allWhiteVariants).forEach(function(whiteLogo) {
+	var originalSvgLink = document.querySelector('.dl-buttons a[href="assets/svg/' + whiteLogo + '"]');
+	if (!originalSvgLink) return;
+
+	var originalRow = originalSvgLink.closest('.dl-row');
+	var allWhiteRow = originalRow.cloneNode(true);
+	var allWhiteName = allWhiteVariants[whiteLogo];
+	var preview = allWhiteRow.querySelector('.dl-preview');
+	preview.innerHTML = '<img src="assets/svg/' + allWhiteName + '.svg" alt="CloudCasa all-white logo">';
+	allWhiteRow.querySelector('.dl-name').textContent = 'All white';
+	allWhiteRow.querySelector('.dl-desc').textContent = 'Single color, all logo elements in white.';
+
+	allWhiteRow.querySelectorAll('.dl-buttons a').forEach(function(link) {
+		var format = link.textContent.trim();
+		var fileFormat = allWhiteFormats[format];
+		link.href = 'assets/' + fileFormat.folder + '/' + allWhiteName + fileFormat.extension;
+	});
+
+	originalRow.after(allWhiteRow);
+});
 </script>
 </body>
 </html>
