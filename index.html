@@ -1091,9 +1091,13 @@
 </g>
 </svg>
 </div><div class="dl-info"><span class="dl-name">Black</span><span class="dl-desc">Single color. B/W prints, forms, embossing and etching.</span></div></div><div class="dl-buttons"><a class="dl-btn dl-btn-svg" href="assets/svg/cloudcasa-logo-standalone-dark.svg" download>SVG</a><a class="dl-btn dl-btn-png" href="assets/png/cloudcasa-logo-standalone-dark.png" download>PNG</a><a class="dl-btn dl-btn-png" href="assets/png/cloudcasa-logo-standalone-dark@2x.png" download>PNG 2x</a></div></div>
-  </div>
+		<div class="dl-group">Stacked</div>
+		<div class="dl-row"><div class="dl-left"><div class="dl-preview dl-preview-wide dl-preview-color"><img src="assets/svg/cloudcasa_logo_stacked_color.svg" alt="CloudCasa standalone stacked gradient logo"></div><div class="dl-info"><span class="dl-name">Gradient <span class="badge">Preferred</span></span><span class="dl-desc">Digital, web, presentations, and offset print.</span></div></div><div class="dl-buttons"><a class="dl-btn dl-btn-svg" href="assets/svg/cloudcasa_logo_stacked_color.svg" download>SVG</a><a class="dl-btn dl-btn-png" href="assets/png/cloudcasa_logo_stacked_color.png" download>PNG</a><a class="dl-btn dl-btn-png" href="assets/png/cloudcasa_logo_stacked_color@2x.png" download>PNG 2x</a></div></div>
+		<div class="dl-row"><div class="dl-left"><div class="dl-preview dl-preview-wide dl-preview-white"><img src="assets/svg/cloudcasa_logo_stacked_white.svg" alt="CloudCasa standalone stacked white logo"></div><div class="dl-info"><span class="dl-name">White</span><span class="dl-desc">Single color, white on dark or photographic backgrounds.</span></div></div><div class="dl-buttons"><a class="dl-btn dl-btn-svg" href="assets/svg/cloudcasa_logo_stacked_white.svg" download>SVG</a><a class="dl-btn dl-btn-png" href="assets/png/cloudcasa_logo_stacked_white.png" download>PNG</a><a class="dl-btn dl-btn-png" href="assets/png/cloudcasa_logo_stacked_white@2x.png" download>PNG 2x</a></div></div>
+		<div class="dl-row"><div class="dl-left"><div class="dl-preview dl-preview-wide dl-preview-color"><img src="assets/svg/cloudcasa_logo_stacked_black.svg" alt="CloudCasa standalone stacked black logo"></div><div class="dl-info"><span class="dl-name">Black</span><span class="dl-desc">Single color. B/W prints, forms, embossing and etching.</span></div></div><div class="dl-buttons"><a class="dl-btn dl-btn-svg" href="assets/svg/cloudcasa_logo_stacked_black.svg" download>SVG</a><a class="dl-btn dl-btn-png" href="assets/png/cloudcasa_logo_stacked_black.png" download>PNG</a><a class="dl-btn dl-btn-png" href="assets/png/cloudcasa_logo_stacked_black@2x.png" download>PNG 2x</a></div></div>
+	</div>
 
-  <div class="section-title section-title-with-action" id="dl-icon"><span>CC Icon</span></div>
+	<div class="section-title section-title-with-action" id="dl-icon"><span>CC Icon</span></div>
   <div class="dl-section-card">
     <div class="dl-row"><div class="dl-left"><div class="dl-preview dl-preview-wide dl-preview-color"><svg viewBox="46.7 30.7 206.5 238.7" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
 <style type="text/css">
@@ -1286,12 +1290,21 @@ var sourceFilesBySvg = {
 	'cloudcasa-logo-standalone.svg': 'cloudcasa_logo_color',
 	'cloudcasa-logo-standalone-white.svg': 'cloudcasa_logo_white',
 	'cloudcasa-logo-standalone-dark.svg': 'cloudcasa_logo_black',
+	'cloudcasa_logo_stacked_color.svg': 'cloudcasa_logo_stacked_color',
+	'cloudcasa_logo_stacked_white.svg': 'cloudcasa_logo_stacked_white',
+	'cloudcasa_logo_stacked_black.svg': 'cloudcasa_logo_stacked_black',
 	'cc-icon.svg': 'cloudcasa_icon_color',
 	'cc-icon-white.svg': 'cloudcasa_icon_white',
 	'cc-icon-dark.svg': 'cloudcasa_icon_black'
 };
 
 document.querySelectorAll('.dl-row').forEach(function(row) {
+	var name = row.querySelector('.dl-name');
+	if (name && name.textContent.trim() === 'Master logo files') {
+		row.remove();
+		return;
+	}
+
 	var svgLink = row.querySelector('.dl-buttons a[href$=".svg"]');
 	if (!svgLink) return;
 
