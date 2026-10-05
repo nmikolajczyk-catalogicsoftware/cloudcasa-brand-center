@@ -948,7 +948,7 @@
 </div><div class="dl-info"><span class="dl-name">Black</span><span class="dl-desc">Single color. B/W prints, forms, embossing and etching.</span></div></div><div class="dl-buttons"><a class="dl-btn dl-btn-svg" href="assets/svg/cloudcasa-logo-dark-stacked.svg" download>SVG</a><a class="dl-btn dl-btn-png" href="assets/png/cloudcasa-logo-dark-stacked.png" download>PNG</a><a class="dl-btn dl-btn-png" href="assets/png/cloudcasa-logo-dark-stacked@2x.png" download>PNG 2x</a></div></div>
   </div>
 
-  <div class="section-title section-title-with-action" id="dl-standalone"><span>Without &ldquo;by Catalogic&rdquo;</span></div>
+  <div class="section-title section-title-with-action" id="dl-standalone"><span>Without &ldquo;by Catalogic&rdquo;</span><div class="section-title-actions"><a class="section-title-zip" href="assets/packages/cloudcasa-standalone-logos.zip" download>Download ZIP<svg width="12" height="12" viewBox="0 0 12 12" fill="none" style="margin-left:6px;vertical-align:-1px;" aria-hidden="true"><path d="M6 1V8M6 8L3 5M6 8L9 5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 10.5H10" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></a></div></div>
   <div class="dl-section-card">
     <div class="dl-row"><div class="dl-left"><div class="dl-preview dl-preview-wide dl-preview-color"><svg viewBox="35.6 72.8 478.8 123.8" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
 <style type="text/css">
@@ -1097,7 +1097,7 @@
 		<div class="dl-row"><div class="dl-left"><div class="dl-preview dl-preview-wide dl-preview-color"><img src="assets/svg/cloudcasa_logo_stacked_black.svg" alt="CloudCasa standalone stacked black logo"></div><div class="dl-info"><span class="dl-name">Black</span><span class="dl-desc">Single color. B/W prints, forms, embossing and etching.</span></div></div><div class="dl-buttons"><a class="dl-btn dl-btn-svg" href="assets/svg/cloudcasa_logo_stacked_black.svg" download>SVG</a><a class="dl-btn dl-btn-png" href="assets/png/cloudcasa_logo_stacked_black.png" download>PNG</a><a class="dl-btn dl-btn-png" href="assets/png/cloudcasa_logo_stacked_black@2x.png" download>PNG 2x</a></div></div>
 	</div>
 
-	<div class="section-title section-title-with-action" id="dl-icon"><span>CC Icon</span></div>
+	<div class="section-title section-title-with-action" id="dl-icon"><span>CC Icon</span><div class="section-title-actions"><a class="section-title-zip" href="assets/packages/cloudcasa-icon.zip" download>Download ZIP<svg width="12" height="12" viewBox="0 0 12 12" fill="none" style="margin-left:6px;vertical-align:-1px;" aria-hidden="true"><path d="M6 1V8M6 8L3 5M6 8L9 5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 10.5H10" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></a></div></div>
   <div class="dl-section-card">
     <div class="dl-row"><div class="dl-left"><div class="dl-preview dl-preview-wide dl-preview-color"><svg viewBox="46.7 30.7 206.5 238.7" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
 <style type="text/css">
@@ -1323,6 +1323,12 @@ document.querySelectorAll('.dl-row').forEach(function(row) {
 		link.textContent = sourceFile.label;
 		buttonGroup.append(link);
 	});
+});
+
+document.querySelectorAll('.dl-preview-white').forEach(function(preview) {
+	var row = preview.closest('.dl-row');
+	var svgLink = row && row.querySelector('.dl-buttons a[href$=".svg"]');
+	if (svgLink) preview.innerHTML = '<img src="' + svgLink.getAttribute('href') + '" alt="">';
 });
 
 var allWhiteVariants = {
