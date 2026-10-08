@@ -37,6 +37,16 @@ def row(group, kind):
             f'<div class="dl-buttons">{buttons}</div></div>\n')
 
 
+def stem(group, kind):
+    return f'{group["base"]}_{kind["suffix"]}'
+
+
+def variant_stems(data):
+    """{zip name: [stems]} in display order."""
+    return {sec["zip"]: [stem(g, data["kinds"][k]) for g in sec["groups"] for k in g["kinds"]]
+            for sec in data["sections"]}
+
+
 def section(sec, kinds):
     out = (f'  <div class="section-title section-title-with-action" id="{sec["id"]}"><span>{sec["title"]}</span>'
            f'<div class="section-title-actions"><a class="section-title-zip" href="assets/packages/{sec["zip"]}" download>'
