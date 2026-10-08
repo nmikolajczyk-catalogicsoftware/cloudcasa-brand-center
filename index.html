@@ -35,6 +35,9 @@
   .hero-text p { font-size: 15px; opacity: 0.7; margin-top: 2px; font-family: 'Inter', sans-serif; font-weight: 400; }
 
   /* Nav */
+  .skip-link { position:absolute; left:-9999px; top:8px; z-index:200; background:var(--white,#fff); color:var(--pink); padding:8px 14px; border-radius:6px; font-weight:600; font-size:13px; }
+  .skip-link:focus { left:8px; }
+  [id^="dl-"] { scroll-margin-top:64px; }
   .nav { display:flex; gap:0; background:white; border-bottom:2px solid var(--border); padding:0 48px; position:sticky; top:0; z-index:100; box-shadow:0 2px 8px rgba(0,0,0,0.04); overflow-x:auto; }
   .nav a { padding:14px 24px; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.5px; color:var(--text-muted); text-decoration:none; border-bottom:3px solid transparent; white-space:nowrap; transition:all .15s; font-family:'Inter',sans-serif; }
   .nav a:hover { color:var(--text); }
@@ -153,8 +156,10 @@
 </head>
 <body>
 
+<a class="skip-link" href="#main">Skip to content</a>
+
 <!-- HEADER -->
-<div class="hero">
+<header class="hero">
   <div class="hero-left">
     <div class="hero-logos">
       <img src="assets/svg/cloudcasa_logo_white.svg" alt="CloudCasa" style="height:39.74px;width:auto;margin:23.21px 12.67px 1.05px 1.86px;">
@@ -164,24 +169,24 @@
       <p>Logos, colors, typography, usage guidelines, and downloads</p>
     </div>
   </div>
+</header>
+
+<div class="nav" role="tablist" aria-label="Brand center sections">
+  <a href="#overview" role="tab" id="tabbtn-overview" data-tab="overview" aria-controls="tab-overview" aria-selected="true" class="active">Overview</a>
+  <a href="#colors" role="tab" id="tabbtn-colors" data-tab="colors" aria-controls="tab-colors" aria-selected="false" tabindex="-1">Colors</a>
+  <a href="#typography" role="tab" id="tabbtn-typography" data-tab="typography" aria-controls="tab-typography" aria-selected="false" tabindex="-1">Typography</a>
+  <a href="#usage" role="tab" id="tabbtn-usage" data-tab="usage" aria-controls="tab-usage" aria-selected="false" tabindex="-1">Usage Rules</a>
+  <a href="#downloads" role="tab" id="tabbtn-downloads" data-tab="downloads" aria-controls="tab-downloads" aria-selected="false" tabindex="-1">Downloads</a>
 </div>
 
-<div class="nav">
-  <a href="#" class="active" data-tab="overview" onclick="return showTab('overview',this)">Overview</a>
-  <a href="#" data-tab="colors" onclick="return showTab('colors',this)">Colors</a>
-  <a href="#" data-tab="typography" onclick="return showTab('typography',this)">Typography</a>
-  <a href="#" data-tab="usage" onclick="return showTab('usage',this)">Usage Rules</a>
-  <a href="#" data-tab="downloads" onclick="return showTab('downloads',this)">Downloads</a>
-</div>
-
-<div class="page">
+<main class="page" id="main">
 
 <!-- OVERVIEW -->
-<div class="section active" id="tab-overview">
+<div class="section active" id="tab-overview" role="tabpanel" aria-labelledby="tabbtn-overview">
   <div class="section-title">Product</div>
   <p class="lead">CloudCasa is Catalogic Software's backup and disaster recovery service for Kubernetes. Delivered as SaaS, it lets teams protect all their clusters and manage backup policies from one place.</p>
 
-  <div class="section-title section-title-with-action"><span>Logo System</span><a class="section-title-view-downloads" href="#" onclick="return showTab('downloads', document.querySelector('.nav a[data-tab=downloads]'));">View downloads &rarr;</a></div>
+  <div class="section-title section-title-with-action"><span>Logo System</span><a class="section-title-view-downloads" href="#downloads">View downloads &rarr;</a></div>
   <p class="lead">The logo comes in two versions: <strong>with</strong> the "by Catalogic" tagline and <strong>without</strong> it. Use the tagline version by default; drop it only where Catalogic is already clear from context.</p>
   <div class="product-grid">
     <div class="product-card product-card-link" data-dl="dl-bycat" tabindex="0" role="link">
@@ -202,7 +207,7 @@
 </div>
 
 <!-- COLORS -->
-<div class="section" id="tab-colors">
+<div class="section" id="tab-colors" role="tabpanel" aria-labelledby="tabbtn-colors">
   <div class="section-title">Brand Colors</div>
   <div class="palette-grid">
     <div class="palette-card">
@@ -276,7 +281,7 @@
 </div>
 
 <!-- TYPOGRAPHY -->
-<div class="section" id="tab-typography">
+<div class="section" id="tab-typography" role="tabpanel" aria-labelledby="tabbtn-typography">
   <div class="section-title section-title-with-action"><span>Typefaces</span><div class="section-title-actions"><a class="dl-btn dl-btn-primary" href="https://fonts.google.com/specimen/Poppins" target="_blank" rel="noopener">Download Poppins<svg width="12" height="12" viewBox="0 0 12 12" fill="none" style="margin-left:6px;vertical-align:-1px;"><path d="M6 1V8M6 8L3 5M6 8L9 5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 10.5H10" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></a><a class="dl-btn dl-btn-primary" href="https://fonts.google.com/specimen/Inter" target="_blank" rel="noopener">Download Inter<svg width="12" height="12" viewBox="0 0 12 12" fill="none" style="margin-left:6px;vertical-align:-1px;"><path d="M6 1V8M6 8L3 5M6 8L9 5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 10.5H10" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></a></div></div>
   <p class="lead" style="max-width:560px;">We use <strong>Poppins</strong> for headings and <strong>Inter</strong> for body text. Both are free on Google Fonts. Open Sans is a legacy fallback only.</p>
 
@@ -332,7 +337,7 @@
 </div>
 
 <!-- USAGE RULES -->
-<div class="section" id="tab-usage">
+<div class="section" id="tab-usage" role="tabpanel" aria-labelledby="tabbtn-usage">
   <div class="section-title">Do</div>
   <div class="rule-card rule-do"><div class="rule-icon">&#10003;</div><div><h5>Always use lowercase</h5><p>The logo text is "cloudcasa" (all lowercase). This applies everywhere: website, decks, documents, social media.</p></div></div>
   <div class="rule-card rule-do"><div class="rule-icon">&#10003;</div><div><h5>Respect the exclusion zone</h5><p>Leave a clear area equal to the height of the letter "l" in "cloudcasa" around all edges of the logo.</p></div></div>
@@ -347,7 +352,7 @@
 </div>
 
 <!-- DOWNLOADS -->
-<div class="section" id="tab-downloads">
+<div class="section" id="tab-downloads" role="tabpanel" aria-labelledby="tabbtn-downloads">
     <div class="section-title section-title-with-action" id="dl-bycat"><span>With &ldquo;by Catalogic&rdquo;</span><div class="section-title-actions"><a class="section-title-zip" href="assets/packages/cloudcasa-by-catalogic-logos.zip" download>Download ZIP<svg width="12" height="12" viewBox="0 0 12 12" fill="none" style="margin-left:6px;vertical-align:-1px;"><path d="M6 1V8M6 8L3 5M6 8L9 5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 10.5H10" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></a></div></div>
   <div class="dl-section-card">
     <div class="dl-group">Horizontal</div>
@@ -395,10 +400,10 @@
   </div>
 </div>
 
-</div><!-- .page -->
+</main>
 
 <!-- FOOTER -->
-<div class="footer">
+<footer class="footer">
   <div class="footer-inner">
     <div class="footer-left">
       <p>CloudCasa is a registered trademark of Catalogic Software, Inc. All rights reserved. The CloudCasa name, logo, and the CC double-C icon are protected trademarks. Unauthorized use, reproduction, or modification of these brand assets is prohibited.</p>
@@ -411,36 +416,9 @@
       <p style="margin-top:12px;font-size:11px;opacity:0.6;">Last updated: September 2026</p>
     </div>
   </div>
-</div>
+</footer>
 
-<script>
-function showTab(tab, el) {
-  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-  document.querySelectorAll('.nav a').forEach(a => a.classList.remove('active'));
-  document.getElementById('tab-' + tab).classList.add('active');
-  el.classList.add('active');
-  return false;
-}
-
-function goToDownload(id) {
-  var dlTab = document.querySelector('.nav a[data-tab="downloads"]');
-  showTab('downloads', dlTab);
-  requestAnimationFrame(function() {
-    var el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  });
-  return false;
-}
-
-var grid = document.querySelector('.product-grid');
-grid.addEventListener('click', function(e) {
-  var card = e.target.closest('.product-card-link');
-  if (card && card.dataset.dl) goToDownload(card.dataset.dl);
-});
-grid.addEventListener('keydown', function(e) {
-  var card = e.target.closest('.product-card-link');
-  if (card && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); goToDownload(card.dataset.dl); }
-});
-</script>
+<script src="assets/js/tabs.js" defer></script>
+<noscript><style>.section{display:block}.nav{display:none}</style></noscript>
 </body>
 </html>
