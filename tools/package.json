@@ -11,14 +11,10 @@
     "lint:css": "cd .. && stylelint --config tools/.stylelintrc.json \"assets/css/*.css\"",
     "lint:html": "cd .. && html-validate -c tools/.htmlvalidate.json index.html",
     "format": "cd .. && prettier --config tools/.prettierrc.json --write \"assets/css/*.css\" \"assets/js/*.js\" \"tests/**/*.{js,mjs}\" \"tools/*.{mjs,json}\" variants.json vercel.json",
-    "format:check": "cd .. && prettier --config tools/.prettierrc.json --check \"assets/css/*.css\" \"assets/js/*.js\" \"tests/**/*.{js,mjs}\" \"tools/*.{mjs,json}\" variants.json vercel.json",
-    "test": "playwright test --config tools/playwright.config.mjs",
-    "test:update": "playwright test --config tools/playwright.config.mjs --update-snapshots"
+    "format:check": "cd .. && prettier --config tools/.prettierrc.json --check \"assets/css/*.css\" \"assets/js/*.js\" \"tests/**/*.{js,mjs}\" \"tools/*.{mjs,json}\" variants.json vercel.json"
   },
   "devDependencies": {
-    "@axe-core/playwright": "^4.13.0",
     "@eslint/js": "^9.39.5",
-    "@playwright/test": "~1.49.1",
     "eslint": "^9.39.5",
     "globals": "^15.15.0",
     "html-validate": "^9.7.1",

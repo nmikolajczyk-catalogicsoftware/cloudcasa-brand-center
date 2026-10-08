@@ -1,13 +1,14 @@
 :root {
   --pink: #dd248d;
   --pink-dark: #b81c74;
+  --pink-deep: #9e1763;
   --plum: #863e73;
   --black: #171717;
   --white: #fff;
   --bg: #f7f7fa;
   --border: #e4e6ed;
   --text: #2c3e50;
-  --text-muted: #7f8c8d;
+  --text-muted: #5f6c6d;
   --card: #fff;
   --border-subtle: #f0f1f5;
   --text-body: #555;
@@ -25,7 +26,7 @@
   --fmt-pdf: #b71c1c;
   --fmt-pdf-bg: #ffebee;
   --fmt-pdf-hover: #ffcdd2;
-  --fmt-ai: #e65100;
+  --fmt-ai: #b34000;
   --fmt-ai-bg: #fff3e0;
   --fmt-ai-hover: #ffe0b2;
   --pink-tint: #fce4f1;
@@ -124,7 +125,7 @@ h6 {
   top: 8px;
   z-index: 200;
   background: var(--white, var(--white));
-  color: var(--pink);
+  color: var(--pink-dark);
   padding: 8px 14px;
   border-radius: 6px;
   font-weight: 600;
@@ -139,16 +140,19 @@ h6 {
   scroll-margin-top: 64px;
 }
 
-.nav {
-  display: flex;
-  gap: 0;
+.nav-bar {
   background: white;
   border-bottom: 2px solid var(--border);
-  padding: 0 48px;
   position: sticky;
   top: 0;
   z-index: 100;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.nav {
+  display: flex;
+  gap: 0;
+  padding: 0 48px;
   overflow-x: auto;
 }
 
@@ -171,7 +175,7 @@ h6 {
 }
 
 .nav a.active {
-  color: var(--pink);
+  color: var(--pink-dark);
   border-bottom-color: var(--pink);
 }
 
@@ -197,6 +201,7 @@ a:focus-visible {
 }
 
 .section-title {
+  font-family: inherit;
   font-family: 'Poppins', sans-serif;
   font-size: 11px;
   font-weight: 500;
@@ -211,6 +216,7 @@ a:focus-visible {
 
 .section-title-with-action {
   display: flex;
+  flex-wrap: wrap;
   align-items: baseline;
   justify-content: space-between;
   gap: 12px;
@@ -230,7 +236,7 @@ a:focus-visible {
   letter-spacing: 0.3px;
   text-decoration: none;
   color: var(--white);
-  background: var(--pink);
+  background: var(--pink-dark);
   padding: 4px 10px;
   border-radius: 6px;
   transition: background 0.15s;
@@ -239,7 +245,7 @@ a:focus-visible {
 
 .section-title-zip:hover,
 .section-title-view-downloads:hover {
-  background: var(--pink-dark);
+  background: var(--pink-deep);
 }
 
 .lead {
@@ -287,7 +293,7 @@ a:focus-visible {
   padding: 16px;
 }
 
-.palette-info h4 {
+.palette-info h3 {
   font-size: 14px;
   margin-bottom: 8px;
 }
@@ -411,7 +417,7 @@ a:focus-visible {
   flex: 1;
 }
 
-.version-card h5 {
+.version-card h3 {
   font-size: 14px;
   margin-bottom: 4px;
 }
@@ -427,7 +433,7 @@ a:focus-visible {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.4px;
-  color: var(--pink);
+  color: var(--pink-dark);
   background: var(--pink-tint);
   padding: 1px 7px;
   border-radius: 4px;
@@ -470,7 +476,7 @@ a:focus-visible {
   color: var(--danger);
 }
 
-.rule-card h5 {
+.rule-card h3 {
   font-size: 14px;
   margin-bottom: 2px;
 }
@@ -582,12 +588,12 @@ a:focus-visible {
 }
 
 .dl-btn-primary {
-  background: var(--pink);
+  background: var(--pink-dark);
   color: var(--white);
 }
 
 .dl-btn-primary:hover {
-  background: var(--pink-dark);
+  background: var(--pink-deep);
 }
 
 .dl-btn-png {
@@ -749,7 +755,7 @@ a:focus-visible {
 
 .footer a {
   color: rgba(255, 255, 255, 0.6);
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 .footer a:hover {
@@ -842,7 +848,6 @@ a:focus-visible {
 .footer-updated {
   margin-top: 12px;
   font-size: 11px;
-  opacity: 0.6;
 }
 
 .lead--narrow {
@@ -914,7 +919,7 @@ a:focus-visible {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  color: var(--pink);
+  color: var(--pink-dark);
   margin-bottom: 10px;
 }
 
@@ -923,7 +928,7 @@ a:focus-visible {
   align-items: center;
   padding: 8px 16px;
   border-radius: 6px;
-  background: var(--pink);
+  background: var(--pink-dark);
   color: var(--white);
   font-size: 13px;
   font-weight: 600;
@@ -997,4 +1002,21 @@ a:focus-visible {
   border: none;
   padding: 0;
   margin-bottom: 0;
+}
+
+/* Headings keep the look of the elements they replaced (h2 inside .section-title) */
+
+.section-title h2 {
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  color: inherit;
+}
+
+/* Swatch labels on the light end of the brand pink need a backing for AA contrast */
+.sw-pink .hex,
+.sw-gradient .hex {
+  background: rgb(23 23 23 / 72%);
+  padding: 2px 8px;
+  border-radius: 4px;
 }

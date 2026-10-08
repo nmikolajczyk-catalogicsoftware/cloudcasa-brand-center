@@ -5,22 +5,67 @@ on:
     branches: [main]
   pull_request:
 
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+defaults:
+  run:
+    working-directory: .
+
 jobs:
-  checks:
+  static:
+    name: Lint and integrity checks
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: .
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Generated files are up to date
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: tools/package-lock.json
+      - name: Generated files are up to date (page, ZIP packages)
         run: |
           python3 tools/build.py --check
           python3 tools/build_zips.py --check
-      - name: Repository checks (links, assets, colours, markup)
+      - name: Repository checks (links, formats, colours, file integrity, headers, markup)
         run: python3 tools/check.py
-      - name: Browser tests (tabs, keyboard, hash routing)
-        run: python3 tools/test_browser.py
+      - name: Lint (ESLint, Stylelint, html-validate, Prettier)
+        run: |
+          npm ci --prefix tools
+          npm run lint --prefix tools
+
+  e2e:
+    name: End-to-end tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: tests/package-lock.json
+      - name: Install dependencies
+        working-directory: tests
+        run: npm ci
+      - name: Install browsers
+        working-directory: tests
+        run: npx playwright install --with-deps chromium firefox webkit
+      - name: Playwright (Chromium, Firefox, WebKit, mobile Chrome, mobile Safari)
+        working-directory: tests
+        run: >
+          npx playwright test
+          --project=chromium --project=firefox --project=webkit
+          --project=mobile-chrome --project=mobile-safari
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: playwright-report
+          path: playwright-report
+          retention-days: 7

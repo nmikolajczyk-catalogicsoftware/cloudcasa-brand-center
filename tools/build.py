@@ -48,7 +48,7 @@ def variant_stems(data):
 
 
 def section(sec, kinds):
-    out = (f'  <div class="section-title section-title-with-action" id="{sec["id"]}"><span>{sec["title"]}</span>'
+    out = (f'  <div class="section-title section-title-with-action" id="{sec["id"]}"><h2>{sec["title"]}</h2>'
            f'<div class="section-title-actions"><a class="section-title-zip" href="assets/packages/{sec["zip"]}" download>'
            f'Download ZIP{ZIP_ICON}</a></div></div>\n  <div class="dl-section-card">\n')
     for group in sec["groups"]:

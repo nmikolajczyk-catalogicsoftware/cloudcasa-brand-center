@@ -1,0 +1,19 @@
+{
+  "name": "brand-center-tests",
+  "private": true,
+  "description": "Playwright end-to-end tests. Not part of the deployed site (tests/ is excluded by .vercelignore).",
+  "engines": {
+    "node": ">=18.18"
+  },
+  "scripts": {
+    "test": "playwright test --project=chromium --project=firefox --project=webkit --project=mobile-chrome --project=mobile-safari",
+    "test:chromium": "playwright test --project=chromium",
+    "test:visual": "playwright test --project=visual",
+    "test:update-visual": "playwright test --project=visual --update-snapshots",
+    "report": "playwright show-report ../playwright-report"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.13.0",
+    "@playwright/test": "~1.49.1"
+  }
+}

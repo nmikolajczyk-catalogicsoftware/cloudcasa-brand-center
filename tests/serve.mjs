@@ -21,15 +21,23 @@ const types = {
   '.zip': 'application/zip',
   '.ai': 'application/postscript',
 };
-const hidden =
-  /^\/(tools|tests|node_modules|\.git|\.github)\/|^\/(variants\.json|index\.template\.html|README\.md|package(-lock)?\.json)$/;
+// Mirror .vercelignore: whatever Vercel does not deploy must 404 here too.
+const ignored = (await readFile(join(root, '.vercelignore'), 'utf8').catch(() => ''))
+  .split('\n')
+  .map((line) => line.trim())
+  .filter((line) => line && !line.startsWith('#'));
+const isHidden = (path) =>
+  path === '/.vercelignore' ||
+  path === '/vercel.json' ||
+  path.startsWith('/node_modules/') ||
+  ignored.some((rule) => (rule.endsWith('/') ? path.startsWith(`/${rule}`) : path === `/${rule}`));
 
 export function start(port = 0) {
   const server = createServer(async (req, res) => {
     const path = decodeURIComponent(new URL(req.url, 'http://x').pathname);
     const file = normalize(join(root, path.endsWith('/') ? `${path}index.html` : path));
     try {
-      if (!file.startsWith(root) || hidden.test(path)) throw new Error('not found');
+      if (!file.startsWith(root) || isHidden(path)) throw new Error('not found');
       if (!(await stat(file)).isFile()) throw new Error('not found');
       res.writeHead(200, { 'Content-Type': types[extname(file)] || 'application/octet-stream', ...headers });
       res.end(await readFile(file));
