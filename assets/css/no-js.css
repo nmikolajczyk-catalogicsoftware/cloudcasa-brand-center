@@ -1,3 +1,8 @@
 /* Without JavaScript every panel is shown and the tab bar is hidden. */
-.section { display: block; }
-.nav { display: none; }
+.section {
+  display: block;
+}
+
+.nav {
+  display: none;
+}

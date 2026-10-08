@@ -1,10 +1,5 @@
 {
-  "brand_colors": [
-    "#863E73",
-    "#DD248D",
-    "#171717",
-    "#FFFFFF"
-  ],
+  "brand_colors": ["#863E73", "#DD248D", "#171717", "#FFFFFF"],
   "kinds": {
     "color": {
       "name": "Gradient",
@@ -53,25 +48,13 @@
           "name": "Horizontal",
           "label": "CloudCasa by Catalogic horizontal",
           "base": "cloudcasa-by-catalogic_logo",
-          "kinds": [
-            "color",
-            "spot",
-            "white",
-            "all-white",
-            "black"
-          ]
+          "kinds": ["color", "spot", "white", "all-white", "black"]
         },
         {
           "name": "Stacked",
           "label": "CloudCasa by Catalogic stacked",
           "base": "cloudcasa-by-catalogic_logo_stacked",
-          "kinds": [
-            "color",
-            "spot",
-            "white",
-            "all-white",
-            "black"
-          ]
+          "kinds": ["color", "spot", "white", "all-white", "black"]
         }
       ]
     },
@@ -84,25 +67,13 @@
           "name": "Horizontal",
           "label": "CloudCasa horizontal",
           "base": "cloudcasa_logo",
-          "kinds": [
-            "color",
-            "spot",
-            "white",
-            "all-white",
-            "black"
-          ]
+          "kinds": ["color", "spot", "white", "all-white", "black"]
         },
         {
           "name": "Stacked",
           "label": "CloudCasa stacked",
           "base": "cloudcasa_logo_stacked",
-          "kinds": [
-            "color",
-            "spot",
-            "white",
-            "all-white",
-            "black"
-          ]
+          "kinds": ["color", "spot", "white", "all-white", "black"]
         }
       ]
     },
@@ -114,12 +85,7 @@
         {
           "label": "CloudCasa icon",
           "base": "cloudcasa_icon",
-          "kinds": [
-            "color",
-            "spot",
-            "white",
-            "black"
-          ]
+          "kinds": ["color", "spot", "white", "black"]
         }
       ]
     }

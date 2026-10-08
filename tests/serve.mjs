@@ -7,13 +7,22 @@ import { fileURLToPath } from 'node:url';
 
 const root = resolve(fileURLToPath(new URL('..', import.meta.url)));
 const config = JSON.parse(await readFile(join(root, 'vercel.json'), 'utf8'));
-const headers = Object.fromEntries(config.headers.flatMap((rule) => rule.headers.map((h) => [h.key, h.value])));
+const headers = Object.fromEntries(
+  config.headers.flatMap((rule) => rule.headers.map((h) => [h.key, h.value]))
+);
 const types = {
-  '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'application/javascript; charset=utf-8',
-  '.json': 'application/json; charset=utf-8', '.svg': 'image/svg+xml', '.png': 'image/png', '.pdf': 'application/pdf',
-  '.zip': 'application/zip', '.ai': 'application/postscript',
+  '.html': 'text/html; charset=utf-8',
+  '.css': 'text/css; charset=utf-8',
+  '.js': 'application/javascript; charset=utf-8',
+  '.json': 'application/json; charset=utf-8',
+  '.svg': 'image/svg+xml',
+  '.png': 'image/png',
+  '.pdf': 'application/pdf',
+  '.zip': 'application/zip',
+  '.ai': 'application/postscript',
 };
-const hidden = /^\/(tools|tests|node_modules|\.git|\.github)\/|^\/(variants\.json|index\.template\.html|README\.md|package(-lock)?\.json)$/;
+const hidden =
+  /^\/(tools|tests|node_modules|\.git|\.github)\/|^\/(variants\.json|index\.template\.html|README\.md|package(-lock)?\.json)$/;
 
 export function start(port = 0) {
   const server = createServer(async (req, res) => {

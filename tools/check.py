@@ -192,11 +192,14 @@ def main():
     duplicates = {i for i in page.ids if page.ids.count(i) > 1}
     if duplicates:
         fail(f"duplicate ids: {sorted(duplicates)}")
+    tab_names = {attrs.get("data-tab") for tag, attrs in tags if attrs.get("role") == "tab"}
     for tag, attrs in tags:
         if attrs.get("role") == "tab" and attrs.get("aria-controls") not in page.ids:
             fail(f"tab controls a missing panel: {attrs.get('aria-controls')}")
-        if "data-dl" in attrs and attrs["data-dl"] not in page.ids:
-            fail(f"card links to a missing section: {attrs['data-dl']}")
+        href = attrs.get("href", "")
+        if tag == "a" and href.startswith("#") and len(href) > 1:
+            if href[1:] not in page.ids and href[1:] not in tab_names:
+                fail(f"in-page link points nowhere: {href}")
 
 
 if __name__ == "__main__":

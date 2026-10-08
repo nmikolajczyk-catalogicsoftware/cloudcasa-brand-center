@@ -6,3 +6,5 @@ index.template.html
 README.md
 .editorconfig
 .gitignore
+test-results/
+playwright-report/

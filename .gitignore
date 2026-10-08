@@ -1,5 +1,8 @@
+*.pyc
+*.tmp
 .DS_Store
 __pycache__/
-*.pyc
 _browser_test.html
-*.tmp
+node_modules/
+playwright-report/
+test-results/
