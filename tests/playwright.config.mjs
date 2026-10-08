@@ -1,7 +1,8 @@
 import { defineConfig, devices } from '@playwright/test';
 
 const port = 4173;
-const baseURL = `http://127.0.0.1:${port}`;
+// BASE_URL=https://example.vercel.app runs the suite against a deployment instead of the local server
+const baseURL = process.env.BASE_URL ?? `http://127.0.0.1:${port}`;
 
 export default defineConfig({
   testDir: './e2e',
@@ -14,12 +15,9 @@ export default defineConfig({
     : [['list']],
   use: { baseURL, trace: 'retain-on-failure' },
   // The site is served with the exact headers from vercel.json (see tests/serve.mjs)
-  webServer: {
-    command: `node serve.mjs ${port}`,
-    cwd: '.',
-    url: baseURL,
-    reuseExistingServer: !process.env.CI,
-  },
+  webServer: process.env.BASE_URL
+    ? undefined
+    : { command: `node serve.mjs ${port}`, cwd: '.', url: baseURL, reuseExistingServer: !process.env.CI },
   projects: [
     { name: 'chromium', testIgnore: /visual/, use: { ...devices['Desktop Chrome'] } },
     { name: 'firefox', testIgnore: /visual/, use: { ...devices['Desktop Firefox'] } },
