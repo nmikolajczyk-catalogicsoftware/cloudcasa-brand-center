@@ -2,6 +2,8 @@
 // the result is written to document.title as "PASS ... || FAIL ...".
 (function () {
   var results = [];
+  var errors = [];
+  window.addEventListener('error', function (e) { errors.push(e.message); });
   var tabs = [].slice.call(document.querySelectorAll('[role=tab]'));
   var names = tabs.map(function (t) { return t.dataset.tab; });
   var card = document.querySelector('[data-dl]');
@@ -59,6 +61,7 @@
       card.focus(); key(card, 'Enter'); return wait(100);
     }).then(function () {
       check('Enter on a focused card opens Downloads', only('downloads'), state());
+      check('no uncaught errors during the whole run', errors.length === 0, errors);
       check('exactly one tabpanel is visible', [].filter.call(document.querySelectorAll('[role=tabpanel]'), function (p) { return p.offsetParent !== null; }).length === 1, {});
       document.title = results.join(' || ');
     });

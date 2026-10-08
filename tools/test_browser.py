@@ -39,7 +39,7 @@ def run(chrome, page, hash_):
 
 if __name__ == "__main__":
     chrome, failed, total = find_chrome(), 0, 0
-    for hash_ in ["", "#typography", "#downloads"]:
+    for hash_ in ["", "#typography", "#downloads", "#%", "#%E0%A4%A", "#unknown-section"]:
         results = run(chrome, "index.html", hash_)
         if not results:
             sys.exit(f"no test output for hash '{hash_}'")

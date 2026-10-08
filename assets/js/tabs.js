@@ -1,13 +1,19 @@
 // Tabbed layout: ARIA tabs, keyboard support and hash routing.
-// URL hash selects a tab (#colors) or deep-links to an element inside one (#dl-bycat).
+// The URL hash selects a tab (#colors) or deep-links to an element inside one (#dl-bycat).
 (function () {
   'use strict';
 
   var tabs = Array.prototype.slice.call(document.querySelectorAll('[role="tab"]'));
+  if (!tabs.length) return;
+
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   function panelOf(tab) {
     return document.getElementById(tab.getAttribute('aria-controls'));
+  }
+
+  function tabForPanel(panel) {
+    return tabs.filter(function (t) { return panelOf(t) === panel; })[0];
   }
 
   function select(tab) {
@@ -20,16 +26,26 @@
     });
   }
 
+  // A hand-typed or truncated URL ("#%") makes decodeURIComponent throw; treat it as "no hash".
+  function hashId() {
+    try {
+      return decodeURIComponent(location.hash.slice(1));
+    } catch (e) {
+      return '';
+    }
+  }
+
   function route() {
-    var id = decodeURIComponent(location.hash.slice(1));
+    var id = hashId();
     var tab = tabs.filter(function (t) { return t.dataset.tab === id; })[0];
     if (tab) return select(tab);
 
     var target = id && document.getElementById(id);
     var panel = target && target.closest('[role="tabpanel"]');
-    if (!panel) return select(tabs[0]);
+    var owner = panel && tabForPanel(panel);
+    if (!owner) return select(tabs[0]);
 
-    select(tabs.filter(function (t) { return panelOf(t) === panel; })[0]);
+    select(owner);
     target.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
   }
 
