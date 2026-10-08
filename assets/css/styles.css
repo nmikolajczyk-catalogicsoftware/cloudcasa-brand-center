@@ -203,7 +203,7 @@ a:focus-visible {
 .section-title {
   font-family: inherit;
   font-family: 'Poppins', sans-serif;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -230,7 +230,7 @@ a:focus-visible {
 
 .section-title-zip,
 .section-title-view-downloads {
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.3px;
@@ -389,7 +389,7 @@ a:focus-visible {
   margin-top: 16px;
   padding-top: 12px;
   border-top: 1px dashed var(--border);
-  font-size: 11px;
+  font-size: 12px;
   color: var(--text-muted);
   font-family: 'Inter', sans-serif;
 }
@@ -429,7 +429,7 @@ a:focus-visible {
 
 .badge {
   display: inline-block;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.4px;
@@ -551,7 +551,7 @@ a:focus-visible {
 }
 
 .dl-desc {
-  font-size: 11px;
+  font-size: 12px;
   color: var(--text-muted);
 }
 
@@ -567,7 +567,7 @@ a:focus-visible {
   align-items: center;
   padding: 5px 12px;
   border-radius: 6px;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
   text-decoration: none;
   text-transform: uppercase;
@@ -847,7 +847,7 @@ a:focus-visible {
 
 .footer-updated {
   margin-top: 12px;
-  font-size: 11px;
+  font-size: 12px;
 }
 
 .lead--narrow {
@@ -915,7 +915,7 @@ a:focus-visible {
 }
 
 .eyebrow {
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;

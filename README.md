@@ -85,7 +85,11 @@ Pixel baselines (`npm run test:visual`) are stored for macOS only and are not ru
 
 Accessibility decisions worth knowing: the brand pink `#DD248D` is 4.46:1 on white, just below the 4.5:1 AA threshold
 for small text, so text and solid buttons use the darker `--pink-dark` (`#B81C74`); the logo, swatches and gradients keep
-the brand pink. Secondary text is `#5F6C6D`.
+the brand pink. Secondary text is `#5F6C6D`. No text is smaller than 12px.
+
+## Measured quality (Lighthouse, mobile, local server, one run)
+
+Accessibility, Best Practices and SEO: **100** on every tab; Performance 94-99; CLS under 0.03. Lighthouse is not part of CI.
 
 ## Known limitations / hand-over notes
 
@@ -99,3 +103,4 @@ the brand pink. Secondary text is `#5F6C6D`.
   the Firefox results of the test suite were never seen locally. The other four profiles passed locally.
 - Fonts come from Google Fonts (allowed explicitly in the CSP). Self-hosting them would remove the third-party request.
 - The two brand-center repositories share `tabs.js` and the tooling as copies; keep them in sync when changing one.
+- Opening the site directly on `#downloads` first paints the Overview panel and then switches (one layout shift of the footer, CLS 0.09 on desktop; still rated "good"). Fixing it needs an early render-blocking script.
