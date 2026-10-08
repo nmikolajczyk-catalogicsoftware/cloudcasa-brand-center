@@ -14,12 +14,12 @@
     "format:check": "cd .. && prettier --config tools/.prettierrc.json --check \"assets/css/*.css\" \"assets/js/*.js\" \"tests/**/*.{js,mjs}\" \"tools/*.{mjs,json}\" variants.json vercel.json"
   },
   "devDependencies": {
-    "@eslint/js": "^9.39.5",
-    "eslint": "^9.39.5",
-    "globals": "^15.15.0",
-    "html-validate": "^9.7.1",
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.12.0",
+    "globals": "^17.13.0",
+    "html-validate": "^11.16.2",
     "prettier": "^3.9.9",
-    "stylelint": "^16.26.1",
-    "stylelint-config-standard": "^36.0.1"
+    "stylelint": "^17.16.0",
+    "stylelint-config-standard": "^40.0.0"
   }
 }
