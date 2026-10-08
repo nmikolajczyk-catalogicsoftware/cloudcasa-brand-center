@@ -65,8 +65,7 @@ request. `check.py` also guards the layout rules: no inline `style`/`onclick`, e
 
 ## Known limitations / hand-over notes
 
-- The **brandbook PDF has no "All White" page** yet. The PDF is the source of truth and is edited by the design owner; the
-  site already offers the all-white logo files.
+- The **brandbook PDF intentionally has no "All White" page** (decision: not added). The PDF is the source of truth for the identity; the site still offers the all-white logo files.
 - The two spot swatches are created **by name** (with the brandbook CMYK alternates), not picked from the Pantone library.
   Open one `*_spot.pdf` in Illustrator's Separations Preview before sending it to a printer.
 - Illustrator-exported SVGs carry Adobe XMP metadata (document IDs); harmless, but it changes on every re-export.
