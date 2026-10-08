@@ -6,6 +6,8 @@ page works without JavaScript. Run from the repo root:  python3 tools/build.py
 Pass --check to fail if the committed index.html is out of date.
 """
 import json
+import re
+import struct
 import sys
 from html import escape
 from pathlib import Path
@@ -29,7 +31,7 @@ def row(group, kind):
         f'<a class="dl-btn {cls}" href="assets/{folder}/{stem}{ext}" download>{label}</a>'
         for label, cls, folder, ext in BUTTONS)
     return (f'    <div class="dl-row"><div class="dl-left"><div class="dl-preview dl-preview-wide dl-preview-{kind["preview"]}">'
-            f'<img src="assets/svg/{stem}.svg" alt="{alt}"></div>'
+            f'<img src="assets/svg/{stem}.svg" alt="{alt}" loading="lazy" decoding="async"></div>'
             f'<div class="dl-info"><span class="dl-name">{kind["name"]}{badge}</span>'
             f'<span class="dl-desc">{kind["desc"]}</span></div></div>'
             f'<div class="dl-buttons">{buttons}</div></div>\n')
@@ -46,11 +48,33 @@ def section(sec, kinds):
     return out + "  </div>\n\n"
 
 
+def image_size(path):
+    """Intrinsic (width, height) of an SVG (viewBox) or PNG, rounded to integers."""
+    if path.suffix == ".png":
+        w, h = struct.unpack(">II", path.read_bytes()[16:24])
+        return w, h
+    match = re.search(r'viewBox="([-\d.\s]+)"', path.read_text()[:2000])
+    _, _, w, h = (float(v) for v in match.group(1).split())
+    return round(w), round(h)
+
+
+def add_image_dimensions(html):
+    """Give every local <img> width/height so the browser reserves space (no layout shift)."""
+    def fix(match):
+        tag = match.group(0)
+        if " width=" in tag:
+            return tag
+        w, h = image_size(ROOT / match.group(1))
+        return tag.replace("<img ", f'<img width="{w}" height="{h}" ', 1)
+    return re.sub(r'<img [^>]*?src="(assets/[^"]+)"[^>]*>', fix, html)
+
+
 def build():
     data = json.loads((ROOT / "variants.json").read_text())
     template = (ROOT / "index.template.html").read_text()
     assert template.count(MARKER) == 1, "template must contain exactly one marker"
-    return template.replace(MARKER, "".join(section(s, data["kinds"]) for s in data["sections"]))
+    html = template.replace(MARKER, "".join(section(s, data["kinds"]) for s in data["sections"]))
+    return add_image_dimensions(html)
 
 
 if __name__ == "__main__":
