@@ -31,6 +31,7 @@
   .hero::before { content:''; position:absolute; top:-40%; right:-5%; width:500px; height:500px; background:radial-gradient(circle, rgba(221,36,141,0.18) 0%, transparent 65%); border-radius:50%; }
   .hero-left { display: flex; align-items: center; gap: 24px; position: relative; z-index: 1; }
   .hero-logos { display: flex; align-items: center; }
+  .hero-text { margin-left:8px; }
   .hero-text h1 { font-size: 14px; font-weight: 500; opacity: 0.5; text-transform: uppercase; letter-spacing: 2px; }
   .hero-text p { font-size: 15px; opacity: 0.7; margin-top: 2px; font-family: 'Inter', sans-serif; font-weight: 400; }
 
@@ -73,8 +74,8 @@
   .aa-card .aa-glyph { font-family:'Poppins',sans-serif; font-size:72px; font-weight:600; line-height:1; color:var(--black); margin-bottom:12px; }
   .aa-card .aa-name { font-size:14px; font-weight:700; color:var(--text); margin-bottom:2px; }
   .aa-card .aa-role { font-size:12px; color:var(--text-muted); }
-  .type-sample-heading { font-family:'Poppins',sans-serif; }
-  .type-sample-body { font-family:'Inter',sans-serif; }
+  .type-sample-heading { font-family:'Poppins',sans-serif;  font-size:36px;font-weight:700;line-height:1.25;color:var(--black);margin-bottom:12px; }
+  .type-sample-body { font-family:'Inter',sans-serif;  font-size:16px;font-weight:400;line-height:1.7;color:#555;max-width:640px; }
   .type-combo { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:40px; margin-bottom:20px; }
   .type-spec { margin-top:16px; padding-top:12px; border-top:1px dashed var(--border); font-size:11px; color:var(--text-muted); font-family:'Inter',sans-serif; }
 
@@ -142,16 +143,47 @@
   @media (max-width:768px) {
     .hero { padding:32px 20px; flex-direction:column; align-items:flex-start; gap:16px; }
     .hero-left { flex-direction:column; align-items:flex-start; gap:4px; }
-    .hero-text { margin-left:0 !important; }
+    .hero-text { margin-left:0; }
     .nav { padding:0 20px; }
     .page { padding:0 20px 0; }
     .palette-grid, .product-grid, .aa-grid, .version-grid { grid-template-columns:1fr; }
     .footer-inner { flex-direction:column; }
-    .footer-inner > div:last-child { text-align:left !important; }
+    .footer .footer-right { text-align:left; }
     .dl-row { flex-direction:column; align-items:flex-start; gap:10px; }
     .section-title-with-action { flex-direction:column; align-items:flex-start; }
   }
   @media (prefers-reduced-motion:reduce) { * { transition:none !important; } }
+
+  /* Components & utilities (formerly inline styles) */
+  .icon-inline { margin-left:6px; vertical-align:-1px; }
+  .mt-8 { margin-top:8px; } .mt-12 { margin-top:12px; }
+  .footer-right { text-align:right; }
+  .footer-updated { margin-top:12px; font-size:11px; opacity:0.6; }
+  .lead--narrow { max-width:560px; }
+  .palette-swatch .hex { color:#fff; } .palette-swatch .hex--dark { color:var(--black); }
+  .aa-card .aa-glyph--poppins { font-family:'Poppins',sans-serif; } .aa-card .aa-glyph--inter { font-family:'Inter',sans-serif; }
+  .aa-card .aa-glyph--montserrat { font-family:'Montserrat',sans-serif; } .aa-card .aa-glyph--nunito { font-family:'Nunito',sans-serif; }
+  .type-row { display:flex; gap:20px; flex-wrap:wrap; align-items:stretch; } .type-row--spaced { margin-bottom:20px; }
+  .aa-card--side { max-width:340px; flex:1; min-width:220px; }
+  .aa-card--logo { display:flex; flex-direction:column; justify-content:center; }
+  .type-card--grow { flex:2; min-width:280px; margin-bottom:0; padding:28px; }
+  .type-card--montserrat { font-family:'Montserrat',sans-serif; } .type-card--nunito { font-family:'Nunito',sans-serif; }
+  .type-card-title { font-size:20px; font-weight:700; color:var(--black); margin-bottom:8px; }
+  .type-card-desc { font-size:14px; color:#666; line-height:1.6; margin-bottom:16px; }
+  .eyebrow { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.5px; color:var(--pink); margin-bottom:10px; }
+  .btn-link { display:inline-flex; align-items:center; padding:8px 16px; border-radius:6px; background:var(--pink); color:#fff; font-size:13px; font-weight:600; }
+  .aa-card-logo { width:auto; display:block; }
+  .hero-logo { height:39.74px; width:auto; margin:23.21px 12.67px 1.05px 1.86px; }
+  .product-card .mark .mark-logo { width:auto; }
+  .product-card .mark .mark-logo--bycat { height:50.86px; margin:29.57px 18.82px 29.57px -6.14px; }
+  .product-card .mark .mark-logo--standalone { height:50.63px; margin:29.57px 18.82px 29.8px -6.14px; }
+  .aa-card-logo { height:58px; margin:7px auto 19px; }
+  .sw-plum { background:var(--plum); } .sw-pink { background:var(--pink); } .sw-black { background:var(--black); }
+  .sw-gradient { background:linear-gradient(44deg,var(--plum) 0%,var(--pink) 100%); }
+  .version-strip .strip-gradient { background:linear-gradient(44deg,var(--plum),var(--pink)); flex:2; }
+  .version-strip .strip-pink { background:var(--pink); flex:2; }
+  .version-strip .strip-white { background:#fff; border:1px solid var(--border); }
+  .rule-card--flush { border:none; padding:0; margin-bottom:14px; } .rule-card--flush-last { border:none; padding:0; margin-bottom:0; }
 </style>
 </head>
 <body>
@@ -162,9 +194,9 @@
 <header class="hero">
   <div class="hero-left">
     <div class="hero-logos">
-      <img src="assets/svg/cloudcasa_logo_white.svg" alt="CloudCasa" style="height:39.74px;width:auto;margin:23.21px 12.67px 1.05px 1.86px;">
+      <img class="hero-logo" src="assets/svg/cloudcasa_logo_white.svg" alt="CloudCasa">
     </div>
-    <div class="hero-text" style="margin-left:8px;">
+    <div class="hero-text">
       <h1>Brand Resource Center</h1>
       <p>Logos, colors, typography, usage guidelines, and downloads</p>
     </div>
@@ -190,14 +222,14 @@
   <p class="lead">The logo comes in two versions: <strong>with</strong> the "by Catalogic" tagline and <strong>without</strong> it. Use the tagline version by default; drop it only where Catalogic is already clear from context.</p>
   <div class="product-grid">
     <div class="product-card product-card-link" data-dl="dl-bycat" tabindex="0" role="link">
-      <div class="mark"><img src="assets/svg/cloudcasa-by-catalogic_logo_color.svg" alt="CloudCasa by Catalogic" style="height:50.86px;width:auto;margin:29.57px 18.82px 29.57px -6.14px;">
+      <div class="mark"><img class="mark-logo mark-logo--bycat" src="assets/svg/cloudcasa-by-catalogic_logo_color.svg" alt="CloudCasa by Catalogic">
 </div>
       <div class="tagline">With "by Catalogic" &nbsp;<span class="badge">Default</span></div>
       <p>For anything where CloudCasa appears as a Catalogic product. Horizontal and stacked versions available.</p>
       <p class="example"><strong>Examples:</strong> website, sales decks, datasheets, events, partner co-branding.</p>
     </div>
     <div class="product-card product-card-link" data-dl="dl-standalone" tabindex="0" role="link">
-      <div class="mark"><img src="assets/svg/cloudcasa_logo_color.svg" alt="CloudCasa, without by Catalogic" style="height:50.63px;width:auto;margin:29.57px 18.82px 29.8px -6.14px;">
+      <div class="mark"><img class="mark-logo mark-logo--standalone" src="assets/svg/cloudcasa_logo_color.svg" alt="CloudCasa, without by Catalogic">
 </div>
       <div class="tagline">Without "by Catalogic"</div>
       <p>For places inside the product itself, where the parent brand is already clear.</p>
@@ -211,7 +243,7 @@
   <div class="section-title">Brand Colors</div>
   <div class="palette-grid">
     <div class="palette-card">
-      <div class="palette-swatch" style="background:#863E73;"><span class="hex" style="color:#fff;">#863E73</span></div>
+      <div class="palette-swatch sw-plum"><span class="hex">#863E73</span></div>
       <div class="palette-info">
         <h4>Pantone 689 C</h4>
         <table>
@@ -223,7 +255,7 @@
       </div>
     </div>
     <div class="palette-card">
-      <div class="palette-swatch" style="background:#DD248D;"><span class="hex" style="color:#fff;">#DD248D</span></div>
+      <div class="palette-swatch sw-pink"><span class="hex">#DD248D</span></div>
       <div class="palette-info">
         <h4>Pantone Pink C</h4>
         <table>
@@ -235,7 +267,7 @@
       </div>
     </div>
     <div class="palette-card">
-      <div class="palette-swatch" style="background:#171717;"><span class="hex" style="color:#fff;">#171717</span></div>
+      <div class="palette-swatch sw-black"><span class="hex">#171717</span></div>
       <div class="palette-info">
         <h4>Pantone Black 6 C</h4>
         <table>
@@ -247,7 +279,7 @@
       </div>
     </div>
     <div class="palette-card">
-      <div class="palette-swatch" style="background:linear-gradient(44deg,#863E73 0%,#DD248D 100%);"><span class="hex" style="color:#fff;">#863E73 &rarr; #DD248D</span></div>
+      <div class="palette-swatch sw-gradient"><span class="hex">#863E73 &rarr; #DD248D</span></div>
       <div class="palette-info">
         <h4>Logo Gradient</h4>
         <table>
@@ -263,17 +295,17 @@
   <div class="section-title">Color Versions of the Logo</div>
   <div class="version-grid">
     <div class="type-card version-card">
-      <div class="version-strip"><span style="background:linear-gradient(44deg,#863E73,#DD248D);flex:2;"></span><span style="background:#171717;"></span></div>
+      <div class="version-strip"><span class="strip-gradient"></span><span class="sw-black"></span></div>
       <h5>Gradient full color <span class="badge">Preferred</span></h5>
       <p>For all digital, web, presentation, and offset print applications.</p>
     </div>
     <div class="type-card version-card">
-      <div class="version-strip"><span style="background:#DD248D;flex:2;"></span><span style="background:#171717;"></span></div>
+      <div class="version-strip"><span class="strip-pink"></span><span class="sw-black"></span></div>
       <h5>Flat color (spot)</h5>
       <p>Only where the gradient isn't possible, e.g. screen printing and vinyl graphics for signage.</p>
     </div>
     <div class="type-card version-card">
-      <div class="version-strip"><span style="background:#171717;"></span><span style="background:#fff;border:1px solid var(--border);"></span></div>
+      <div class="version-strip"><span class="sw-black"></span><span class="strip-white"></span></div>
       <h5>Single color</h5>
       <p>Black, or white on a dark background. For b/w laser prints, forms, and fax sheets, or embossing and etching on glass, wood, metal, and plastic.</p>
     </div>
@@ -282,56 +314,56 @@
 
 <!-- TYPOGRAPHY -->
 <div class="section" id="tab-typography" role="tabpanel" aria-labelledby="tabbtn-typography">
-  <div class="section-title section-title-with-action"><span>Typefaces</span><div class="section-title-actions"><a class="dl-btn dl-btn-primary" href="https://fonts.google.com/specimen/Poppins" target="_blank" rel="noopener">Download Poppins<svg width="12" height="12" viewBox="0 0 12 12" fill="none" style="margin-left:6px;vertical-align:-1px;"><path d="M6 1V8M6 8L3 5M6 8L9 5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 10.5H10" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></a><a class="dl-btn dl-btn-primary" href="https://fonts.google.com/specimen/Inter" target="_blank" rel="noopener">Download Inter<svg width="12" height="12" viewBox="0 0 12 12" fill="none" style="margin-left:6px;vertical-align:-1px;"><path d="M6 1V8M6 8L3 5M6 8L9 5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 10.5H10" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></a></div></div>
-  <p class="lead" style="max-width:560px;">We use <strong>Poppins</strong> for headings and <strong>Inter</strong> for body text. Both are free on Google Fonts. Open Sans is a legacy fallback only.</p>
+  <div class="section-title section-title-with-action"><span>Typefaces</span><div class="section-title-actions"><a class="dl-btn dl-btn-primary" href="https://fonts.google.com/specimen/Poppins" target="_blank" rel="noopener">Download Poppins<svg class="icon-inline" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1V8M6 8L3 5M6 8L9 5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 10.5H10" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></a><a class="dl-btn dl-btn-primary" href="https://fonts.google.com/specimen/Inter" target="_blank" rel="noopener">Download Inter<svg class="icon-inline" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1V8M6 8L3 5M6 8L9 5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 10.5H10" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></a></div></div>
+  <p class="lead lead--narrow">We use <strong>Poppins</strong> for headings and <strong>Inter</strong> for body text. Both are free on Google Fonts. Open Sans is a legacy fallback only.</p>
 
   <div class="aa-grid">
     <div class="aa-card">
-      <div class="aa-glyph" style="font-family:'Poppins',sans-serif;">Aa</div>
+      <div class="aa-glyph aa-glyph--poppins">Aa</div>
       <div class="aa-name">Poppins</div>
       <div class="aa-role">Headings &nbsp;&bull;&nbsp; weights 400&ndash;900</div>
     </div>
     <div class="aa-card">
-      <div class="aa-glyph" style="font-family:'Inter',sans-serif;">Aa</div>
+      <div class="aa-glyph aa-glyph--inter">Aa</div>
       <div class="aa-name">Inter</div>
       <div class="aa-role">Body text &nbsp;&bull;&nbsp; weights 300&ndash;800</div>
     </div>
   </div>
 
   <div class="type-combo">
-    <div class="type-sample-heading" style="font-size:36px;font-weight:700;line-height:1.25;color:var(--black);margin-bottom:12px;">Protect Your Kubernetes Workloads with Confidence</div>
-    <div class="type-sample-body" style="font-size:16px;font-weight:400;line-height:1.7;color:#555;max-width:640px;">CloudCasa delivers enterprise-grade backup and disaster recovery for Kubernetes environments. Whether you run a handful of clusters or thousands, the platform scales with you while keeping your data safe, compliant, and recoverable.</div>
+    <div class="type-sample-heading">Protect Your Kubernetes Workloads with Confidence</div>
+    <div class="type-sample-body">CloudCasa delivers enterprise-grade backup and disaster recovery for Kubernetes environments. Whether you run a handful of clusters or thousands, the platform scales with you while keeping your data safe, compliant, and recoverable.</div>
     <div class="type-spec">Heading: Poppins Bold 700 &nbsp;&bull;&nbsp; Body: Inter Regular 400</div>
   </div>
 
-  <div class="section-title section-title-with-action"><span>Product Typeface</span><div class="section-title-actions"><a class="dl-btn dl-btn-primary" href="https://fonts.google.com/specimen/Montserrat" target="_blank" rel="noopener">Download Montserrat<svg width="12" height="12" viewBox="0 0 12 12" fill="none" style="margin-left:6px;vertical-align:-1px;"><path d="M6 1V8M6 8L3 5M6 8L9 5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 10.5H10" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></a></div></div>
-  <p class="lead" style="max-width:560px;">Inside the CloudCasa app, the UI uses <strong>Montserrat</strong> &mdash; separate from the Poppins/Inter pairing used on marketing and brand materials.</p>
-  <div style="display:flex;gap:20px;flex-wrap:wrap;align-items:stretch;margin-bottom:20px;">
-    <div class="aa-card" style="max-width:340px;flex:1;min-width:220px;">
-      <div class="aa-glyph" style="font-family:'Montserrat',sans-serif;">Aa</div>
+  <div class="section-title section-title-with-action"><span>Product Typeface</span><div class="section-title-actions"><a class="dl-btn dl-btn-primary" href="https://fonts.google.com/specimen/Montserrat" target="_blank" rel="noopener">Download Montserrat<svg class="icon-inline" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1V8M6 8L3 5M6 8L9 5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 10.5H10" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></a></div></div>
+  <p class="lead lead--narrow">Inside the CloudCasa app, the UI uses <strong>Montserrat</strong> &mdash; separate from the Poppins/Inter pairing used on marketing and brand materials.</p>
+  <div class="type-row type-row--spaced">
+    <div class="aa-card aa-card--side">
+      <div class="aa-glyph aa-glyph--montserrat">Aa</div>
       <div class="aa-name">Montserrat</div>
       <div class="aa-role">Product UI</div>
     </div>
-    <div class="type-card" style="font-family:'Montserrat',sans-serif;flex:2;min-width:280px;margin-bottom:0;padding:28px;">
-      <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--pink);margin-bottom:10px;">Backup Job &mdash; prod-cluster-01</div>
-      <div style="font-size:20px;font-weight:700;color:var(--black);margin-bottom:8px;">Completed successfully</div>
-      <div style="font-size:14px;color:#666;line-height:1.6;margin-bottom:16px;">214 resources and 6 persistent volumes backed up in 8 minutes. Next run scheduled for tonight at 11:00 PM.</div>
-      <div style="display:inline-flex;align-items:center;padding:8px 16px;border-radius:6px;background:var(--pink);color:#fff;font-size:13px;font-weight:600;">View Job Details</div>
+    <div class="type-card type-card--grow type-card--montserrat">
+      <div class="eyebrow">Backup Job &mdash; prod-cluster-01</div>
+      <div class="type-card-title">Completed successfully</div>
+      <div class="type-card-desc">214 resources and 6 persistent volumes backed up in 8 minutes. Next run scheduled for tonight at 11:00 PM.</div>
+      <div class="btn-link">View Job Details</div>
     </div>
   </div>
 
   <div class="section-title">Logo Typeface</div>
-  <p class="lead" style="max-width:560px;">The wordmark is set in <strong>Arcon</strong>, always in lowercase. Arcon belongs to the logo only &mdash; don't use it for headings, body text, or anything else.</p>
-  <div style="display:flex;gap:20px;flex-wrap:wrap;align-items:stretch;">
-    <div class="aa-card" style="max-width:340px;flex:1;min-width:220px;display:flex;flex-direction:column;justify-content:center;">
-      <svg viewBox="-0.5 -0.5 52.82 31.25" xmlns="http://www.w3.org/2000/svg" style="height:58px;width:auto;display:block;margin:7px auto 19px;" role="img" aria-label="Aa in Arcon"><path fill="#171717" fill-rule="nonzero" d="M15.064 3.672L9.931 15.024L20.155 15.024L15.064 3.672ZM13.395 0.000L16.691 0.000L30.087 29.795L26.791 29.795L21.449 17.944L8.637 17.944L3.296 29.795L0.000 29.795L13.395 0.000ZM48.861 20.656C48.861 16.942 45.648 13.895 42.018 13.895C38.304 13.895 35.507 16.942 35.507 20.656C35.507 24.286 38.304 27.499 42.018 27.499C45.648 27.499 48.861 24.286 48.861 20.656ZM32.587 20.656C32.587 15.439 36.885 11.141 42.101 11.141C44.898 11.141 47.360 12.434 49.029 14.438L49.029 11.433L51.824 11.433L51.824 29.878L49.029 29.878L49.029 26.873C47.360 28.919 44.898 30.254 42.101 30.254C36.885 30.254 32.587 25.788 32.587 20.656Z"/></svg>
+  <p class="lead lead--narrow">The wordmark is set in <strong>Arcon</strong>, always in lowercase. Arcon belongs to the logo only &mdash; don't use it for headings, body text, or anything else.</p>
+  <div class="type-row">
+    <div class="aa-card aa-card--side aa-card--logo">
+      <svg class="aa-card-logo" viewBox="-0.5 -0.5 52.82 31.25" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Aa in Arcon"><path fill="#171717" fill-rule="nonzero" d="M15.064 3.672L9.931 15.024L20.155 15.024L15.064 3.672ZM13.395 0.000L16.691 0.000L30.087 29.795L26.791 29.795L21.449 17.944L8.637 17.944L3.296 29.795L0.000 29.795L13.395 0.000ZM48.861 20.656C48.861 16.942 45.648 13.895 42.018 13.895C38.304 13.895 35.507 16.942 35.507 20.656C35.507 24.286 38.304 27.499 42.018 27.499C45.648 27.499 48.861 24.286 48.861 20.656ZM32.587 20.656C32.587 15.439 36.885 11.141 42.101 11.141C44.898 11.141 47.360 12.434 49.029 14.438L49.029 11.433L51.824 11.433L51.824 29.878L49.029 29.878L49.029 26.873C47.360 28.919 44.898 30.254 42.101 30.254C36.885 30.254 32.587 25.788 32.587 20.656Z"/></svg>
 
       <div class="aa-name">Arcon</div>
       <div class="aa-role">Logo wordmark only</div>
     </div>
-    <div class="type-card" style="flex:2;min-width:280px;margin-bottom:0;padding:28px;">
-      <div class="rule-card rule-do" style="border:none;padding:0;margin-bottom:14px;"><div class="rule-icon">&#10003;</div><div><h5>cloudcasa</h5><p>Correct in the logo.</p></div></div>
-      <div class="rule-card rule-dont" style="border:none;padding:0;margin-bottom:0;"><div class="rule-icon">&#10007;</div><div><h5>CloudCasa &nbsp;/&nbsp; Cloudcasa &nbsp;/&nbsp; CLOUDCASA</h5><p>Never use these casings in the logo.</p></div></div>
+    <div class="type-card type-card--grow">
+      <div class="rule-card rule-do rule-card--flush"><div class="rule-icon">&#10003;</div><div><h5>cloudcasa</h5><p>Correct in the logo.</p></div></div>
+      <div class="rule-card rule-dont rule-card--flush-last"><div class="rule-icon">&#10007;</div><div><h5>CloudCasa &nbsp;/&nbsp; Cloudcasa &nbsp;/&nbsp; CLOUDCASA</h5><p>Never use these casings in the logo.</p></div></div>
     </div>
   </div>
 </div>
@@ -367,13 +399,13 @@
   <div class="footer-inner">
     <div class="footer-left">
       <p>CloudCasa is a registered trademark of Catalogic Software, Inc. All rights reserved. The CloudCasa name, logo, and the CC double-C icon are protected trademarks. Unauthorized use, reproduction, or modification of these brand assets is prohibited.</p>
-      <p style="margin-top:8px;">For brand usage inquiries or to request assets not available on this page, contact <a href="mailto:marketing@catalogicsoftware.com">marketing@catalogicsoftware.com</a>.</p>
+      <p class="mt-8">For brand usage inquiries or to request assets not available on this page, contact <a href="mailto:marketing@catalogicsoftware.com">marketing@catalogicsoftware.com</a>.</p>
     </div>
-    <div style="text-align:right;">
+    <div class="footer-right">
       <p>&copy; 2024&ndash;2026 Catalogic Software, Inc.</p>
       <p>140 E. Ridgewood Ave., Suite 415, South Tower, Office 432<br>Paramus, NJ 07652, USA</p>
-      <p style="margin-top:12px;"><a href="https://www.catalogicsoftware.com">catalogicsoftware.com</a> &nbsp;|&nbsp; <a href="https://www.cloudcasa.io">cloudcasa.io</a></p>
-      <p style="margin-top:12px;font-size:11px;opacity:0.6;">Last updated: September 2026</p>
+      <p class="mt-12"><a href="https://www.catalogicsoftware.com">catalogicsoftware.com</a> &nbsp;|&nbsp; <a href="https://www.cloudcasa.io">cloudcasa.io</a></p>
+      <p class="footer-updated">Last updated: September 2026</p>
     </div>
   </div>
 </footer>

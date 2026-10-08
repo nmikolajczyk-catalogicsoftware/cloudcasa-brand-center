@@ -12,7 +12,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 MARKER = "<!-- @@DOWNLOAD_SECTIONS@@ -->"
-ZIP_ICON = ('<svg width="12" height="12" viewBox="0 0 12 12" fill="none" style="margin-left:6px;vertical-align:-1px;">'
+ZIP_ICON = ('<svg width="12" height="12" viewBox="0 0 12 12" fill="none" class="icon-inline">'
             '<path d="M6 1V8M6 8L3 5M6 8L9 5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>'
             '<path d="M2 10.5H10" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>')
 # (label, css class, folder, file suffix) in display order
