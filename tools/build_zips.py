@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
-"""Build the ZIP packages in assets/packages from variants.json (reproducible: fixed timestamps).
+"""Build the ZIP packages in assets/packages from variants.json (entries carry the build date; a zip is only rewritten when its content changed).
 
     python3 tools/build_zips.py          # rewrite the zips
     python3 tools/build_zips.py --check  # fail if a zip does not match the files on disk
 """
 import json
 import sys
+import time
 import zipfile
 from pathlib import Path
 
@@ -14,7 +15,6 @@ import build  # noqa: E402
 
 ROOT = build.ROOT
 ALL_ZIP = "cloudcasa-logos.zip"
-FIXED_TIME = (2026, 1, 1, 0, 0, 0)
 # (folder inside the zip, folder on disk, file suffix)
 FORMATS = [("svg", "svg", ".svg"), ("png", "png", ".png"), ("png", "png", "@2x.png"),
            ("docs", "docs", ".pdf"), ("source", "source", ".ai")]
@@ -32,30 +32,33 @@ def specs():
 
 
 def write(path, entries):
+    stamp = time.localtime()[:6]
     with zipfile.ZipFile(path, "w", zipfile.ZIP_DEFLATED) as zf:
         for arcname, source in sorted(entries):
-            info = zipfile.ZipInfo(arcname, FIXED_TIME)
+            info = zipfile.ZipInfo(arcname, stamp)
             info.compress_type = zipfile.ZIP_DEFLATED
             info.external_attr = 0o644 << 16
             zf.writestr(info, source.read_bytes())
 
 
-def problems():
+def zip_problems(name, entries):
     out = []
-    for name, entries in specs().items():
-        path = ROOT / "assets" / "packages" / name
-        if not path.exists():
-            out.append(f"{name}: missing")
-            continue
-        with zipfile.ZipFile(path) as zf:
-            have = {i.filename: zf.read(i) for i in zf.infolist() if not i.filename.endswith("/")}
-        missing = [arc for arc, src in entries if not src.exists()]
-        out += [f"{name}: source file missing for {a}" for a in missing]
-        want = {arc: src.read_bytes() for arc, src in entries if src.exists()}
-        out += [f"{name}: missing entry {a}" for a in sorted(want.keys() - have.keys())]
-        out += [f"{name}: unexpected entry {a}" for a in sorted(have.keys() - want.keys())]
-        out += [f"{name}: {a} differs from assets file" for a in sorted(want.keys() & have.keys()) if want[a] != have[a]]
+    path = ROOT / "assets" / "packages" / name
+    if not path.exists():
+        return [f"{name}: missing"]
+    with zipfile.ZipFile(path) as zf:
+        have = {i.filename: zf.read(i) for i in zf.infolist() if not i.filename.endswith("/")}
+    missing = [arc for arc, src in entries if not src.exists()]
+    out += [f"{name}: source file missing for {a}" for a in missing]
+    want = {arc: src.read_bytes() for arc, src in entries if src.exists()}
+    out += [f"{name}: missing entry {a}" for a in sorted(want.keys() - have.keys())]
+    out += [f"{name}: unexpected entry {a}" for a in sorted(have.keys() - want.keys())]
+    out += [f"{name}: {a} differs from assets file" for a in sorted(want.keys() & have.keys()) if want[a] != have[a]]
     return out
+
+
+def problems():
+    return [p for name, entries in specs().items() for p in zip_problems(name, entries)]
 
 
 if __name__ == "__main__":
@@ -64,5 +67,8 @@ if __name__ == "__main__":
         sys.exit("\n".join(found) if found else 0)
     (ROOT / "assets" / "packages").mkdir(exist_ok=True)
     for name, entries in specs().items():
-        write(ROOT / "assets" / "packages" / name, entries)
-        print(f"wrote {name} ({len(entries)} files)")
+        if zip_problems(name, entries):
+            write(ROOT / "assets" / "packages" / name, entries)
+            print(f"wrote {name} ({len(entries)} files)")
+        else:
+            print(f"unchanged {name}")
