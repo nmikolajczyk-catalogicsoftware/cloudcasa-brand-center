@@ -531,6 +531,7 @@ a:focus-visible {
 
 .dl-preview-white {
   background: var(--black);
+  border: 1px solid var(--black);
 }
 
 .dl-preview-color {
