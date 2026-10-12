@@ -17,7 +17,7 @@ ROOT = build.ROOT
 ALL_ZIP = "cloudcasa-logos.zip"
 # (folder inside the zip, folder on disk, file suffix)
 FORMATS = [("svg", "svg", ".svg"), ("png", "png", ".png"), ("png", "png", "@2x.png"),
-           ("docs", "docs", ".pdf"), ("source", "source", ".ai")]
+           ("pdf", "docs", ".pdf"), ("source", "source", ".ai")]
 
 
 def members(stems):
