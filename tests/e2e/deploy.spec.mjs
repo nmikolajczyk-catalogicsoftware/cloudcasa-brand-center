@@ -33,6 +33,8 @@ test.describe('deployment', () => {
       '/package.json',
       '/.vercelignore',
       '/vercel.json',
+      '/.github/workflows/ci.yml',
+      '/.claude/skills/brand-center/SKILL.md',
     ]) {
       const status = (await request.get(path)).status();
       expect(status, path).toBe(404);
