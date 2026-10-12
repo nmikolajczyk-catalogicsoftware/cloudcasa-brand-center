@@ -780,7 +780,7 @@ a:focus-visible {
   .hero-left {
     flex-direction: column;
     align-items: flex-start;
-    gap: 4px;
+    gap: 12px;
   }
 
   .hero-text {
@@ -943,9 +943,9 @@ a:focus-visible {
 }
 
 .hero-logo {
-  height: 39.74px;
+  display: block;
+  height: 40px;
   width: auto;
-  margin: 23.21px 12.67px 1.05px 1.86px;
 }
 
 .product-card .mark .mark-logo {
