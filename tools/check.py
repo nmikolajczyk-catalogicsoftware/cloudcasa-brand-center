@@ -164,6 +164,11 @@ def main():
         colours = {c.lower() for c in re.findall(r"#[0-9a-fA-F]{6}\b", svg.read_text())}
         if colours - allowed:
             fail(f"{svg.name}: off-brand colours {sorted(colours - allowed)}")
+        for ref_id, body in re.findall(
+            r'<(?:clipPath|mask)\b[^>]*\bid="([^"]+)"[^>]*>(.*?)</(?:clipPath|mask)>', svg.read_text(), flags=re.S
+        ):
+            if not re.search(r"<(?:path|rect|polygon|polyline|circle|ellipse|line|use|g)\b", body):
+                fail(f"{svg.name}: #{ref_id} is empty, so everything that uses it is clipped away (the logo disappears)")
 
     # 4. every local link/src resolves
     for ref in sorted(set(re.findall(r'(?:href|src)="(assets/[^"]+)"', html))):
