@@ -51,16 +51,17 @@ description: Work on, verify and hand over the Catalogic brand resource sites (C
 ## Verify before handing over
 
 1. Working tree clean and pushed (`git status -sb` shows no ahead/behind).
-2. CI green on GitHub (`gh` is not installed on this machine; check in the browser or ask).
+2. CI green on GitHub. `gh` is not installed, but the repos are public so the API works without a token: `curl -s "https://api.github.com/repos/nmikolajczyk-catalogicsoftware/<repo>/actions/runs?per_page=5&branch=main"` (status/conclusion per commit); for a failing run get its check-run id from `.../commits/<sha>/check-runs` and read `.../check-runs/<id>/annotations` (the Playwright summary and error messages are there). CI is the only place Firefox runs, and it has caught real bugs (a render test that divided by a 0 SVG size in Firefox). Check CI after every push; do not report "done" before it is green.
 3. Local: `python3 tools/check.py`, lint (`npm ci --prefix tools && npm run lint --prefix tools`), `cd tests && npm test`.
-4. Production smoke test: `cd tests && BASE_URL=<prod url> npm run test:production`. Last run on cloudcasa: 205 passed, 0 failed, 99 skipped (skips are defined in the tests).
+4. Production smoke test: `cd tests && BASE_URL=<prod url> npm run test:production` (cloudcasa 309, Catalogic 293 tests at last run, 0 failed; skips are defined in the tests). A single network timeout (30.0s) can be a flake: re-run those tests before concluding anything.
 5. Quick manual probes with curl: `curl -sI <url>/` shows 200 plus CSP/HSTS/X-Frame-Options; `/package.json` and `/.git/config` must be 404; a few `/assets/png/...all-white.png` return 200.
-6. The Catalogic repo has the same setup in `dpx/tests/` (`cd dpx/tests && BASE_URL=<prod url> npm run test:production`). Last run: 205 passed, 0 failed, 99 skipped.
+6. The Catalogic repo has the same setup in `dpx/tests/` (`cd dpx/tests && BASE_URL=<prod url> npm run test:production`).
 7. After a header, CSS or copy change run `npm run test:visual`; if the new look is intended, view the `*-actual.png` in `test-results/`, then `npm run test:update-visual` and commit the baselines.
 
 ## Machine gotchas (observed on the original author's Mac; may differ on yours)
 
 - `git push` over SSH to the Catalogic repo hangs on the author's machine. Push over HTTPS, one commit at a time, with retries: `git -c http.postBuffer=524288000 -c http.version=HTTP/1.1 push https://github.com/nmikolajczyk-catalogicsoftware/Catalogic-brand-resource-center.git "${sha}:refs/heads/main"`. Always write `"${sha}:refs/..."`: in zsh a bare `$sha:refs` is mangled by the `:r` modifier. Kill hung pushes (`pkill -f "git push"`) before retrying.
+- Local test runs start `serve.mjs` on port 4173 and REUSE whatever already listens there. Killing an aborted `playwright test` can leave that server running with the OTHER repo's files, so the next run in this repo silently tests (and even regenerates visual baselines from) the wrong site. Before every test run: `lsof -nP -iTCP:4173 -sTCP:LISTEN` must be empty; after an aborted run `kill` that node process.
 - `npm test` includes Firefox, which hangs locally. Use `npm run test:chromium`, or `npx playwright test --project=webkit --project=mobile-chrome --project=mobile-safari`.
 - If `npm` is not on PATH in the Claude Code shell, add your Node 22 install to PATH first (nvm: `$HOME/.nvm/versions/node/<version>/bin`).
 - macOS has no `timeout` command; do not wrap with it.
@@ -69,6 +70,7 @@ description: Work on, verify and hand over the Catalogic brand resource sites (C
 
 ## Working rules learned
 
+- Content review before hand-over: dump the rendered text of every tab and read it (typos, stale "Last updated" month in the footer, wording that no longer matches the files, e.g. "single color" next to a variant that keeps a coloured mark). Render PDFs and `.ai` too (a small Swift `CGPDFDocument` script on macOS works) instead of only checking their headers.
 - Do not claim something about a file you did not open. Names suggest, images prove. Say plainly what was and was not checked (PNG viewed, PDF/ZIP not opened).
 - Do not push, deploy or share links with others without the user's go-ahead; checking and reading is fine. Approval covers the commits that existed when it was given; ask again for later ones.
 - After pushing, poll production until the new version is live (compare a changed file or `last-modified`), then verify on the live URL instead of assuming the deploy finished.

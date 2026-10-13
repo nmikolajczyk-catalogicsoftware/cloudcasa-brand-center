@@ -70,7 +70,7 @@ CI (`.github/workflows/ci.yml`) runs on every push and pull request:
 
 1. **Generated files are current:** `build.py --check`, `build_zips.py --check`.
 2. **`tools/check.py`:** every local link resolves; every variant has SVG, PNG, PNG 2x, PDF and AI; SVGs use only brand
-   colours; files have the right signature (PNG, `%PDF-`, well-formed SVG); PNG, PDF and AI proportions match the SVG;
+   colours and have no empty `clipPath`/`mask` (that would hide the whole logo); files have the right signature (PNG, `%PDF-`, well-formed SVG); PNG, PDF and AI proportions match the SVG;
    `*_spot` PDF/AI really contain the `PANTONE` swatches; the CSP has no `unsafe-*` and the security headers exist;
    no inline `style`/`onclick`/`<style>`, every `<img>` has `alt`/`width`/`height`, one `h1`, one `header`/`main`/`footer`.
 3. **Lint:** ESLint, Stylelint, html-validate (incl. WCAG rules), Prettier.
@@ -78,7 +78,9 @@ CI (`.github/workflows/ci.yml`) runs on every push and pull request:
    fails on any console message, uncaught error, failed request, HTTP >= 400 or CSP violation:
    - tabs: ARIA state, keyboard (arrows/Home/End), hash routing, malformed hashes, Back/Forward, skip link, landmarks;
    - accessibility: axe-core with WCAG 2.2 AA + best practices on every tab, focus visibility, reduced motion;
-   - downloads: every referenced asset returns the right type and file signature, every row offers 5 formats, ZIPs exist;
+   - downloads: every referenced asset returns the right type and file signature, every row offers 5 formats, ZIPs exist, the first block of the tab is
+     one "Download all (ZIP)" with every logo;
+   - logos: every SVG is rendered in the browser and must actually paint pixels (also guards Firefox, which gives a viewBox-only SVG size 0);
    - deployment: the exact headers from `vercel.json`, dev files return 404, size budget, image dimensions/lazy loading;
    - responsive: no horizontal scroll at 320-1440 px on every tab, 24x24 px minimum targets; works without JavaScript.
 
