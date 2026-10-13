@@ -74,7 +74,7 @@ test.describe('downloads and assets', () => {
       );
     const logoRows = rows.filter((labels) => labels.length > 1);
     expect(logoRows.length).toBeGreaterThan(15);
-    for (const labels of logoRows) expect(labels.sort()).toEqual(['AI', 'PDF', 'PNG', 'PNG 2x', 'SVG']);
+    for (const labels of logoRows) expect(labels).toEqual(['SVG', 'PNG', 'PNG 2x', 'PDF', 'AI']); // same order on every row and on both sites
   });
 
   test('every section ZIP link points to an existing archive', async ({ page, request }) => {

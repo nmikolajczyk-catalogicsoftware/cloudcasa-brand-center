@@ -20,7 +20,7 @@
       "name": "White",
       "alt": "white",
       "suffix": "white",
-      "desc": "Single color, white on dark or photographic backgrounds.",
+      "desc": "White wordmark, gradient mark. For dark or photographic backgrounds.",
       "preview": "white"
     },
     "all-white": {
@@ -90,7 +90,10 @@
         {
           "label": "CloudCasa icon",
           "base": "cloudcasa_icon",
-          "kinds": ["color", "spot", "white", "black"]
+          "kinds": ["color", "spot", "white", "black"],
+          "overrides": {
+            "white": { "desc": "Single color, all white. For dark or photographic backgrounds." }
+          }
         }
       ]
     }

@@ -19,8 +19,8 @@ ZIP_ICON = ('<svg width="12" height="12" viewBox="0 0 12 12" fill="none" class="
             '<path d="M2 10.5H10" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>')
 # (label, css class, folder, file suffix) in display order
 BUTTONS = [("SVG", "dl-btn-svg", "svg", ".svg"), ("PNG", "dl-btn-png", "png", ".png"),
-           ("PNG 2x", "dl-btn-png", "png", "@2x.png"), ("AI", "dl-btn-ai", "source", ".ai"),
-           ("PDF", "dl-btn-pdf", "docs", ".pdf")]
+           ("PNG 2x", "dl-btn-png", "png", "@2x.png"), ("PDF", "dl-btn-pdf", "docs", ".pdf"),
+           ("AI", "dl-btn-ai", "source", ".ai")]
 
 
 def row(group, kind):
@@ -65,7 +65,7 @@ def section(sec, kinds):
     for group in sec["groups"]:
         if group.get("name"):
             out += f'    <div class="dl-group">{group["name"]}</div>\n'
-        out += "".join(row(group, kinds[k]) for k in group["kinds"])
+        out += "".join(row(group, {**kinds[k], **group.get("overrides", {}).get(k, {})}) for k in group["kinds"])
     return out + "  </div>\n\n"
 
 
