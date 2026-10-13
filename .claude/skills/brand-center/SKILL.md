@@ -45,6 +45,7 @@ description: Work on, verify and hand over the Catalogic brand resource sites (C
 
 - `python3 tools/build_zips.py` writes `assets/packages/*.zip` with this layout in every ZIP: `svg/`, `png/` (1x and @2x), `pdf/`, `source/` (the `.ai` files). Same layout in both repos.
 - Entries carry the build date (not a fixed date) and a ZIP is only rewritten when its content changed, so rebuilding is idempotent. Delete a ZIP first to force a new timestamp. `--check` and `check.py` compare content only.
+- `variants.json` has a top-level `all_zip` (`zip`, `title`, `desc`): `build.py` renders it as the "All logos" block with a "Download all (ZIP)" button (`#dl-all`) at the top of Downloads, and `build_zips.py` builds that ZIP from every section (cloudcasa-logos.zip, catalogic-all-logos.zip).
 - After changing any SVG/PNG/PDF/AI, rebuild the ZIPs, otherwise `check.py` fails with "differs from assets file".
 
 ## Verify before handing over

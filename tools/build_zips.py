@@ -14,7 +14,6 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import build  # noqa: E402
 
 ROOT = build.ROOT
-ALL_ZIP = "cloudcasa-logos.zip"
 # (folder inside the zip, folder on disk, file suffix)
 FORMATS = [("svg", "svg", ".svg"), ("png", "png", ".png"), ("png", "png", "@2x.png"),
            ("pdf", "docs", ".pdf"), ("source", "source", ".ai")]
@@ -25,10 +24,8 @@ def members(stems):
 
 
 def specs():
-    per_section = build.variant_stems(json.loads((ROOT / "variants.json").read_text()))
-    specs = dict(per_section)
-    specs[ALL_ZIP] = [s for stems in per_section.values() for s in stems]
-    return {name: members(stems) for name, stems in specs.items()}
+    stems = build.variant_stems(json.loads((ROOT / "variants.json").read_text()))
+    return {name: members(s) for name, s in stems.items()}
 
 
 def write(path, entries):

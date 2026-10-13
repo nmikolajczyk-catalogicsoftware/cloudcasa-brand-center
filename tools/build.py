@@ -43,8 +43,19 @@ def stem(group, kind):
 
 def variant_stems(data):
     """{zip name: [stems]} in display order."""
-    return {sec["zip"]: [stem(g, data["kinds"][k]) for g in sec["groups"] for k in g["kinds"]]
-            for sec in data["sections"]}
+    stems = {sec["zip"]: [stem(g, data["kinds"][k]) for g in sec["groups"] for k in g["kinds"]]
+             for sec in data["sections"]}
+    if "all_zip" in data:
+        stems[data["all_zip"]["zip"]] = [s for group in list(stems.values()) for s in group]
+    return stems
+
+
+def all_zip_block(data):
+    """Top-of-tab block with the ZIP that holds every logo of every section."""
+    a = data["all_zip"]
+    return (f'  <div class="section-title section-title-with-action" id="dl-all"><h2>{a["title"]}</h2>'
+            f'<div class="section-title-actions"><a class="section-title-zip" href="assets/packages/{a["zip"]}" download>'
+            f'Download all (ZIP){ZIP_ICON}</a></div></div>\n  <p class="lead lead--narrow">{a["desc"]}</p>\n\n')
 
 
 def section(sec, kinds):
@@ -83,7 +94,7 @@ def build():
     data = json.loads((ROOT / "variants.json").read_text())
     template = (ROOT / "index.template.html").read_text()
     assert template.count(MARKER) == 1, "template must contain exactly one marker"
-    html = template.replace(MARKER, "".join(section(s, data["kinds"]) for s in data["sections"]))
+    html = template.replace(MARKER, all_zip_block(data) + "".join(section(s, data["kinds"]) for s in data["sections"]))
     return add_image_dimensions(html)
 
 

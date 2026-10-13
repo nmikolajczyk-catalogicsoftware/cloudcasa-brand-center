@@ -90,6 +90,21 @@ test.describe('downloads and assets', () => {
     }
   });
 
+  test('Downloads starts with one ZIP that holds every logo', async ({ page, request }) => {
+    await page.goto('/#downloads');
+    const all = page.locator('#dl-all a.section-title-zip');
+    await expect(all).toHaveCount(1);
+    await expect(all).toBeVisible();
+    // it comes before every per-section ZIP and is the biggest archive
+    const hrefs = await page
+      .locator('a.section-title-zip')
+      .evaluateAll((els) => els.map((el) => el.getAttribute('href')));
+    expect(hrefs[0]).toBe(await all.getAttribute('href'));
+    const sizes = [];
+    for (const href of hrefs) sizes.push((await (await request.get(`/${href}`)).body()).length);
+    expect(sizes[0]).toBeGreaterThan(Math.max(...sizes.slice(1)));
+  });
+
   test('external links open safely and use https', async ({ page }) => {
     await page.goto('/');
     const external = await page

@@ -38,6 +38,11 @@
       "preview": "color"
     }
   },
+  "all_zip": {
+    "zip": "cloudcasa-logos.zip",
+    "title": "All logos",
+    "desc": "Every CloudCasa logo and icon in every format (SVG, PNG, PDF and AI) from all the sections below, in one ZIP."
+  },
   "sections": [
     {
       "id": "dl-bycat",
